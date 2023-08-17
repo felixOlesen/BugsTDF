@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
 public GameObject path;
+public GameObject levelManager;
 private SpriteShapeController pathController;
 private Spline pathSpline;
 
@@ -24,6 +25,8 @@ private void Start() {
     path = GameObject.Find("WoodenPath");
     pathController = path.GetComponent<SpriteShapeController>();
     pathSpline = pathController.spline;
+    levelManager = GameObject.Find("LevelManager");
+
     speed = 2;
     // Debug.Log(pathSpline.GetPointCount());
     // Debug.Log(pathSpline.GetPosition(2));
@@ -50,6 +53,7 @@ private Vector3 UpdateCheckpoint() {
         }
         if(currentCheckpointIndex == pathSpline.GetPointCount()) {
             Destroy(gameObject);
+            levelManager.GetComponent<LevelManager>().LevelDamage(20);
         }
     }
     return currentCheckpointPos;
@@ -63,6 +67,7 @@ public void TakeDamage(int damage) {
 
     if(currentHealth <= 0) {
         Destroy(gameObject);
+        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(50);
     }
 
 }
