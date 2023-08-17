@@ -5,8 +5,8 @@ using UnityEngine;
 public class TowerController : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    public int attackPower = 10;
+    public int price;
+    public int attackPower;
     public int rangeRadius;
     public float attackSpeed;
     private CircleCollider2D towerRange;

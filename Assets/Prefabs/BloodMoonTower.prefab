@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d3242f015d4494f994544fc87b6326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  price: -5000
   attackPower: 40
   rangeRadius: 5
   attackSpeed: 1

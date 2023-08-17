@@ -37,6 +37,9 @@ public class ButtonManager : MonoBehaviour
         GameObject preFab = towers[towerName];
         currentTower = Instantiate(preFab, mousePos, Quaternion.identity);
         towerHeld = true;
+        int cost = currentTower.GetComponent<TowerController>().price;
+        Debug.Log(cost);
+        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
     }
 
     public void StartWave(){
