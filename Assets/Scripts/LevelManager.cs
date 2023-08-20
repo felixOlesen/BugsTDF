@@ -29,8 +29,8 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(GoblinCoroutine(nGoblins));
 
         int nKnights = knightWaves[waveNumber-1];
-        Debug.Log("Number of Goblins Spawned: " + nKnights);
-        StartCoroutine(GoblinCoroutine(nKnights));
+        Debug.Log("Number of Mushrooms Spawned: " + nKnights);
+        StartCoroutine(KnightCoroutine(nKnights));
 
     }
 

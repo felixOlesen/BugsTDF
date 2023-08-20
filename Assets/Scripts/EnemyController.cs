@@ -15,6 +15,8 @@ private float speed;
 
 [SerializeField]
 private int currentHealth;
+[SerializeField]
+private int attackDamage = 10;
 public int maxHealth = 100;
 public HealthBar healthBar;
 
@@ -53,7 +55,7 @@ private Vector3 UpdateCheckpoint() {
         }
         if(currentCheckpointIndex == pathSpline.GetPointCount()) {
             Destroy(gameObject);
-            levelManager.GetComponent<LevelManager>().LevelDamage(20);
+            levelManager.GetComponent<LevelManager>().LevelDamage(attackDamage);
         }
     }
     return currentCheckpointPos;
