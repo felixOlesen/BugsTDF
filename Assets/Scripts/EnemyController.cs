@@ -29,7 +29,6 @@ private void Start() {
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
 
-    speed = 2;
     // Debug.Log(pathSpline.GetPointCount());
     // Debug.Log(pathSpline.GetPosition(2));
     transform.position = pathSpline.GetPosition(0);
