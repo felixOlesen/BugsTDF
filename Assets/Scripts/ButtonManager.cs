@@ -6,6 +6,8 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject purpleWizardPreFab;
     public GameObject bloodMoonPreFab;
+    public GameObject tower3PreFab;
+    public GameObject tower4PreFab;
     public GameObject levelManager;
     private Vector3 mousePos;
     private GameObject currentTower;
@@ -15,7 +17,9 @@ public class ButtonManager : MonoBehaviour
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
             {"purpleWizard", purpleWizardPreFab},
-            {"bloodMoon", bloodMoonPreFab}
+            {"bloodMoon", bloodMoonPreFab},
+            {"tower3", tower3PreFab},
+            {"tower4", tower4PreFab}
         };
     }
 
