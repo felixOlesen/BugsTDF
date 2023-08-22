@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     private GameObject currentTower;
     private bool towerHeld;
     private IDictionary<string, GameObject> towers;
+    private bool goodPlacement;
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
@@ -21,6 +22,7 @@ public class ButtonManager : MonoBehaviour
             {"tower3", tower3PreFab},
             {"tower4", tower4PreFab}
         };
+        goodPlacement = true;
     }
 
     void Update() {
@@ -31,9 +33,20 @@ public class ButtonManager : MonoBehaviour
             currentTower.transform.position = mousePos;
         }
 
-        if(Input.GetMouseButtonDown(0) && towerHeld){
+        if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement)){
             towerHeld = false;
             currentTower.GetComponent<TowerController>().SetSelection(false);
+            currentTower.GetComponent<TowerController>().SetPlacement(true);
+        }
+    }
+
+    public void DetermineTowerPlacement(bool placement) {
+        goodPlacement = placement;
+        Debug.Log(placement);
+        if(!placement) {
+            currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);
+        } else {
+            currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 0f , 0f, 0.3f);
         }
     }
 
@@ -42,7 +55,6 @@ public class ButtonManager : MonoBehaviour
         currentTower = Instantiate(preFab, mousePos, Quaternion.identity);
         towerHeld = true;
         int cost = currentTower.GetComponent<TowerController>().price;
-        Debug.Log(cost);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
     }
 

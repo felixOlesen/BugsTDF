@@ -9,6 +9,7 @@ public class TowerController : MonoBehaviour
     public int attackPower;
     public int rangeRadius;
     public float attackSpeed;
+    public bool placed;
     private CircleCollider2D towerRange;
     private GameObject currentTarget;
     private Queue<GameObject> enemyQueue;
@@ -23,6 +24,7 @@ public class TowerController : MonoBehaviour
     private void Start() {
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
         towerRange.isTrigger = true;
+        placed = false;
         enemyQueue = new Queue<GameObject>();
         rangeShape = transform.GetChild(0).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
@@ -32,8 +34,7 @@ public class TowerController : MonoBehaviour
 
     private void Update() {
         towerRange.radius = rangeRadius;
-        if(enemyQueue.Count > 0) {
-            // LockOn(enemyQueue.Peek());
+        if(enemyQueue.Count > 0 && placed) {
             if(currentCoroutine == null) {
                 currentCoroutine = StartCoroutine(Fire());
             }
@@ -43,11 +44,21 @@ public class TowerController : MonoBehaviour
         } else {
             rangeShape.SetActive(false);
         }
+
+        if(!placed) {
+            towerRange.enabled = false;
+        } else {
+            towerRange.enabled = true;
+        }
         
     }
 
     public void SetSelection(bool selection) {
         isSelected = selection;
+    }
+
+    public void SetPlacement(bool placement) {
+        placed = placement;
     }
 
     IEnumerator Fire() {
@@ -74,21 +85,17 @@ public class TowerController : MonoBehaviour
     // }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        //Debug.Log("Goblin Detected");
+
         if (other.CompareTag("Enemy"))
         {
-            // simply set the object you collide with inactive
             enemyQueue.Enqueue(other.gameObject);
-            // currentTarget = other.gameObject;
-
         }
-        
     }
-
     private void OnTriggerExit2D(Collider2D other) {
-        //Debug.Log("Goblin Out of Sight");
-        enemyQueue.Dequeue();
-        // currentTarget = 
+        if (other.CompareTag("Enemy"))
+        {
+            enemyQueue.Dequeue();
+        }
     }
 
 }
