@@ -23,10 +23,34 @@ public class LevelManager : MonoBehaviour
     public TMP_Text healthUI;
     private int totalMoney;
     public TMP_Text moneyUI;
+    private bool midWave = false;
+    private List<GameObject> currentEnemies = new List<GameObject>();
     
+    private void Update() {
+        if(currentEnemies.TrueForAll(EnemyCheck)) {
+            Debug.Log("No more enemies");
+            currentEnemies.Clear();
+            midWave = false;
+        }
+    }
+
+    private bool EnemyCheck(GameObject item) {
+        bool check;
+        if(item == null) {
+            check = true;
+        } else {
+            check = false;
+        }
+        return check;
+    }
     public void InitializeWave() {
-        Debug.Log("Starting Wave: " + waveNumber);
-        SpawnEnemies();
+        if(!midWave) {
+            Debug.Log("Starting Wave: " + waveNumber);
+            SpawnEnemies();
+            midWave = true;
+        } else {
+            Debug.Log("Wave already started");
+        }
     }
 
     private void SpawnEnemies() {
@@ -54,7 +78,8 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
         for(int i = 1; i <= numEn; i++) {
-            Instantiate(enPrefab);
+            GameObject prefab = Instantiate(enPrefab);
+            currentEnemies.Add(prefab);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -66,6 +91,9 @@ public class LevelManager : MonoBehaviour
     public void LevelDamage(int dmg) {
         int currentHealth = Int32.Parse(healthUI.text);
         currentHealth -= dmg;
+        if(currentHealth <= 0) {
+            Debug.Log("Game over Trigger");
+        }
         healthUI.SetText(currentHealth.ToString());
 
     }
