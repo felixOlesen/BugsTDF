@@ -70,6 +70,18 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public bool CheckMoneyTotal(int amount) {
+        int currentMoney = Int32.Parse(moneyUI.text);
+        currentMoney += amount;
+        bool check = false;
+        if(currentMoney < 0) {
+            check = false;
+        } else {
+            check = true;
+        }
+        return check;
+    }
+
     public void ChangeMoneyTotal(int amount) {
         int currentMoney = Int32.Parse(moneyUI.text);
         currentMoney += amount;

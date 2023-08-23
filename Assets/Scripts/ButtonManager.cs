@@ -55,7 +55,18 @@ public class ButtonManager : MonoBehaviour
         currentTower = Instantiate(preFab, mousePos, Quaternion.identity);
         towerHeld = true;
         int cost = currentTower.GetComponent<TowerController>().price;
-        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+        currentTower.SetActive(false);
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+            currentTower.SetActive(true);
+            Debug.Log("Enough money!");
+        } else {
+            towerHeld = false;
+            Destroy(currentTower);
+            Debug.Log("Not enough money!");
+        }
+        
+        
     }
 
     public void StartWave(){
