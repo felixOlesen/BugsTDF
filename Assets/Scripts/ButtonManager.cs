@@ -38,6 +38,15 @@ public class ButtonManager : MonoBehaviour
             currentTower.GetComponent<TowerController>().SetSelection(false);
             currentTower.GetComponent<TowerController>().SetPlacement(true);
         }
+
+        if (Input.GetMouseButtonDown(0)) {
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
+            if (hit.collider != null) {
+                Debug.Log(hit.collider.gameObject.name);
+            }
+        }
     }
 
     public void DetermineTowerPlacement(bool placement) {
@@ -70,7 +79,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void StartWave(){
-        levelManager.GetComponent<LevelManager>().IncrementWave();
+
         levelManager.GetComponent<LevelManager>().InitializeWave();
 
 

@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7358639201841355431}
   - component: {fileID: 6743520775273493290}
   - component: {fileID: 7768033519425832968}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PurpleWizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5607007166782441805}
   - component: {fileID: 6614554924718034915}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TowerRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -40,9 +40,9 @@ public class TowerController : MonoBehaviour
             }
         }
         if(isSelected) {
-            rangeShape.SetActive(true);
+            rangeShape.GetComponent<SpriteRenderer>().enabled = true;
         } else {
-            rangeShape.SetActive(false);
+            rangeShape.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if(!placed) {

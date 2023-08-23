@@ -28,7 +28,6 @@ public class LevelManager : MonoBehaviour
     
     private void Update() {
         if(currentEnemies.TrueForAll(EnemyCheck)) {
-            Debug.Log("No more enemies");
             currentEnemies.Clear();
             midWave = false;
         }
@@ -45,6 +44,7 @@ public class LevelManager : MonoBehaviour
     }
     public void InitializeWave() {
         if(!midWave) {
+            waveNumber += 1;
             Debug.Log("Starting Wave: " + waveNumber);
             SpawnEnemies();
             midWave = true;
@@ -82,10 +82,6 @@ public class LevelManager : MonoBehaviour
             currentEnemies.Add(prefab);
             yield return new WaitForSeconds(0.5f);
         }
-    }
-
-    public void IncrementWave() {
-        waveNumber += 1;
     }
 
     public void LevelDamage(int dmg) {
