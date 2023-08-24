@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -25,6 +26,13 @@ public class LevelManager : MonoBehaviour
     public TMP_Text moneyUI;
     private bool midWave = false;
     private List<GameObject> currentEnemies = new List<GameObject>();
+    public GameObject gameOverMenu;
+
+    private void Start() {
+        gameOverMenu.SetActive(false);
+        midWave = false;
+        waveNumber = 0;
+    }
     
     private void Update() {
         if(currentEnemies.TrueForAll(EnemyCheck)) {
@@ -89,6 +97,9 @@ public class LevelManager : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0) {
             Debug.Log("Game over Trigger");
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0f;
+            PauseMenuController.isPaused = true;
         }
         healthUI.SetText(currentHealth.ToString());
 
@@ -110,6 +121,13 @@ public class LevelManager : MonoBehaviour
         int currentMoney = Int32.Parse(moneyUI.text);
         currentMoney += amount;
         moneyUI.SetText(currentMoney.ToString());
+    }
+
+    public void RetryLevel() {
+        Scene scene = SceneManager.GetActiveScene();
+        PauseMenuController.isPaused = false;
+        SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1f;
     }
 
 }
