@@ -32,21 +32,23 @@ public class ButtonManager : MonoBehaviour
         if(towerHeld){
             currentTower.transform.position = mousePos;
         }
+        if(!PauseMenuController.isPaused) {
+            if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement)){
+                towerHeld = false;
+                currentTower.GetComponent<TowerController>().SetSelection(false);
+                currentTower.GetComponent<TowerController>().SetPlacement(true);
+            }
 
-        if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement)){
-            towerHeld = false;
-            currentTower.GetComponent<TowerController>().SetSelection(false);
-            currentTower.GetComponent<TowerController>().SetPlacement(true);
-        }
-
-        if (Input.GetMouseButtonDown(0)) {
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
-            if (hit.collider != null) {
-                Debug.Log(hit.collider.gameObject.name);
+            if (Input.GetMouseButtonDown(0)) {
+                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+                
+                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
+                if (hit.collider != null) {
+                    Debug.Log(hit.collider.gameObject.name);
+                }
             }
         }
+        
     }
 
     public void DetermineTowerPlacement(bool placement) {
@@ -60,29 +62,30 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void TowerCreate(string towerName){
-        GameObject preFab = towers[towerName];
-        currentTower = Instantiate(preFab, mousePos, Quaternion.identity);
-        towerHeld = true;
-        int cost = currentTower.GetComponent<TowerController>().price;
-        currentTower.SetActive(false);
-        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
-            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
-            currentTower.SetActive(true);
-            Debug.Log("Enough money!");
-        } else {
-            towerHeld = false;
-            Destroy(currentTower);
-            Debug.Log("Not enough money!");
+        if(!PauseMenuController.isPaused) {
+            GameObject preFab = towers[towerName];
+            currentTower = Instantiate(preFab, mousePos, Quaternion.identity);
+            towerHeld = true;
+            int cost = currentTower.GetComponent<TowerController>().price;
+            currentTower.SetActive(false);
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+                levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+                currentTower.SetActive(true);
+                Debug.Log("Enough money!");
+            } else {
+                towerHeld = false;
+                Destroy(currentTower);
+                Debug.Log("Not enough money!");
+            }
         }
         
         
     }
 
     public void StartWave(){
-
-        levelManager.GetComponent<LevelManager>().InitializeWave();
-
-
+        if(!PauseMenuController.isPaused) {
+            levelManager.GetComponent<LevelManager>().InitializeWave();
+        }
     }
 
 }
