@@ -15,6 +15,8 @@ public class ButtonManager : MonoBehaviour
     private IDictionary<string, GameObject> towers;
     private bool goodPlacement;
 
+    public GameObject levelUpManager;
+
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
             {"purpleWizard", purpleWizardPreFab},
@@ -34,17 +36,22 @@ public class ButtonManager : MonoBehaviour
         }
         if(!PauseMenuController.isPaused) {
             if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement)){
-                towerHeld = false;
                 currentTower.GetComponent<TowerController>().SetSelection(false);
                 currentTower.GetComponent<TowerController>().SetPlacement(true);
+                towerHeld = false;
             }
 
             if (Input.GetMouseButtonDown(0)) {
                 Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
                 
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
-                if (hit.collider != null) {
-                    Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider != null && hit.collider.CompareTag("Tower")) {
+                    GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
+                    //Debug.Log(selectedTower.name);
+                    //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
+                    levelUpManager.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
+
+
                 }
             }
         }

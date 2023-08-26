@@ -20,6 +20,22 @@ public class TowerController : MonoBehaviour
 
     public bool isSelected;
     private GameObject rangeShape;
+    public TowerData lvla1;
+    public TowerData lvla2;
+    public TowerData lvla3;
+    public TowerData lvlb1;
+    public TowerData lvlb2;
+    public TowerData lvlb3;
+    public TowerData lvlc1;
+    public TowerData lvlc2;
+    public TowerData lvlc3;
+
+    public Queue<TowerData> branch1;
+    public Queue<TowerData> branch2;
+    public Queue<TowerData> branch3;
+
+    public List<Queue<TowerData>> lvlTree;
+
 
     private void Start() {
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
@@ -29,6 +45,9 @@ public class TowerController : MonoBehaviour
         rangeShape = transform.GetChild(0).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         isSelected = true;
+        CreateLvlTree();
+
+
         
     }
 
@@ -96,6 +115,17 @@ public class TowerController : MonoBehaviour
         {
             enemyQueue.Dequeue();
         }
+    }
+
+    private void CreateLvlTree() {
+        branch1 = new Queue<TowerData>(new[] {lvla1, lvlb1, lvlc1});
+        branch2 = new Queue<TowerData>(new[] {lvla2, lvlb2, lvlc2});
+        branch3 = new Queue<TowerData>(new[] {lvla3, lvlb3, lvlc3});
+        lvlTree = new List<Queue<TowerData>>{branch1, branch2, branch3};
+    }
+
+    public List<Queue<TowerData>> GetLevelTree() {
+        return lvlTree;
     }
 
 }
