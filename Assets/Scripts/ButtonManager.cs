@@ -15,7 +15,6 @@ public class ButtonManager : MonoBehaviour
     private IDictionary<string, GameObject> towers;
     private bool goodPlacement;
 
-    public GameObject levelUpManager;
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
@@ -49,7 +48,7 @@ public class ButtonManager : MonoBehaviour
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
                     //Debug.Log(selectedTower.name);
                     //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
-                    levelUpManager.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
+                    gameObject.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
 
 
                 }
