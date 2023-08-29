@@ -53,6 +53,7 @@ public class TowerController : MonoBehaviour
 
     private void Update() {
         towerRange.radius = rangeRadius;
+        rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         if(enemyQueue.Count > 0 && placed) {
             if(currentCoroutine == null) {
                 currentCoroutine = StartCoroutine(Fire());

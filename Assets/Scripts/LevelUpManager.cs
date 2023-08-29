@@ -15,13 +15,34 @@ public TMP_Text descTwo;
 public TMP_Text descThree;
 public GameObject lvlUpMenu;
 public GameObject levelManager;
+private Vector3 mousePos;
+
+
+private void Update() {
+    mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    mousePos.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
+
+    if(!PauseMenuController.isPaused) {
+        if (Input.GetMouseButtonDown(0)) {
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
+            if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
+                currentTower.GetComponent<TowerController>().SetSelection(false);
+            }
+        }
+    }
+}
 
 public void DisplayOptions(GameObject tower) {
 
     lvlUpMenu.SetActive(true);
 
     lvlTree = tower.GetComponent<TowerController>().GetLevelTree();
+    if(currentTower != null) {
+        currentTower.GetComponent<TowerController>().SetSelection(false);
+    }
     currentTower = tower;
+    currentTower.GetComponent<TowerController>().SetSelection(true);
 
     if(lvlTree[0].Count != 0) {
         nameOne.text = lvlTree[0].Peek().name;
