@@ -41,6 +41,9 @@ public class LevelManager : MonoBehaviour
             currentEnemies.Clear();
             midWave = false;
         }
+        if(!midWave && waveNumber >= 10) {
+            Debug.Log("Level Complete!");
+        }
     }
 
     private bool EnemyCheck(GameObject item) {

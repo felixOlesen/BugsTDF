@@ -22,14 +22,13 @@ private void Update() {
     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     mousePos.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
 
-    if(!PauseMenuController.isPaused) {
-        if (Input.GetMouseButtonDown(0)) {
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
-            if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
-                currentTower.GetComponent<TowerController>().SetSelection(false);
-            }
+    if(!PauseMenuController.isPaused && Input.GetMouseButtonDown(0)) {
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
+        if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
+            currentTower.GetComponent<TowerController>().SetSelection(false);
         }
+        
     }
 }
 
@@ -39,27 +38,27 @@ public void DisplayOptions(GameObject tower) {
 
     lvlTree = tower.GetComponent<TowerController>().GetLevelTree();
     if(currentTower != null) {
-        currentTower.GetComponent<TowerController>().SetSelection(false);
+        currentTower.GetComponent<TowerController>().SetSelection(false); 
     }
     currentTower = tower;
     currentTower.GetComponent<TowerController>().SetSelection(true);
 
     if(lvlTree[0].Count != 0) {
-        nameOne.text = lvlTree[0].Peek().name;
+        nameOne.text = lvlTree[0].Peek().upgradeName;
         descOne.text = lvlTree[0].Peek().description;
     } else {
         nameOne.text = "Empty";
         descOne.text = "Empty";
     }
     if(lvlTree[1].Count != 0) {
-        nameTwo.text = lvlTree[1].Peek().name;
+        nameTwo.text = lvlTree[1].Peek().upgradeName;
         descTwo.text = lvlTree[1].Peek().description;
     } else {
         nameTwo.text = "Empty";
         descTwo.text = "Empty";
     }
     if(lvlTree[2].Count != 0) {
-        nameThree.text = lvlTree[2].Peek().name;
+        nameThree.text = lvlTree[2].Peek().upgradeName;
         descThree.text = lvlTree[2].Peek().description;
     } else {
         nameThree.text = "Empty";
