@@ -1,21 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelUpManager : MonoBehaviour
 {
 public List<Queue<TowerData>> lvlTree;
 private GameObject currentTower;
+public TMP_Text nameOne;
+public TMP_Text nameTwo;
+public TMP_Text nameThree;
+public TMP_Text descOne;
+public TMP_Text descTwo;
+public TMP_Text descThree;
+public GameObject lvlUpMenu;
+public GameObject levelManager;
 
 public void DisplayOptions(GameObject tower) {
+
+    lvlUpMenu.SetActive(true);
+
     lvlTree = tower.GetComponent<TowerController>().GetLevelTree();
     currentTower = tower;
-    Debug.Log(lvlTree[0].Peek().name);
-    /*
-        1. Get Level informations from Queue.Peek
-        2. Change button text areas to show the level up options for the specific tower
-        3. SetActive to the canvas
-    */
+
+    if(lvlTree[0].Count != 0) {
+        nameOne.text = lvlTree[0].Peek().name;
+        descOne.text = lvlTree[0].Peek().description;
+    } else {
+        nameOne.text = "Empty";
+        descOne.text = "Empty";
+    }
+    if(lvlTree[1].Count != 0) {
+        nameTwo.text = lvlTree[1].Peek().name;
+        descTwo.text = lvlTree[1].Peek().description;
+    } else {
+        nameTwo.text = "Empty";
+        descTwo.text = "Empty";
+    }
+    if(lvlTree[2].Count != 0) {
+        nameThree.text = lvlTree[2].Peek().name;
+        descThree.text = lvlTree[2].Peek().description;
+    } else {
+        nameThree.text = "Empty";
+        descThree.text = "Empty";
+    }
+    
+
 }
 
 public void LevelUp(int branch) {
@@ -27,14 +57,38 @@ public void LevelUp(int branch) {
         5. Dequeue the specified branch
         6. Refreshes the Displayed options
     */
+    branch -= 1;
+    if(lvlTree[branch].Count != 0) {
+        int cost = lvlTree[branch].Peek().upgradeCost;
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+            string index = lvlTree[branch].Peek().buffIdx;
+            float magnitude = lvlTree[branch].Peek().magnitude;
+            ImproveStats(index, magnitude);
+            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+            lvlTree[branch].Dequeue();
+        }
+    }
+    DisplayOptions(currentTower);
 }
 
-public void ImproveStats() {
+public void ImproveStats(string idx, float mag) {
     /*
         1. Check the buff IDX (could be related to dictionary)
         2. Improve tower stat by a magnitude param 
     */
+    if(idx == "attackSpeed") {
+        currentTower.GetComponent<TowerController>().attackSpeed /= mag;
+    }
+    if(idx == "rangeRadius") {
+        float changed = (float)currentTower.GetComponent<TowerController>().rangeRadius * mag;
+        Mathf.RoundToInt(changed);
+        currentTower.GetComponent<TowerController>().rangeRadius = (int)changed;
+    }
+    if(idx == "attackPower") {
+        float changed = (float)currentTower.GetComponent<TowerController>().attackPower * mag;
+        Mathf.RoundToInt(changed);
+        currentTower.GetComponent<TowerController>().attackPower = (int)changed;
+    }
+
 }
-
-
 }

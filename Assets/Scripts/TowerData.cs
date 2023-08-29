@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TowerData")]
 public class TowerData : ScriptableObject {
 
-    public int buffIdx;
+    public string buffIdx;
     public float magnitude;
     public string description;
     public string name;
+    public int upgradeCost;
 
 }

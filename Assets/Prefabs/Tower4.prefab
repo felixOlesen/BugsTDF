@@ -267,6 +267,15 @@ MonoBehaviour:
   placed: 0
   projectile: {fileID: 4703044257907422920, guid: 6aecb9822bec4438e9febcdbc41ad275, type: 3}
   isSelected: 0
+  lvla1: {fileID: 11400000, guid: 822a9917196bf4905b701cb902e28f41, type: 2}
+  lvla2: {fileID: 11400000, guid: f46b85514a7544ce0b2774a7e8f5f3fc, type: 2}
+  lvla3: {fileID: 11400000, guid: 820541846586a420eaec5a462d64b7e9, type: 2}
+  lvlb1: {fileID: 11400000, guid: 8682aeb560c934870a40b08e08d10e29, type: 2}
+  lvlb2: {fileID: 11400000, guid: 0196e8113ee0e45ada764141b02b67e1, type: 2}
+  lvlb3: {fileID: 11400000, guid: ea9c48e7c810d404b8fb374d13d5c6f4, type: 2}
+  lvlc1: {fileID: 11400000, guid: dcfba556149414c17bf294854ce4b431, type: 2}
+  lvlc2: {fileID: 11400000, guid: fa3139aebda9e4555a90c82766fdb78f, type: 2}
+  lvlc3: {fileID: 11400000, guid: a6e25c66528754353a19550bae67e9f2, type: 2}
 --- !u!1 &3259887509528293394
 GameObject:
   m_ObjectHideFlags: 0

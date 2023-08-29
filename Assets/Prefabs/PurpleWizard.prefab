@@ -268,6 +268,15 @@ MonoBehaviour:
   placed: 0
   projectile: {fileID: 4703044257907422920, guid: 91e48e3f3a0bc4db8920c83b4a4eafa4, type: 3}
   isSelected: 0
+  lvla1: {fileID: 11400000, guid: 1cefbf69f4eb643d79083d98698652d8, type: 2}
+  lvla2: {fileID: 11400000, guid: 0fa563c1f7ae9488aa4e2b063d720f57, type: 2}
+  lvla3: {fileID: 11400000, guid: 2a86078fced85461c947ca670bb0ad2e, type: 2}
+  lvlb1: {fileID: 11400000, guid: 49e05cf861fdf48819e354f04fcf907e, type: 2}
+  lvlb2: {fileID: 11400000, guid: 1fd07ffeecdfa4099854b5e82c7eb2e9, type: 2}
+  lvlb3: {fileID: 11400000, guid: 5267b6f43b7d74bbf976d4d8480e330b, type: 2}
+  lvlc1: {fileID: 11400000, guid: 2d7c9abdc73e94bad84d537d3177a54a, type: 2}
+  lvlc2: {fileID: 11400000, guid: 1ff07d3c284f64b7ab900b6abea30503, type: 2}
+  lvlc3: {fileID: 11400000, guid: 609fd51bd3add43b38f1324f8503e7ea, type: 2}
 --- !u!95 &7768033519425832968
 Animator:
   serializedVersion: 5

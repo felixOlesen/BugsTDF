@@ -83,7 +83,7 @@ public class TowerController : MonoBehaviour
     IEnumerator Fire() {
         GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
-        Destroy(tempProjectile, 5f);
+        Destroy(tempProjectile, 3f);
         if(enemyQueue.Peek() != null) {
             Vector3 shootDir = enemyQueue.Peek().transform.position - transform.position;
             tempProjectile.GetComponent<BulletController>().shot(shootDir);

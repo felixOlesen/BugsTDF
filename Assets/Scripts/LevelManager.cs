@@ -27,9 +27,11 @@ public class LevelManager : MonoBehaviour
     private bool midWave = false;
     private List<GameObject> currentEnemies = new List<GameObject>();
     public GameObject gameOverMenu;
+    public GameObject lvlUpMenu;
 
     private void Start() {
         gameOverMenu.SetActive(false);
+        lvlUpMenu.SetActive(false);
         midWave = false;
         waveNumber = 0;
     }
