@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class LevelUpManager : MonoBehaviour
@@ -27,9 +28,8 @@ private void Update() {
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
         if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
             currentTower.GetComponent<TowerController>().SetSelection(false);
-            lvlUpMenu.SetActive(false);
+            //lvlUpMenu.SetActive(false); 
         }
-        
     }
 }
 
@@ -79,16 +79,20 @@ public void LevelUp(int branch) {
         6. Refreshes the Displayed options
     */
     branch -= 1;
-    if(lvlTree[branch].Count != 0) {
-        int cost = lvlTree[branch].Peek().upgradeCost;
-        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
-            string index = lvlTree[branch].Peek().buffIdx;
-            float magnitude = lvlTree[branch].Peek().magnitude;
-            ImproveStats(index, magnitude);
-            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
-            lvlTree[branch].Dequeue();
+    if(!PauseMenuController.isPaused) {
+        if(lvlTree[branch].Count != 0) {
+            int cost = lvlTree[branch].Peek().upgradeCost;
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+                string index = lvlTree[branch].Peek().buffIdx;
+                float magnitude = lvlTree[branch].Peek().magnitude;
+                ImproveStats(index, magnitude);
+                levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+                lvlTree[branch].Dequeue();
+            }
         }
     }
+    
+    
     DisplayOptions(currentTower);
 }
 

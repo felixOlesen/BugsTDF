@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Tower
   - Path
+  - Button
   layers:
   - Default
   - TransparentFX

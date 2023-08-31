@@ -87,11 +87,14 @@ public class ButtonManager : MonoBehaviour
         
         
     }
-
     public void StartWave(){
         if(!PauseMenuController.isPaused) {
             levelManager.GetComponent<LevelManager>().InitializeWave();
         }
+    }
+
+    public void CallPause() {
+        levelManager.GetComponent<PauseMenuController>().PauseGame();
     }
 
 }
