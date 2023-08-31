@@ -30,12 +30,13 @@ public class LevelManager : MonoBehaviour
     public GameObject lvlUpMenu;
 
     public GameObject lvlCompleteMenu;
-
+    public TMP_Text waveUI;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
         lvlCompleteMenu.SetActive(false);
         midWave = false;
+        waveUI.text = "Wave: 1";
         waveNumber = 0;
     }
     
@@ -64,6 +65,7 @@ public class LevelManager : MonoBehaviour
     public void InitializeWave() {
         if(!midWave) {
             waveNumber += 1;
+            waveUI.text = "Wave: " + waveNumber.ToString();
             Debug.Log("Starting Wave: " + waveNumber);
             SpawnEnemies();
             midWave = true;

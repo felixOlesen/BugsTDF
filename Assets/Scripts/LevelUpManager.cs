@@ -27,6 +27,7 @@ private void Update() {
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
         if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
             currentTower.GetComponent<TowerController>().SetSelection(false);
+            lvlUpMenu.SetActive(false);
         }
         
     }

@@ -52,6 +52,12 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene("Level"+lvlNum);
     }
 
+    public void Back() {
+        levelCanvas.SetActive(false);
+        settingsMenu.SetActive(false);
+        mainCanvas.SetActive(true);
+    }
+
     public void OpenSettings() {
         Debug.Log("Settings Opened");
         mainCanvas.SetActive(false);
@@ -79,5 +85,6 @@ public class MainMenuButtons : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
 
 }
