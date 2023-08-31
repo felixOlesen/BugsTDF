@@ -29,9 +29,12 @@ public class LevelManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject lvlUpMenu;
 
+    public GameObject lvlCompleteMenu;
+
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
+        lvlCompleteMenu.SetActive(false);
         midWave = false;
         waveNumber = 0;
     }
@@ -43,6 +46,9 @@ public class LevelManager : MonoBehaviour
         }
         if(!midWave && waveNumber >= 10) {
             Debug.Log("Level Complete!");
+            lvlCompleteMenu.SetActive(true);
+            gameOverMenu.SetActive(false);
+            lvlUpMenu.SetActive(false);
         }
     }
 
