@@ -28,7 +28,6 @@ public class LevelManager : MonoBehaviour
     private List<GameObject> currentEnemies = new List<GameObject>();
     public GameObject gameOverMenu;
     public GameObject lvlUpMenu;
-
     public GameObject lvlCompleteMenu;
     public TMP_Text waveUI;
     private void Start() {
