@@ -26,9 +26,12 @@ private void Update() {
     if(!PauseMenuController.isPaused && Input.GetMouseButtonDown(0)) {
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
+
         if(currentTower != null && (hit.collider == null || !hit.collider.CompareTag("Tower"))) {
-            currentTower.GetComponent<TowerController>().SetSelection(false);
-            //lvlUpMenu.SetActive(false); 
+            if(hit.collider == null){
+                currentTower.GetComponent<TowerController>().SetSelection(false);
+                lvlUpMenu.SetActive(false);
+            } 
         }
     }
 }
