@@ -94,6 +94,7 @@ public class TowerController : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;
     }
+    
 
     // private void LockOn(GameObject target) {
     //     Vector3 offset = (target.transform.position - transform.position).normalized;
@@ -112,7 +113,8 @@ public class TowerController : MonoBehaviour
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Enemy") && enemyQueue.Peek() != null)
+
+        if (other.CompareTag("Enemy") && enemyQueue.Count > 0)
         {
             enemyQueue.Dequeue();
         }
