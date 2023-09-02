@@ -30,6 +30,10 @@ public class LevelManager : MonoBehaviour
     public GameObject lvlUpMenu;
     public GameObject lvlCompleteMenu;
     public TMP_Text waveUI;
+
+    private float spawnDelay;
+
+    private bool waveTimeUp;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -37,10 +41,11 @@ public class LevelManager : MonoBehaviour
         midWave = false;
         waveUI.text = "Wave: 1";
         waveNumber = 0;
+        spawnDelay = 0.2f;
     }
     
     private void Update() {
-        if(currentEnemies.TrueForAll(EnemyCheck)) {
+        if(currentEnemies.TrueForAll(EnemyCheck) && waveTimeUp) {
             currentEnemies.Clear();
             midWave = false;
         }
@@ -73,9 +78,20 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    IEnumerator WaveTimer(int numEn) {
+        waveTimeUp = false;
+        float totalWaveTime = spawnDelay * numEn;
+        Debug.Log("Timer Started: " + totalWaveTime );
+        yield return new WaitForSeconds(totalWaveTime);
+        Debug.Log("Wave Finished");
+        waveTimeUp = true;
+    }
+
     private void SpawnEnemies() {
         //implement wave waiting feature for the entire wave based off the spawning time as a constant
         int nEnemy = enemyWaves[waveNumber-1];
+
+        StartCoroutine(WaveTimer(nEnemy));
         Debug.Log("Number of Goblins Spawned: " + nEnemy);
         StartCoroutine(EnemyCoroutine(nEnemy, enemy));
 
@@ -101,7 +117,7 @@ public class LevelManager : MonoBehaviour
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
             currentEnemies.Add(prefab);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(spawnDelay);
         }
     }
 
