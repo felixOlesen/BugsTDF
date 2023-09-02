@@ -38,6 +38,14 @@ public class ButtonManager : MonoBehaviour
                 currentTower.GetComponent<TowerController>().SetSelection(false);
                 currentTower.GetComponent<TowerController>().SetPlacement(true);
                 towerHeld = false;
+                int cost = currentTower.GetComponent<TowerController>().price;
+                if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+                    levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+                } else {
+                    towerHeld = false;
+                    Destroy(currentTower);
+                    Debug.Log("Not enough money!");
+                }
             }
 
             if (Input.GetMouseButtonDown(0)) {
@@ -75,7 +83,6 @@ public class ButtonManager : MonoBehaviour
             int cost = currentTower.GetComponent<TowerController>().price;
             currentTower.SetActive(false);
             if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
-                levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
                 currentTower.SetActive(true);
                 Debug.Log("Enough money!");
             } else {
