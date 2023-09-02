@@ -82,10 +82,10 @@ public class TowerController : MonoBehaviour
     }
 
     IEnumerator Fire() {
-        GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-        tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
-        Destroy(tempProjectile, 3f);
         if(enemyQueue.Peek() != null) {
+            GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
+            Destroy(tempProjectile, 3f);
             Vector3 shootDir = enemyQueue.Peek().transform.position - transform.position;
             tempProjectile.GetComponent<BulletController>().shot(shootDir);
         }
@@ -112,7 +112,7 @@ public class TowerController : MonoBehaviour
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && enemyQueue.Peek() != null)
         {
             enemyQueue.Dequeue();
         }
