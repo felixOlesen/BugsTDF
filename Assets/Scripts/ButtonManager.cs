@@ -44,7 +44,7 @@ public class ButtonManager : MonoBehaviour
                 Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
                 
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
-                if (hit.collider != null && hit.collider.CompareTag("Tower")) {
+                if (hit.collider != null && hit.collider.CompareTag("Tower") && goodPlacement) {
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
                     //Debug.Log(selectedTower.name);
                     //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);

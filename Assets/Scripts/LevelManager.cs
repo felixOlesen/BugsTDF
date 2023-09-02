@@ -74,6 +74,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void SpawnEnemies() {
+        //implement wave waiting feature for the entire wave based off the spawning time as a constant
         int nEnemy = enemyWaves[waveNumber-1];
         Debug.Log("Number of Goblins Spawned: " + nEnemy);
         StartCoroutine(EnemyCoroutine(nEnemy, enemy));
@@ -100,7 +101,7 @@ public class LevelManager : MonoBehaviour
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
             currentEnemies.Add(prefab);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
