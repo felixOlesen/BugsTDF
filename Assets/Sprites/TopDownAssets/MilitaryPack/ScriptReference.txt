@@ -1,0 +1,2 @@
+SkinEditor.cs is used to change camouflage and chevron colors in runtime.
+CustomGrid.cs is an editor script to place units in a grid.
