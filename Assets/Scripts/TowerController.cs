@@ -36,6 +36,8 @@ public class TowerController : MonoBehaviour
 
     public List<Queue<TowerData>> lvlTree;
 
+    public GameObject weapon;
+
 
     private void Start() {
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
@@ -43,6 +45,7 @@ public class TowerController : MonoBehaviour
         placed = false;
         enemyQueue = new Queue<GameObject>();
         rangeShape = transform.GetChild(0).gameObject;
+        weapon = transform.GetChild(2).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         isSelected = true;
         CreateLvlTree();
@@ -55,6 +58,8 @@ public class TowerController : MonoBehaviour
         towerRange.radius = rangeRadius;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         if(enemyQueue.Count > 0 && placed) {
+            
+            LockOn(enemyQueue.Peek());
             if(currentCoroutine == null) {
                 currentCoroutine = StartCoroutine(Fire());
             }
@@ -82,12 +87,14 @@ public class TowerController : MonoBehaviour
     }
 
     IEnumerator Fire() {
-        if(enemyQueue.Peek() != null) {
+        if(enemyQueue.Count > 0 && enemyQueue.Peek() != null) {
+            Vector3 shootDir = enemyQueue.Peek().transform.position - transform.position;
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            Vector3 shootDir = enemyQueue.Peek().transform.position - transform.position;
             tempProjectile.GetComponent<BulletController>().shot(shootDir);
+        } else if(enemyQueue.Peek() == null) {
+            enemyQueue.Dequeue();
         }
         
 
@@ -96,14 +103,16 @@ public class TowerController : MonoBehaviour
     }
     
 
-    // private void LockOn(GameObject target) {
-    //     Vector3 offset = (target.transform.position - transform.position).normalized;
+    private void LockOn(GameObject target) {
+        if(target != null) {
+            Vector3 offset = (target.transform.position - weapon.transform.position).normalized;
 
-    //     transform.rotation = Quaternion.LookRotation(
-    //         Vector3.forward, // Keep z+ pointing straight into the screen.
-    //         offset           // Point y+ toward the target.
-    //     ); 
-    // }
+            weapon.transform.rotation = Quaternion.LookRotation(
+            Vector3.forward, // Keep z+ pointing straight into the screen.
+            offset           // Point y+ toward the target.
+            ); 
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
 
