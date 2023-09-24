@@ -19,9 +19,12 @@ private int currentHealth;
 private int attackDamage = 10;
 public int maxHealth = 100;
 public HealthBar healthBar;
-
 private Vector3 currentCheckpointPos;
 private int currentCheckpointIndex;
+
+public float armour;
+
+public int moneyReward;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
@@ -61,14 +64,17 @@ private Vector3 UpdateCheckpoint() {
     
 }
 
-public void TakeDamage(int damage) {
+public void TakeDamage(int damage, bool pierce) {
+    if(!pierce){
+        damage = Mathf.RoundToInt((float)damage * armour);
+    }
     currentHealth -= damage;
 
     healthBar.SetHealth(currentHealth);
 
     if(currentHealth <= 0) {
         Destroy(gameObject);
-        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(50);
+        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }
 
 }

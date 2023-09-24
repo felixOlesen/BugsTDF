@@ -294,10 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d3242f015d4494f994544fc87b6326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: -1000
+  price: -3000
   attackPower: 10
-  rangeRadius: 5
-  attackSpeed: 0.5
+  rangeRadius: 4
+  attackSpeed: 0.1
   placed: 0
   projectile: {fileID: 4703044257907422920, guid: 91e48e3f3a0bc4db8920c83b4a4eafa4, type: 3}
   isSelected: 0

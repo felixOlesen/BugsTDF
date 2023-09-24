@@ -254,9 +254,11 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   speed: 1
   currentHealth: 0
-  attackDamage: 30
-  maxHealth: 200
+  attackDamage: 15
+  maxHealth: 300
   healthBar: {fileID: 1812481271718209484}
+  armour: 0.1
+  moneyReward: 200
 --- !u!70 &4620967215459786881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerController : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool armourPierce;
     public int price;
     public int attackPower;
     public int rangeRadius;
@@ -92,7 +93,7 @@ public class TowerController : MonoBehaviour
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            tempProjectile.GetComponent<BulletController>().shot(shootDir);
+            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce);
         } else if(enemyQueue.Peek() == null) {
             enemyQueue.Dequeue();
         }

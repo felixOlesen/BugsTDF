@@ -8,11 +8,12 @@ public class BulletController : MonoBehaviour
     private Vector3 shootDir;
     public int attackPower;
     public float projectileSpeed;
+    public bool armourPierce;
 
-    public void shot(Vector3 shootDir) {
+    public void shot(Vector3 shootDir, bool piercing) {
         this.shootDir = shootDir;
         projectileSpeed = 4f;
-
+        this.armourPierce = piercing;
         transform.eulerAngles = new Vector3(0, 0, AngleFromVectorFloat(shootDir));
         
     }
@@ -24,7 +25,7 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             //Debug.Log("GOBLIN HIT!");
-            other.gameObject.GetComponent<EnemyController>().TakeDamage(attackPower);
+            other.gameObject.GetComponent<EnemyController>().TakeDamage(attackPower, this.armourPierce);
             Destroy(gameObject);
         }
     }
