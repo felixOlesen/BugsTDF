@@ -258,7 +258,7 @@ MonoBehaviour:
   maxHealth: 1000
   healthBar: {fileID: 1812481271718209484}
   armour: 1
-  moneyReward: 100
+  moneyReward: 2000
 --- !u!70 &4620967215459786881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

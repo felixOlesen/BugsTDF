@@ -259,7 +259,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 1812481271718209484}
   armour: 1
-  moneyReward: 50
+  moneyReward: 150
 --- !u!95 &6401784475020192712
 Animator:
   serializedVersion: 5

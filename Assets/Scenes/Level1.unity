@@ -26120,7 +26120,7 @@ GameObject:
   - component: {fileID: 469500572}
   - component: {fileID: 469500571}
   m_Layer: 5
-  m_Name: PurpleWizButton
+  m_Name: Tower2
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27591,7 +27591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10000
+  m_text: 5000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30846,7 +30846,7 @@ GameObject:
   - component: {fileID: 1737774213}
   - component: {fileID: 1737774212}
   m_Layer: 5
-  m_Name: BloodMoonButton
+  m_Name: Tower1
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31463,10 +31463,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737774211}
+  - {fileID: 469500570}
   - {fileID: 2112813985}
   - {fileID: 1335490508}
   - {fileID: 1194549109}
-  - {fileID: 469500570}
   - {fileID: 495376120}
   - {fileID: 393308637}
   m_Father: {fileID: 0}
