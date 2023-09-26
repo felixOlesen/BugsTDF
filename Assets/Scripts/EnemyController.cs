@@ -26,6 +26,8 @@ public float armour;
 
 public int moneyReward;
 
+public bool stealthy;
+
 private void Start() {
     path = GameObject.Find("WoodenPath");
     pathController = path.GetComponent<SpriteShapeController>();
@@ -53,7 +55,6 @@ private Vector3 UpdateCheckpoint() {
         if(currentCheckpointIndex < pathSpline.GetPointCount() && currentCheckpointIndex < pathSpline.GetPointCount()) {
             currentCheckpointPos = pathSpline.GetPosition(currentCheckpointIndex);
             currentCheckpointIndex += 1;
-            // Debug.Log(currentCheckpointIndex);
         }
         if(currentCheckpointIndex == pathSpline.GetPointCount()) {
             Destroy(gameObject);
@@ -61,7 +62,6 @@ private Vector3 UpdateCheckpoint() {
         }
     }
     return currentCheckpointPos;
-    
 }
 
 public void TakeDamage(int damage, bool pierce) {
@@ -69,14 +69,11 @@ public void TakeDamage(int damage, bool pierce) {
         damage = Mathf.RoundToInt((float)damage * armour);
     }
     currentHealth -= damage;
-
     healthBar.SetHealth(currentHealth);
-
     if(currentHealth <= 0) {
         Destroy(gameObject);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }
-
 }
 
 

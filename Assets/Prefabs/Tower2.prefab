@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d3242f015d4494f994544fc87b6326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armourPierce: 0
   price: -3000
   attackPower: 10
   rangeRadius: 4
@@ -311,6 +312,7 @@ MonoBehaviour:
   lvlc2: {fileID: 11400000, guid: 1ff07d3c284f64b7ab900b6abea30503, type: 2}
   lvlc3: {fileID: 11400000, guid: 609fd51bd3add43b38f1324f8503e7ea, type: 2}
   weapon: {fileID: 0}
+  stealthVision: 1
 --- !u!95 &7768033519425832968
 Animator:
   serializedVersion: 5

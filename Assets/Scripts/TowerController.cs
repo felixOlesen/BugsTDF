@@ -36,8 +36,8 @@ public class TowerController : MonoBehaviour
     public Queue<TowerData> branch3;
 
     public List<Queue<TowerData>> lvlTree;
-
     public GameObject weapon;
+    public bool stealthVision;
 
 
     private void Start() {
@@ -119,7 +119,11 @@ public class TowerController : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            enemyQueue.Enqueue(other.gameObject);
+            if (other.gameObject.GetComponent<EnemyController>().stealthy && stealthVision) {
+                enemyQueue.Enqueue(other.gameObject);
+            } else if (!other.gameObject.GetComponent<EnemyController>().stealthy) {
+                enemyQueue.Enqueue(other.gameObject);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
