@@ -1,0 +1,3403 @@
+fileFormatVersion: 2
+guid: c43828ee2396b9e4fa7918551cda2e61
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Top_Banner_01
+  - first:
+      213: 21300002
+    second: Title_Bar_01
+  - first:
+      213: 21300004
+    second: Corner_1
+  - first:
+      213: 21300006
+    second: Top_Banner_02
+  - first:
+      213: 21300008
+    second: Corner_2
+  - first:
+      213: 21300010
+    second: Title_Bar_Setting_01
+  - first:
+      213: 21300012
+    second: Title_Bar_Close_01
+  - first:
+      213: 21300014
+    second: Main_Screen_Overlay_01
+  - first:
+      213: 21300016
+    second: Main_Frame_01
+  - first:
+      213: 21300018
+    second: Main_Frame_Close_01
+  - first:
+      213: 21300020
+    second: Map_Frame_01
+  - first:
+      213: 21300022
+    second: Map_Quest_01
+  - first:
+      213: 21300024
+    second: SF_ATlas_2048x2048_12
+  - first:
+      213: 21300026
+    second: Map_Corner_Top_01
+  - first:
+      213: 21300028
+    second: Map_Enemy_01
+  - first:
+      213: 21300030
+    second: Map_NPC_01
+  - first:
+      213: 21300032
+    second: Map_Corner_Bot_01
+  - first:
+      213: 21300034
+    second: Map_Character_01
+  - first:
+      213: 21300036
+    second: Main_Frame_Overlay_02
+  - first:
+      213: 21300038
+    second: Map_Zoom_In_01
+  - first:
+      213: 21300040
+    second: Map_Zoom_Out_01
+  - first:
+      213: 21300042
+    second: Map_Net_01
+  - first:
+      213: 21300044
+    second: Login_Screen_TextInput_01
+  - first:
+      213: 21300046
+    second: Main_Frame_Overlay_01
+  - first:
+      213: 21300048
+    second: Main_Frame_Corner_01
+  - first:
+      213: 21300050
+    second: Main_Frame_Quest_01
+  - first:
+      213: 21300052
+    second: Main_Frame_Arrow_01
+  - first:
+      213: 21300054
+    second: Main_Frame_Button_01
+  - first:
+      213: 21300056
+    second: Main_Frame_Arrow_02
+  - first:
+      213: 21300058
+    second: Main_Frame_Corner_02
+  - first:
+      213: 21300060
+    second: Map_Overlay_01
+  - first:
+      213: 21300062
+    second: Login_Screen_Login_01
+  - first:
+      213: 21300064
+    second: Main_Frame_Square_01
+  - first:
+      213: 21300066
+    second: Main_Frame_Square_02
+  - first:
+      213: 21300068
+    second: Main_Frame_Square_03
+  - first:
+      213: 21300070
+    second: Main_Frame_Button_02
+  - first:
+      213: 21300072
+    second: Main_Frame_Scroll_01
+  - first:
+      213: 21300074
+    second: Main_Frame_Scroll_02
+  - first:
+      213: 21300076
+    second: Settings_General_01
+  - first:
+      213: 21300078
+    second: Settings_General_02
+  - first:
+      213: 21300080
+    second: Settings_General_03
+  - first:
+      213: 21300082
+    second: Main_Frame_Button_03
+  - first:
+      213: 21300084
+    second: Inventory_Frame_01
+  - first:
+      213: 21300086
+    second: Inventory_Close_01
+  - first:
+      213: 21300088
+    second: Settings_Graphics_01
+  - first:
+      213: 21300090
+    second: Settings_Graphics_02
+  - first:
+      213: 21300092
+    second: Settings_Graphics_03
+  - first:
+      213: 21300094
+    second: Inventory_Scroll_02
+  - first:
+      213: 21300096
+    second: Login_Screen_Login_02
+  - first:
+      213: 21300098
+    second: SF_ATlas_2048x2048_53
+  - first:
+      213: 21300100
+    second: SF_ATlas_2048x2048_54
+  - first:
+      213: 21300102
+    second: SF_ATlas_2048x2048_55
+  - first:
+      213: 21300104
+    second: Main_Frame_Button_04
+  - first:
+      213: 21300106
+    second: Inventory_Scroll_01
+  - first:
+      213: 21300108
+    second: SF_ATlas_2048x2048_58
+  - first:
+      213: 21300110
+    second: SF_ATlas_2048x2048_59
+  - first:
+      213: 21300112
+    second: SF_ATlas_2048x2048_60
+  - first:
+      213: 21300114
+    second: Settings_Video_01
+  - first:
+      213: 21300116
+    second: Settings_Video_02
+  - first:
+      213: 21300118
+    second: Settings_Video_03
+  - first:
+      213: 21300120
+    second: Main_Frame_Button_06
+  - first:
+      213: 21300122
+    second: Login_Screen_Quit_01
+  - first:
+      213: 21300124
+    second: Settings_Audio_01
+  - first:
+      213: 21300126
+    second: Settings_Audio_02
+  - first:
+      213: 21300128
+    second: Settings_Audio_03
+  - first:
+      213: 21300130
+    second: SF_ATlas_2048x2048_69
+  - first:
+      213: 21300132
+    second: SF_ATlas_2048x2048_70
+  - first:
+      213: 21300134
+    second: SF_ATlas_2048x2048_71
+  - first:
+      213: 21300136
+    second: SF_ATlas_2048x2048_72
+  - first:
+      213: 21300138
+    second: SF_ATlas_2048x2048_73
+  - first:
+      213: 21300140
+    second: SF_ATlas_2048x2048_74
+  - first:
+      213: 21300142
+    second: SF_ATlas_2048x2048_75
+  - first:
+      213: 21300144
+    second: SF_ATlas_2048x2048_76
+  - first:
+      213: 21300146
+    second: SF_ATlas_2048x2048_77
+  - first:
+      213: 21300148
+    second: SF_ATlas_2048x2048_78
+  - first:
+      213: 21300150
+    second: SF_ATlas_2048x2048_79
+  - first:
+      213: 21300152
+    second: SF_ATlas_2048x2048_80
+  - first:
+      213: 21300154
+    second: SF_ATlas_2048x2048_81
+  - first:
+      213: 21300156
+    second: SF_ATlas_2048x2048_82
+  - first:
+      213: 21300158
+    second: SF_ATlas_2048x2048_83
+  - first:
+      213: 21300160
+    second: SF_ATlas_2048x2048_84
+  - first:
+      213: 21300162
+    second: SF_ATlas_2048x2048_85
+  - first:
+      213: 21300164
+    second: SF_ATlas_2048x2048_86
+  - first:
+      213: 21300166
+    second: SF_ATlas_2048x2048_87
+  - first:
+      213: 21300168
+    second: SF_ATlas_2048x2048_88
+  - first:
+      213: 21300170
+    second: SF_ATlas_2048x2048_89
+  - first:
+      213: 21300172
+    second: SF_ATlas_2048x2048_90
+  - first:
+      213: 21300174
+    second: SF_ATlas_2048x2048_91
+  - first:
+      213: 21300176
+    second: SF_ATlas_2048x2048_92
+  - first:
+      213: 21300178
+    second: SF_ATlas_2048x2048_93
+  - first:
+      213: 21300180
+    second: SF_ATlas_2048x2048_94
+  - first:
+      213: 21300182
+    second: Setting_SliderButton_01
+  - first:
+      213: 21300184
+    second: Setting_SliderButton_02
+  - first:
+      213: 21300186
+    second: Setting_SliderButton_03
+  - first:
+      213: 21300188
+    second: Setting_Slider_01
+  - first:
+      213: 21300190
+    second: Setting_Corner_01
+  - first:
+      213: 21300192
+    second: Setting_Overlay_01
+  - first:
+      213: 21300194
+    second: Login_Screen_Quit_02
+  - first:
+      213: 21300196
+    second: Setting_Toggle_01
+  - first:
+      213: 21300198
+    second: Setting_Toggle_02
+  - first:
+      213: 21300200
+    second: Setting_Toggle_03
+  - first:
+      213: 21300202
+    second: Setting_Select_Arrow_01
+  - first:
+      213: 21300204
+    second: Setting_Select_Arrow_02
+  - first:
+      213: 21300206
+    second: Setting_Select_Arrow_03
+  - first:
+      213: 21300208
+    second: SF_ATlas_2048x2048_108
+  - first:
+      213: 21300210
+    second: SF_ATlas_2048x2048_109
+  - first:
+      213: 21300212
+    second: Setting_Select_01
+  - first:
+      213: 21300214
+    second: Setting_CheckBox_01
+  - first:
+      213: 21300216
+    second: Setting_CheckBox_02
+  - first:
+      213: 21300218
+    second: Setting_CheckBox_03
+  - first:
+      213: 21300220
+    second: Setting_Close_01
+  - first:
+      213: 21300222
+    second: Setting_Close_02
+  - first:
+      213: 21300224
+    second: Setting_Close_03
+  - first:
+      213: 21300226
+    second: Setting_Select_02
+  - first:
+      213: 21300228
+    second: Setting_SliderBar_01
+  - first:
+      213: 21300230
+    second: Inventory_Square_01
+  - first:
+      213: 21300232
+    second: Inventory_Credit_01
+  - first:
+      213: 21300234
+    second: Inventory_Credit_02
+  - first:
+      213: 21300236
+    second: Inventory_Credit_03
+  - first:
+      213: 21300238
+    second: Inventory_Corner_01
+  - first:
+      213: 21300240
+    second: Setting_TextField_01
+  - first:
+      213: 21300242
+    second: Setting_Scroll_01
+  - first:
+      213: 21300244
+    second: Setting_Scroll_02
+  - first:
+      213: 21300246
+    second: Exp_Bar_01
+  - first:
+      213: 21300248
+    second: LevelUp_01
+  - first:
+      213: 21300250
+    second: Main_Screen_Corner_01
+  - first:
+      213: 21300252
+    second: Exp_Bar_02
+  - first:
+      213: 21300254
+    second: ActionBar_Skill_02
+  - first:
+      213: 21300256
+    second: ActionBar_Skill_01
+  - first:
+      213: 21300258
+    second: Bottom_Banner_Square_01
+  - first:
+      213: 21300260
+    second: Bottom_Banner_Square_02
+  - first:
+      213: 21300262
+    second: Bottom_Banner_Settings_01
+  - first:
+      213: 21300264
+    second: Bottom_Banner_QuestLog_01
+  - first:
+      213: 21300266
+    second: Bottom_Banner_Trophies_01
+  - first:
+      213: 21300268
+    second: Bottom_Banner_Inventory_01
+  - first:
+      213: 21300270
+    second: Bottom_Banner_Character_01
+  - first:
+      213: 21300272
+    second: Bottom_Banner_Teleport_01
+  - first:
+      213: 21300274
+    second: SF_ATlas_2048x2048_142
+  - first:
+      213: 21300276
+    second: Bottom_Banner_01
+  - first:
+      213: 21300278
+    second: Bottom_Banner_02
+  - first:
+      213: 21300280
+    second: Title_Bar_02
+  - first:
+      213: 21300282
+    second: Main_Frame_Character_01
+  - first:
+      213: 21300284
+    second: Portrait_01
+  - first:
+      213: 21300286
+    second: Resources_Icon_01
+  - first:
+      213: 21300288
+    second: Resources_Icon_02
+  - first:
+      213: 21300290
+    second: Resources_Icon_03
+  - first:
+      213: 21300292
+    second: Resources_Icon_04
+  - first:
+      213: 21300294
+    second: Portrait_Bar_01
+  - first:
+      213: 21300296
+    second: Portrait_Bar_02
+  - first:
+      213: 21300298
+    second: Portrait_Bar_03
+  - first:
+      213: 21300300
+    second: Setting_Button_01
+  - first:
+      213: 21300302
+    second: Setting_Button_02
+  - first:
+      213: 21300304
+    second: Setting_EnterText_01
+  - first:
+      213: 21300306
+    second: Main_Frame_Button_05
+  - first:
+      213: 21300308
+    second: Settings_Interface_01
+  - first:
+      213: 21300310
+    second: Settings_Interface_02
+  - first:
+      213: 21300312
+    second: Settings_Interface_03
+  - first:
+      213: 21300314
+    second: Settings_Controls_01
+  - first:
+      213: 21300316
+    second: Settings_Controls_02
+  - first:
+      213: 21300318
+    second: Settings_Controls_03
+  - first:
+      213: 21300320
+    second: Setting_Slider_Bar_01
+  - first:
+      213: 21300322
+    second: Setting_Text_Field_01
+  - first:
+      213: 21300324
+    second: Level_Up_01
+  - first:
+      213: 21300326
+    second: Action_Bar_Skill_02
+  - first:
+      213: 21300328
+    second: Action_Bar_Skill_01
+  - first:
+      213: 21300330
+    second: Setting_Enter_Text_01
+  - first:
+      213: 21300332
+    second: Main_Frame_Boarder_01
+  - first:
+      213: 21300334
+    second: Settings_Overlay_2
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 16
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Top_Banner_01
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1858
+        width: 818
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f015126af12e3fc439ebe722b8fa08b2
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Bar_01
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1827
+        width: 880
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1952e46532a80e849a7d7f7ab654d826
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corner_1
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1859
+        width: 130
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f412285c58a2744994bc590bfa7eaec
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top_Banner_02
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1662
+        width: 818
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 102, y: 0, z: 100, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b5537204800f6468b72ab6e7d93ac8
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corner_2
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 1663
+        width: 129
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 56, y: 56, z: 26, w: 26}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00f21635ca7d8c45ba91e269e07e08e
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Bar_Setting_01
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1591
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb959b81548e5c47954d20238caca48
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Bar_Close_01
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1595
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbffcdfc350cca43ad22b2f54440d03
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Screen_Overlay_01
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1209
+        width: 706
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 129, y: 100, z: 99, w: 129}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c062fc15f0f6bd4eb1a13be98133701
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 925
+        width: 484
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 27, y: 27, z: 27, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437d3b9519afa9140ba0858d83dd84e2
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Close_01
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1539
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83aaa941376ddc340aa19ef8d50d4f91
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1291
+        width: 304
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 20, z: 19, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15fd4939ce789a4197fed4437f3775e
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Quest_01
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 1530
+        width: 8
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86bbc2cc9308af949a3ec398fa301363
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Corner_Top_01
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1434
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2344939a1588f5a499863647bbf25d41
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Enemy_01
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1492
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a1c946b9ad9be48a0ca2414e90998d
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_NPC_01
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1461
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a637f2f21905faa4ebf7598cf4b5b6c1
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Corner_Bot_01
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1336
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4878cb69f25074bafa4349c336b362
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Character_01
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 1404
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4582ae0f17c9ba0449b92a6a2431e241
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Overlay_02
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 929
+        width: 296
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 67, y: 95, z: 94, w: 58}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa31186a157c28e4bba1f532e2f31050
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Zoom_In_01
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1356
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69748ed4cfacea9448c22f393cb25cea
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Zoom_Out_01
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1311
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e97adfad8bad1547a8499f6b951c88b
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Net_01
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 1016
+        width: 286
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c54c08adbd8084b876f55a5fa02e51
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Screen_TextInput_01
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 835
+        width: 461
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 23, y: 24, z: 26, w: 27}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b0d8587c230904280b56ca694b4dbd
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Overlay_01
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 604
+        width: 443
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 92, y: 65, z: 58, w: 92}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194ba3a0c4d6aab4380a52b6b42a13b0
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Corner_01
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 848
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad057f5d75f6be49848acc144433816
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Quest_01
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 856
+        width: 13
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3c951f4f786b34698841a346c8bc13
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Arrow_01
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 868
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be3eb5c3037158479986e31cea85bbd
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_01
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 860
+        width: 148
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 12, z: 12, w: 13}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9f080eb1e622647a6b7312619f11ce
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Arrow_02
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 868
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3c4c25bea0de647bccc84f7f46ddff
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Corner_02
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 848
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1107e8569b0a69045b770da591a62bd4
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Overlay_01
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 879
+        width: 188
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 42, y: 28, z: 26, w: 40}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24b8da68fb0a5a43853f2191874169c
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Screen_Login_01
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 755
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 28, z: 28, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46dbf720e4fa13439339b95ebfb1bda
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Square_01
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 771
+        width: 69
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 19, z: 20, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e733b9079936b79479c607b4fc84db26
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Square_02
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 771
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 21, y: 19, z: 21, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a629c882e11044a4caf73a79ca564c15
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Square_03
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 771
+        width: 69
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90af483195525c4cbce6cd129f440ef
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_02
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 809
+        width: 148
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 13, z: 12, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ba0b63cff430442b0dfd56c6c81525
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Scroll_01
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 778
+        width: 7
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 9, z: 0, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d25fd510bc88a74c861921141d32993
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Scroll_02
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 455
+        width: 11
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 12, z: 0, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f009793a4453e44fa9294dedde3c26c
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_General_01
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0a870301c854f4b8bf270f1493dd9e
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_General_02
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf0b09e2548f9b4d9240eac292802ea
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_General_03
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dedadbadd380aa545af6ebf31045d0da
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_03
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 755
+        width: 158
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 13, z: 13, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80f44525073b9947b4fc30288ac9e70
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 404
+        width: 303
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40fd58246eb33f249976abe805c3c85c
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Close_01
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 779
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908cb86157e84f94bb2b624e88119e4b
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Graphics_01
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 728
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10880aa68a925743b354d0f8fe4afa8
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Graphics_02
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 728
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bfefc363e4ca844c8270f822aaf7294
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Graphics_03
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 728
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20dcd3cb4c7ef414d8e6976a26448580
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Scroll_02
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 528
+        width: 12
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 11, z: 0, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df555c1884b6853478cfd2a94958f90b
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Screen_Login_02
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 673
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 28, z: 28, w: 30}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de333e5d24b6f940a302e0e4b714a0f
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_04
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 709
+        width: 158
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 15, z: 13, w: 13}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ee1593d7c5c6649955961fb84bb120
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Scroll_01
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 687
+        width: 7
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 7, z: 0, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1e97a580a49dd4391b4b8924324940
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Video_01
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d17b264eedafa840bdc69b6eaa73cb1
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Video_02
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2766128c177088e43a6aee365b6deef0
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Video_03
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b21de932585062458165e80f5bd42a2
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_06
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 618
+        width: 158
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 14, z: 13, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e22d0e3d86a2a364886fac533e6b26e2
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Screen_Quit_01
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 586
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 27, y: 31, z: 28, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7075deb5e602d4ca60ed869099ad88
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Audio_01
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f92221c87d8ee646b9d8a8958c50e2e
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Audio_02
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed4e6f95d1f0ce40a97d8cbe69c72bc
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Audio_03
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86eb703e091b1f740a6c57cbd02b1020
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_SliderButton_01
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 568
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c38df40b5664ac46af5778a4e58c8ac
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_SliderButton_02
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 568
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecafb6cc3ee7f594ca5e41e2c03e8297
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_SliderButton_03
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 568
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f87670d8f937f4e8d113a3f3a11810
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Slider_01
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 576
+        width: 115
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 0, z: 10, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31dcc068ce672034291c60b8332cb08d
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Corner_01
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 473
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cd5e306d6e0c54a976186e1133c5dc
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Overlay_01
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 351
+        width: 243
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 105, y: 38, z: 92, w: 138}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf7f150d8a84524ab4df5ef1c2597af
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Screen_Quit_02
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 505
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 26, z: 27, w: 30}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa2bcddc9e639e4e89a67b8340e733b
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Toggle_01
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81fda3234bc9874fb1b5a7e29987113
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Toggle_02
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfaf365f12cf9064eb40ee1899289726
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Toggle_03
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f4afaf2f64d3c438795c27b796dcfb
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Select_Arrow_01
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 531
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92c515dd4bf22064dab15f9bdedc2e27
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Select_Arrow_02
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 531
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771519f40597f7b4fa77631ec3a29163
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Select_Arrow_03
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 531
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909bc0610bb1e1542b746e7aae694538
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Select_01
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 428
+        width: 269
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f37845ca81d7b4e9d53ba76d783b63
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_CheckBox_01
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 475
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa3300560cfb4547b4fbff1cea5b760
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_CheckBox_02
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 475
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7421416b3fcc47841ad092fb74f4131a
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_CheckBox_03
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 475
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cfde27f3b5f923449a1875c50cad78d
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Close_01
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f044295f4a949488f396bdb939ad10
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Close_02
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a0f4a50cefa7042b12d56d023e3300
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Close_03
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06273cc35ce7904db865c6e76785b56
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Select_02
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 354
+        width: 269
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79c49bde6f06824ca05714464381d7e
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Slider_Bar_01
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 352
+        width: 435
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 30, z: 29, w: 30}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fa31e6e42e56b48b000e6a521af12f
+      internalID: 21300320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Square_01
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 341
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 15, z: 15, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61df146aa6e3636428dd174395f361b7
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Credit_01
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18efc7c98e897634688acd5fabb55f3e
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Credit_02
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6980956868d68e642b3bb0d330e04c6f
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Credit_03
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fcdb07bfbbbb9e4d8953410f44b2858
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inventory_Corner_01
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 345
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6ae725b03bead4b8622893deaee6dc
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Text_Field_01
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 185
+        width: 521
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8a5243b2335d6429d117cd31f84004
+      internalID: 21300322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Scroll_01
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 195
+        width: 11
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 11, z: 0, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632b0abc5fb0b074eb459c9b9f4af084
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Scroll_02
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 271
+        width: 7
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 8, z: 0, w: 8}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680e347ff337a0b4a9fa6b7defafddb4
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Exp_Bar_01
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 258
+        width: 638
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df846d2689e2ebc4c8b7a7d88e96c10e
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Up_01
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 220
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebb194a00fb2404fb5cf7f8631a2346
+      internalID: 21300324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Screen_Corner_01
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 40
+        width: 181
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a037e679be90d84292186f4a979a3e7
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Exp_Bar_02
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 207
+        width: 638
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 21, z: 20, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8714bfaea1e75e849b3b7bbf76ad28df
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Bar_Skill_02
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 139
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91024d6fce37a954e8d45f97a7725f3a
+      internalID: 21300326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_Bar_Skill_01
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 139
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343407e09833cfc43b46b4c0756a0684
+      internalID: 21300328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Square_01
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 147
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33488200c095d04b9ff868a821a500d
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Square_02
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 147
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b530b74bc9355a049bf21455bcfa88b2
+      internalID: 21300260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Settings_01
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 152
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aaff9e1c3efa984ab62443d8076762d
+      internalID: 21300262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_QuestLog_01
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 153
+        width: 8
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80ed709f2d582447ab9485f3a998589
+      internalID: 21300264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Trophies_01
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 152
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbd7493d169e9942acfe9f94acc1c82
+      internalID: 21300266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Inventory_01
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 153
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ce7a823d29983498e825d7d8785cb8
+      internalID: 21300268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Character_01
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 152
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c9890cce0c15f4b93cb10d2a6422f8
+      internalID: 21300270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_Teleport_01
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 152
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73838eab8c762e94d9aeea9eacc38819
+      internalID: 21300272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_01
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 25
+        width: 792
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 88, y: 0, z: 87, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa0fc2384afc7440ab4c50417b1aa63
+      internalID: 21300276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottom_Banner_02
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 25
+        width: 792
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbc76401a825b141b379a74626554b5
+      internalID: 21300278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Bar_02
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1632
+        width: 880
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 131, y: 0, z: 131, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b348bcfd2acd448b3d1881aedede37
+      internalID: 21300280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Character_01
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 247
+        width: 191
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8fedce2475688443820e83b6c015f92
+      internalID: 21300282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_01
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1316
+        width: 108
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1f464015ca7f541b41f252d11978c5
+      internalID: 21300284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resources_Icon_01
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1409
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5285ac1b5cf8b8a4b9e82eb740f76011
+      internalID: 21300286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resources_Icon_02
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1409
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5232d9a37aa65154d8199f99d7f6b940
+      internalID: 21300288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resources_Icon_03
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1410
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c00368a9b2acd34199a9b66e5316598
+      internalID: 21300290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resources_Icon_04
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1410
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fe60ef16c014a46995fc788af43400
+      internalID: 21300292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Bar_01
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1381
+        width: 174
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35fb7f6edea7fe64bb770326d0c147bd
+      internalID: 21300294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Bar_02
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1352
+        width: 174
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01359d6ac9ac4f6409feea3657ab88c1
+      internalID: 21300296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Bar_03
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1321
+        width: 173
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 9, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8aa61a8292020f459c4597669f10173
+      internalID: 21300298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Button_01
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 738
+        width: 237
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 10, z: 18, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff1b4e9ea693984b9cbb38249c3c887
+      internalID: 21300300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Button_02
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 671
+        width: 237
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 17, z: 17, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3184ddc195852e3469c82740c06b1d4b
+      internalID: 21300302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting_Enter_Text_01
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 940
+        width: 272
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 11, z: 11, w: 11}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0adf748988a86f4ab5e20a026fc6f20
+      internalID: 21300330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Button_05
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 661
+        width: 158
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 14, z: 13, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5255ce21be5fe9f4b94af8af5d8b86e4
+      internalID: 21300306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Interface_01
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 618
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460cffeedb6874e47a053539fb7fb6f6
+      internalID: 21300308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Interface_02
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 618
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aeb85627a789654eab4b0d428d74fcb
+      internalID: 21300310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Interface_03
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 618
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c335c62de579d48aa73e7f3f81d489
+      internalID: 21300312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Controls_01
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb8f008db161864ab98bcf0493a5d42
+      internalID: 21300314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Controls_02
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8efcfc97c99572d42833c83209acfd24
+      internalID: 21300316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Controls_03
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee68b1118d24dd40a6aafbd214c2139
+      internalID: 21300318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Frame_Boarder_01
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 935
+        width: 272
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 29, z: 29, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f726485a0c14c04299b0365787ba638
+      internalID: 21300332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_Overlay_2
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 181
+        width: 210
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 28, z: 20, w: 24}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca758138a6edd443b3b836d2ec37243
+      internalID: 21300334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 563b8ffd66ecef34fa0a645d5edcb880
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Action_Bar_Skill_01: 21300328
+      Action_Bar_Skill_02: 21300326
+      Bottom_Banner_01: 21300276
+      Bottom_Banner_02: 21300278
+      Bottom_Banner_Character_01: 21300270
+      Bottom_Banner_Inventory_01: 21300268
+      Bottom_Banner_QuestLog_01: 21300264
+      Bottom_Banner_Settings_01: 21300262
+      Bottom_Banner_Square_01: 21300258
+      Bottom_Banner_Square_02: 21300260
+      Bottom_Banner_Teleport_01: 21300272
+      Bottom_Banner_Trophies_01: 21300266
+      Corner_1: 21300004
+      Corner_2: 21300008
+      Exp_Bar_01: 21300246
+      Exp_Bar_02: 21300252
+      Inventory_Close_01: 21300086
+      Inventory_Corner_01: 21300238
+      Inventory_Credit_01: 21300232
+      Inventory_Credit_02: 21300234
+      Inventory_Credit_03: 21300236
+      Inventory_Frame_01: 21300084
+      Inventory_Scroll_01: 21300106
+      Inventory_Scroll_02: 21300094
+      Inventory_Square_01: 21300230
+      Level_Up_01: 21300324
+      Login_Screen_Login_01: 21300062
+      Login_Screen_Login_02: 21300096
+      Login_Screen_Quit_01: 21300122
+      Login_Screen_Quit_02: 21300194
+      Login_Screen_TextInput_01: 21300044
+      Main_Frame_01: 21300016
+      Main_Frame_Arrow_01: 21300052
+      Main_Frame_Arrow_02: 21300056
+      Main_Frame_Boarder_01: 21300332
+      Main_Frame_Button_01: 21300054
+      Main_Frame_Button_02: 21300070
+      Main_Frame_Button_03: 21300082
+      Main_Frame_Button_04: 21300104
+      Main_Frame_Button_05: 21300306
+      Main_Frame_Button_06: 21300120
+      Main_Frame_Character_01: 21300282
+      Main_Frame_Close_01: 21300018
+      Main_Frame_Corner_01: 21300048
+      Main_Frame_Corner_02: 21300058
+      Main_Frame_Overlay_01: 21300046
+      Main_Frame_Overlay_02: 21300036
+      Main_Frame_Quest_01: 21300050
+      Main_Frame_Scroll_01: 21300072
+      Main_Frame_Scroll_02: 21300074
+      Main_Frame_Square_01: 21300064
+      Main_Frame_Square_02: 21300066
+      Main_Frame_Square_03: 21300068
+      Main_Screen_Corner_01: 21300250
+      Main_Screen_Overlay_01: 21300014
+      Map_Character_01: 21300034
+      Map_Corner_Bot_01: 21300032
+      Map_Corner_Top_01: 21300026
+      Map_Enemy_01: 21300028
+      Map_Frame_01: 21300020
+      Map_NPC_01: 21300030
+      Map_Net_01: 21300042
+      Map_Overlay_01: 21300060
+      Map_Quest_01: 21300022
+      Map_Zoom_In_01: 21300038
+      Map_Zoom_Out_01: 21300040
+      Portrait_01: 21300284
+      Portrait_Bar_01: 21300294
+      Portrait_Bar_02: 21300296
+      Portrait_Bar_03: 21300298
+      Resources_Icon_01: 21300286
+      Resources_Icon_02: 21300288
+      Resources_Icon_03: 21300290
+      Resources_Icon_04: 21300292
+      Setting_Button_01: 21300300
+      Setting_Button_02: 21300302
+      Setting_CheckBox_01: 21300214
+      Setting_CheckBox_02: 21300216
+      Setting_CheckBox_03: 21300218
+      Setting_Close_01: 21300220
+      Setting_Close_02: 21300222
+      Setting_Close_03: 21300224
+      Setting_Corner_01: 21300190
+      Setting_Enter_Text_01: 21300330
+      Setting_Overlay_01: 21300192
+      Setting_Scroll_01: 21300242
+      Setting_Scroll_02: 21300244
+      Setting_Select_01: 21300212
+      Setting_Select_02: 21300226
+      Setting_Select_Arrow_01: 21300202
+      Setting_Select_Arrow_02: 21300204
+      Setting_Select_Arrow_03: 21300206
+      Setting_SliderButton_01: 21300182
+      Setting_SliderButton_02: 21300184
+      Setting_SliderButton_03: 21300186
+      Setting_Slider_01: 21300188
+      Setting_Slider_Bar_01: 21300320
+      Setting_Text_Field_01: 21300322
+      Setting_Toggle_01: 21300196
+      Setting_Toggle_02: 21300198
+      Setting_Toggle_03: 21300200
+      Settings_Audio_01: 21300124
+      Settings_Audio_02: 21300126
+      Settings_Audio_03: 21300128
+      Settings_Controls_01: 21300314
+      Settings_Controls_02: 21300316
+      Settings_Controls_03: 21300318
+      Settings_General_01: 21300076
+      Settings_General_02: 21300078
+      Settings_General_03: 21300080
+      Settings_Graphics_01: 21300088
+      Settings_Graphics_02: 21300090
+      Settings_Graphics_03: 21300092
+      Settings_Interface_01: 21300308
+      Settings_Interface_02: 21300310
+      Settings_Interface_03: 21300312
+      Settings_Overlay_2: 21300334
+      Settings_Video_01: 21300114
+      Settings_Video_02: 21300116
+      Settings_Video_03: 21300118
+      Title_Bar_01: 21300002
+      Title_Bar_02: 21300280
+      Title_Bar_Close_01: 21300012
+      Title_Bar_Setting_01: 21300010
+      Top_Banner_01: 21300000
+      Top_Banner_02: 21300006
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
