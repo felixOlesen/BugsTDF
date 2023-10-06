@@ -27,6 +27,7 @@ public float armour;
 public int moneyReward;
 
 public bool stealthy;
+private float timeCount = 0.0f;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
@@ -47,7 +48,25 @@ private void Start() {
 
 private void Update() {
     currentCheckpointPos = UpdateCheckpoint();
+    Aim(currentCheckpointPos);
     transform.position = Vector3.MoveTowards(transform.position, currentCheckpointPos, speed * Time.deltaTime);
+}
+
+private void Aim(Vector3 targetPos) {
+    if(targetPos != null) {
+        Vector3 offset = (targetPos - transform.position).normalized;
+
+        gameObject.transform.rotation = Quaternion.LookRotation(
+        Vector3.forward, // Keep z+ pointing straight into the screen.
+        offset           // Point y+ toward the target.
+        ); 
+    }
+
+    // Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, targetPos);
+    // Quaternion currentRotation = Quaternion.Slerp(transform.rotation, targetRotation, timeCount);
+    // currentRotation = Quaternion.Euler(new Vector3(0f, 0f, currentRotation.eulerAngles.z));
+    // transform.rotation = currentRotation;
+    // timeCount += Time.deltaTime * 10;
 }
 
 private Vector3 UpdateCheckpoint() {
