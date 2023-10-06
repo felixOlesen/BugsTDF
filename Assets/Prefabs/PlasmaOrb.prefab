@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 1530376095457156597}
   - component: {fileID: 1119369161257945074}
   - component: {fileID: 8393046005491405445}
-  - component: {fileID: 5279030184949661112}
   m_Layer: 0
-  m_Name: PurpleWizardProjectile
+  m_Name: PlasmaOrb
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -717363378, guid: fb38946b7442040a2ad5b7c80b470da9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7565de7c9a3cc1a46bef8c1bd376cebd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.75, y: 0.74}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,24 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 0
   projectileSpeed: 0
---- !u!95 &5279030184949661112
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4703044257907422920}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 44aade680c8a74dffa25d82ae4fb4b67, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  armourPierce: 0
