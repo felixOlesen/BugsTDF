@@ -18,6 +18,16 @@ public GameObject lvlUpMenu;
 public GameObject levelManager;
 private Vector3 mousePos;
 
+public GameObject goldOne;
+public GameObject goldTwo;
+public GameObject goldThree;
+public GameObject silverOne;
+public GameObject silverTwo;
+public GameObject silverThree;
+public GameObject bronzeOne;
+public GameObject bronzeTwo;
+public GameObject bronzeThree;
+
 
 private void Update() {
     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -68,8 +78,42 @@ public void DisplayOptions(GameObject tower) {
         nameThree.text = "Empty";
         descThree.text = "Empty";
     }
-    
+    UpdateTierImages();
+}
 
+private void UpdateTierImages() {
+    GameObject bronze = null;
+    GameObject silver = null;
+    GameObject gold = null;
+
+    for(int i = 0; i < lvlTree.Count; i++){
+        if(i == 0) {
+            bronze = bronzeOne;
+            silver = silverOne;
+            gold = goldOne;
+        } else if(i == 1) {
+            bronze = bronzeTwo;
+            silver = silverTwo;
+            gold = goldTwo;
+        } else if(i == 2) {
+            bronze = bronzeThree;
+            silver = silverThree;
+            gold = goldThree;
+        }
+        if(lvlTree[i].Count >= 3) {
+            bronze.SetActive(true);
+            silver.SetActive(false);
+            gold.SetActive(false);
+        } else if(lvlTree[i].Count == 2) {
+            bronze.SetActive(false);
+            silver.SetActive(true);
+            gold.SetActive(false);
+        } else if(lvlTree[i].Count <= 1) {
+            bronze.SetActive(false);
+            silver.SetActive(false);
+            gold.SetActive(true);
+        }
+    }
 }
 
 public void LevelUp(int branch) {
