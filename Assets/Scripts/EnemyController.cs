@@ -21,11 +21,8 @@ public int maxHealth = 100;
 public HealthBar healthBar;
 private Vector3 currentCheckpointPos;
 private int currentCheckpointIndex;
-
 public float armour;
-
 public int moneyReward;
-
 public bool stealthy;
 private float timeCount = 0.0f;
 
@@ -53,13 +50,21 @@ private void Update() {
 }
 
 private void Aim(Vector3 targetPos) {
-    if(targetPos != null) {
-        Vector3 offset = (targetPos - transform.position).normalized;
+    
 
-        gameObject.transform.rotation = Quaternion.LookRotation(
-        Vector3.forward, // Keep z+ pointing straight into the screen.
-        offset           // Point y+ toward the target.
-        ); 
+    if(targetPos != null) {
+        Vector3 dir = (targetPos - transform.position).normalized;
+
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
+
+        // Vector3 offset = (targetPos - transform.position).normalized;
+
+        // gameObject.transform.rotation = Quaternion.LookRotation(
+        // Vector3.forward, // Keep z+ pointing straight into the screen.
+        // offset           // Point y+ toward the target.
+        // ); 
     }
 
     // Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, targetPos);
