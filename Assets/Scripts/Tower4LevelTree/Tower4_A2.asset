@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower4_A2
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.5
-  description: T1 A2 Description
-  name: T1 A2
-  upgradeCost: -100
+  magnitude: 1.8
+  description: +80% Range
+  upgradeName: Sleek Balistics
+  upgradeCost: -600

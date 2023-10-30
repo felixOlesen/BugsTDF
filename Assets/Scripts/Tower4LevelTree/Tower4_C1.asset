@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower4_C1
   m_EditorClassIdentifier: 
-  buffIdx: rangeRadius
-  magnitude: 1.4
-  description: T1 C1 Description
-  name: T1 C1
-  upgradeCost: -100
+  buffIdx: addStealthVision
+  magnitude: 0
+  description: 'Stealth Vision: Active'
+  upgradeName: Infra-Red Optics
+  upgradeCost: -1500

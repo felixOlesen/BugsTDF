@@ -161,6 +161,12 @@ public void ImproveStats(string idx, float mag) {
         Mathf.RoundToInt(changed);
         currentTower.GetComponent<TowerController>().attackPower = (int)changed;
     }
+    if(idx == "addStealthVision") {
+        currentTower.GetComponent<TowerController>().stealthVision = true;
+    }
+    if(idx == "addArmourPierce") {
+        currentTower.GetComponent<TowerController>().armourPierce = true;
+    }
 
 }
 }
