@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower3_C2
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.8
-  description: T1 C2 Description
-  name: T1 C2
-  upgradeCost: -100
+  magnitude: 1.6
+  description: 'Range: +60%'
+  upgradeName: Magnification++
+  upgradeCost: -2000
