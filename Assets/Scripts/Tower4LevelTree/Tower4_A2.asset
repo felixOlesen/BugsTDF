@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower4_A2
   m_EditorClassIdentifier: 
-  buffIdx: rangeRadius
-  magnitude: 1.8
-  description: +80% Range
-  upgradeName: Sleek Balistics
-  upgradeCost: -600
+  buffIdx: attackPower
+  magnitude: 1.3
+  description: 'Attack: +30%'
+  upgradeName: Improved Balistics
+  upgradeCost: -500

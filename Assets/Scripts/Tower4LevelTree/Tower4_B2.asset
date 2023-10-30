@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower4_B2
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 2
-  description: T1 B2 Description
-  name: T1 B2
-  upgradeCost: -100
+  magnitude: 1.5
+  description: 'Attack: +50%'
+  upgradeName: Plasma Munitions
+  upgradeCost: -1100
