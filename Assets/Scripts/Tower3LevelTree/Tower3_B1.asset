@@ -15,5 +15,5 @@ MonoBehaviour:
   buffIdx: attackSpeed
   magnitude: 1.3
   description: 'Attack Speed: +25%'
-  upgradeName: Enhanced Recharge
+  upgradeName: Fast Recharge
   upgradeCost: -500

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower1_B1
   m_EditorClassIdentifier: 
-  buffIdx: attackPower
-  magnitude: 1.4
-  description: T1 B1 Description
-  name: T1 B1
-  upgradeCost: -100
+  buffIdx: rangeRadius
+  magnitude: 1.3
+  description: 'Range: +30%'
+  upgradeName: Farsight
+  upgradeCost: -1500

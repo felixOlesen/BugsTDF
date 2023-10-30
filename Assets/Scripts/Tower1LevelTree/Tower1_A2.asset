@@ -15,5 +15,5 @@ MonoBehaviour:
   buffIdx: rangeRadius
   magnitude: 1.5
   description: T1 A2 Description
-  name: T1 A2
+  upgradeName: 
   upgradeCost: -100

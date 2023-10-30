@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower3_B3
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 4
-  description: T1 B3 Description
-  name: T1 B3
-  upgradeCost: -100
+  magnitude: 1.2
+  description: 'Attack: +20%'
+  upgradeName: Fire Power
+  upgradeCost: -900

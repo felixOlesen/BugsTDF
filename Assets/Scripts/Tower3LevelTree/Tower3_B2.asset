@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower3_B2
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.5
-  description: 'Range: +50%'
+  magnitude: 1.3
+  description: 'Range: +30%'
   upgradeName: Digital Foresight
-  upgradeCost: 1000
+  upgradeCost: -1000

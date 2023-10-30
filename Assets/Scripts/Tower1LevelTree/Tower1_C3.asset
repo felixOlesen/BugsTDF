@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower1_C3
   m_EditorClassIdentifier: 
-  buffIdx: rangeRadius
-  magnitude: 2
-  description: T1 C3 Description
-  name: T1 C3
-  upgradeCost: -100
+  buffIdx: attackPower
+  magnitude: 1.5
+  description: 'Attack: +50%'
+  upgradeName: Unbeatable
+  upgradeCost: -10000
