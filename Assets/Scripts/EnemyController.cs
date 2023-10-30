@@ -58,20 +58,7 @@ private void Aim(Vector3 targetPos) {
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
-
-        // Vector3 offset = (targetPos - transform.position).normalized;
-
-        // gameObject.transform.rotation = Quaternion.LookRotation(
-        // Vector3.forward, // Keep z+ pointing straight into the screen.
-        // offset           // Point y+ toward the target.
-        // ); 
     }
-
-    // Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, targetPos);
-    // Quaternion currentRotation = Quaternion.Slerp(transform.rotation, targetRotation, timeCount);
-    // currentRotation = Quaternion.Euler(new Vector3(0f, 0f, currentRotation.eulerAngles.z));
-    // transform.rotation = currentRotation;
-    // timeCount += Time.deltaTime * 10;
 }
 
 private Vector3 UpdateCheckpoint() {

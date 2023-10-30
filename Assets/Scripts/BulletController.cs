@@ -14,7 +14,8 @@ public class BulletController : MonoBehaviour
         this.shootDir = shootDir;
         projectileSpeed = 4f;
         this.armourPierce = piercing;
-        transform.eulerAngles = new Vector3(0, 0, AngleFromVectorFloat(shootDir));
+        // -90 is offset angle for bullet direction
+        transform.eulerAngles = new Vector3(0, 0, AngleFromVectorFloat(shootDir)-90);
         
     }
 
