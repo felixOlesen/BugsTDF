@@ -9,11 +9,13 @@ public class BulletController : MonoBehaviour
     public int attackPower;
     public float projectileSpeed;
     public bool armourPierce;
+    public bool armourDestroying;
 
-    public void shot(Vector3 shootDir, bool piercing) {
+    public void shot(Vector3 shootDir, bool piercing, bool destroying) {
         this.shootDir = shootDir;
         projectileSpeed = 4f;
         this.armourPierce = piercing;
+        this.armourDestroying = destroying;
         // -90 is offset angle for bullet direction
         transform.eulerAngles = new Vector3(0, 0, AngleFromVectorFloat(shootDir)-90);
         
@@ -26,7 +28,7 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             //Debug.Log("GOBLIN HIT!");
-            other.gameObject.GetComponent<EnemyController>().TakeDamage(attackPower, this.armourPierce);
+            other.gameObject.GetComponent<EnemyController>().TakeDamage(attackPower, this.armourPierce, this.armourDestroying);
             Destroy(gameObject);
         }
     }

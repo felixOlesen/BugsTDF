@@ -75,9 +75,13 @@ private Vector3 UpdateCheckpoint() {
     return currentCheckpointPos;
 }
 
-public void TakeDamage(int damage, bool pierce) {
+public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
+    }
+    if(armourDestroying) {
+        armour = 1;
+        Debug.Log("Armour Destroyed!!!");
     }
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);

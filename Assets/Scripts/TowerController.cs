@@ -38,6 +38,7 @@ public class TowerController : MonoBehaviour
     public List<Queue<TowerData>> lvlTree;
     public GameObject weapon;
     public bool stealthVision;
+    public bool armourDestroying;
 
 
     private void Start() {
@@ -93,7 +94,7 @@ public class TowerController : MonoBehaviour
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce);
+            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying);
         } else if(enemyQueue.Peek() == null) {
             enemyQueue.Dequeue();
         }

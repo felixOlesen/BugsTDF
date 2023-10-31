@@ -167,6 +167,9 @@ public void ImproveStats(string idx, float mag) {
     if(idx == "addArmourPierce") {
         currentTower.GetComponent<TowerController>().armourPierce = true;
     }
+    if(idx == "addArmourDestroying") {
+        currentTower.GetComponent<TowerController>().armourDestroying = true;
+    }
 
 }
 }

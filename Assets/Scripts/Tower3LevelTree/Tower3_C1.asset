@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower3_C1
   m_EditorClassIdentifier: 
-  buffIdx: null
+  buffIdx: addArmourDestroying
   magnitude: 0
   description: Dissolves Armour
   upgradeName: Acidic Plasma

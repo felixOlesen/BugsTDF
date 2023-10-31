@@ -151,6 +151,7 @@ MonoBehaviour:
   lvlc3: {fileID: 11400000, guid: a1f80778e9223411a9927f8ee2d62273, type: 2}
   weapon: {fileID: 0}
   stealthVision: 0
+  armourDestroying: 0
 --- !u!1 &3259887509528293394
 GameObject:
   m_ObjectHideFlags: 0
