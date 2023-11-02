@@ -54,7 +54,6 @@ public class ButtonManager : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
                 if (hit.collider != null && hit.collider.CompareTag("Tower") && goodPlacement) {
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
-                    //Debug.Log(selectedTower.name);
                     //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
                     gameObject.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
 
@@ -67,7 +66,6 @@ public class ButtonManager : MonoBehaviour
 
     public void DetermineTowerPlacement(bool placement) {
         goodPlacement = placement;
-        // Debug.Log(placement);
         if(!placement) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);
         } else {
@@ -84,7 +82,6 @@ public class ButtonManager : MonoBehaviour
             currentTower.SetActive(false);
             if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
                 currentTower.SetActive(true);
-                Debug.Log("Enough money!");
             } else {
                 towerHeld = false;
                 Destroy(currentTower);

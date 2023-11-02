@@ -13,7 +13,7 @@ public class TowerController : MonoBehaviour
     public bool placed;
     private CircleCollider2D towerRange;
     private GameObject currentTarget;
-    private Queue<GameObject> enemyQueue;
+    private List<GameObject> enemyList;
 
     [SerializeField]
     private GameObject projectile;
@@ -45,7 +45,7 @@ public class TowerController : MonoBehaviour
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
         towerRange.isTrigger = true;
         placed = false;
-        enemyQueue = new Queue<GameObject>();
+        enemyList = new List<GameObject>();
         rangeShape = transform.GetChild(0).gameObject;
         weapon = transform.GetChild(2).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
@@ -59,9 +59,10 @@ public class TowerController : MonoBehaviour
     private void Update() {
         towerRange.radius = rangeRadius;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
-        if(enemyQueue.Count > 0 && placed) {
+        
+        if(enemyList.Count > 0 && placed) {
             
-            LockOn(enemyQueue.Peek());
+            LockOn(enemyList[0]);
             if(currentCoroutine == null) {
                 currentCoroutine = StartCoroutine(Fire());
             }
@@ -89,15 +90,16 @@ public class TowerController : MonoBehaviour
     }
 
     IEnumerator Fire() {
-        if(enemyQueue.Count > 0 && enemyQueue.Peek() != null) {
-            Vector3 shootDir = enemyQueue.Peek().transform.position - transform.position;
+        if(enemyList.Count > 0 && enemyList[0] != null) {
+            Vector3 shootDir = enemyList[0].transform.position - transform.position;
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
             tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying);
-        } else if(enemyQueue.Peek() == null) {
-            enemyQueue.Dequeue();
-        }
+        } 
+        // else if(enemyList[0] == null) {
+        //     enemyQueue.Dequeue();
+        // }
         
 
         yield return new WaitForSeconds(attackSpeed);
@@ -121,17 +123,19 @@ public class TowerController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             if (other.gameObject.GetComponent<EnemyController>().stealthy && stealthVision) {
-                enemyQueue.Enqueue(other.gameObject);
+                enemyList.Add(other.gameObject);
+
             } else if (!other.gameObject.GetComponent<EnemyController>().stealthy) {
-                enemyQueue.Enqueue(other.gameObject);
+                enemyList.Add(other.gameObject);
+
             }
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
 
-        if (other.CompareTag("Enemy") && enemyQueue.Count > 0)
+        if (other.CompareTag("Enemy") && enemyList.Count > 0)
         {
-            enemyQueue.Dequeue();
+            enemyList.Remove(other.gameObject);
         }
     }
 

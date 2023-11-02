@@ -70,20 +70,20 @@ public class LevelManager : MonoBehaviour
         if(!midWave) {
             waveNumber += 1;
             waveUI.text = "Wave: " + waveNumber.ToString();
-            Debug.Log("Starting Wave: " + waveNumber);
+            // Debug.Log("Starting Wave: " + waveNumber);
             SpawnEnemies();
             midWave = true;
         } else {
-            Debug.Log("Wave already started");
+            // Debug.Log("Wave already started");
         }
     }
 
     IEnumerator WaveTimer(int numEn) {
         waveTimeUp = false;
         float totalWaveTime = spawnDelay * numEn;
-        Debug.Log("Timer Started: " + totalWaveTime );
+        // Debug.Log("Timer Started: " + totalWaveTime );
         yield return new WaitForSeconds(totalWaveTime);
-        Debug.Log("Wave Finished");
+        // Debug.Log("Wave Finished");
         waveTimeUp = true;
     }
 

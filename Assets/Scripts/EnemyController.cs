@@ -32,8 +32,6 @@ private void Start() {
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
 
-    // Debug.Log(pathSpline.GetPointCount());
-    // Debug.Log(pathSpline.GetPosition(2));
     transform.position = pathSpline.GetPosition(0);
     currentCheckpointIndex = 1;
     currentCheckpointPos = pathSpline.GetPosition(currentCheckpointIndex);
@@ -81,7 +79,6 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     }
     if(armourDestroying) {
         armour = 1;
-        Debug.Log("Armour Destroyed!!!");
     }
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);
