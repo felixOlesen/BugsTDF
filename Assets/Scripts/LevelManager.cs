@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
     private float spawnDelay;
 
     private bool waveTimeUp;
+    private bool rewardGiven;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -47,6 +48,11 @@ public class LevelManager : MonoBehaviour
         if(currentEnemies.TrueForAll(EnemyCheck) && waveTimeUp) {
             currentEnemies.Clear();
             midWave = false;
+            if(!rewardGiven) {
+                ChangeMoneyTotal(500);
+                rewardGiven = true;
+            }
+            
         }
         if(!midWave && waveNumber >= 10) {
             Debug.Log("Level Complete!");
@@ -72,6 +78,7 @@ public class LevelManager : MonoBehaviour
             // Debug.Log("Starting Wave: " + waveNumber);
             SpawnEnemies();
             midWave = true;
+            rewardGiven = false;
         } else {
             // Debug.Log("Wave already started");
         }

@@ -68,6 +68,7 @@ private Vector3 UpdateCheckpoint() {
         if(currentCheckpointIndex == pathSpline.GetPointCount()) {
             Destroy(gameObject);
             levelManager.GetComponent<LevelManager>().LevelDamage(attackDamage);
+            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(Mathf.RoundToInt(moneyReward * 0.75f));
         }
     }
     return currentCheckpointPos;
