@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class ButtonManager : MonoBehaviour
     private bool towerHeld;
     private IDictionary<string, GameObject> towers;
     private bool goodPlacement;
+    public GameObject cancelText;
 
 
     private void Start() {
@@ -60,6 +62,17 @@ public class ButtonManager : MonoBehaviour
 
                 }
             }
+
+            if(towerHeld && Input.GetKeyDown("x")) {
+                Debug.Log("Tower Cancelled");
+                towerHeld = false;
+                Destroy(currentTower);
+                cancelText.SetActive(false);
+            } 
+            if(!towerHeld) {
+                cancelText.SetActive(false);
+            }
+            
         }
         
     }
@@ -82,6 +95,7 @@ public class ButtonManager : MonoBehaviour
             currentTower.SetActive(false);
             if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
                 currentTower.SetActive(true);
+                cancelText.SetActive(true);
             } else {
                 towerHeld = false;
                 Destroy(currentTower);
