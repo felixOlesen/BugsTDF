@@ -7,6 +7,7 @@ public class TowerController : MonoBehaviour
     // Start is called before the first frame update
     public bool armourPierce;
     public int price;
+    public int sellPrice;
     public int attackPower;
     public int rangeRadius;
     public float attackSpeed;
@@ -49,11 +50,9 @@ public class TowerController : MonoBehaviour
         rangeShape = transform.GetChild(0).gameObject;
         weapon = transform.GetChild(2).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
+        sellPrice = Mathf.RoundToInt(Mathf.Abs(price) * 0.75f);
         isSelected = true;
         CreateLvlTree();
-
-
-        
     }
 
     private void Update() {
@@ -87,6 +86,10 @@ public class TowerController : MonoBehaviour
 
     public void SetPlacement(bool placement) {
         placed = placement;
+    }
+
+    public void UpdateSellPrice(int addedCost) {
+        sellPrice += Mathf.RoundToInt(addedCost * 0.75f);
     }
 
     IEnumerator Fire() {

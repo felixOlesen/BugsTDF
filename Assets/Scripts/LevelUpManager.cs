@@ -14,6 +14,10 @@ public TMP_Text nameThree;
 public TMP_Text descOne;
 public TMP_Text descTwo;
 public TMP_Text descThree;
+public TMP_Text priceOne;
+public TMP_Text priceTwo;
+public TMP_Text priceThree;
+public TMP_Text sellPrice;
 public GameObject lvlUpMenu;
 public GameObject levelManager;
 private Vector3 mousePos;
@@ -56,29 +60,49 @@ public void DisplayOptions(GameObject tower) {
     }
     currentTower = tower;
     currentTower.GetComponent<TowerController>().SetSelection(true);
+    sellPrice.text = "$" + currentTower.GetComponent<TowerController>().sellPrice.ToString();
 
     if(lvlTree[0].Count != 0) {
         nameOne.text = lvlTree[0].Peek().upgradeName;
         descOne.text = lvlTree[0].Peek().description;
+        priceOne.text = "$" + Mathf.Abs(lvlTree[0].Peek().upgradeCost).ToString();
     } else {
         nameOne.text = "Empty";
         descOne.text = "Empty";
+        priceOne.text = "$0";
     }
     if(lvlTree[1].Count != 0) {
         nameTwo.text = lvlTree[1].Peek().upgradeName;
         descTwo.text = lvlTree[1].Peek().description;
+        priceTwo.text = "$" + Mathf.Abs(lvlTree[1].Peek().upgradeCost).ToString();
     } else {
         nameTwo.text = "Empty";
         descTwo.text = "Empty";
+        priceTwo.text = "$0";
     }
     if(lvlTree[2].Count != 0) {
         nameThree.text = lvlTree[2].Peek().upgradeName;
         descThree.text = lvlTree[2].Peek().description;
+        priceThree.text = "$" + Mathf.Abs(lvlTree[2].Peek().upgradeCost).ToString();
     } else {
         nameThree.text = "Empty";
         descThree.text = "Empty";
+        priceThree.text = "$0";
     }
     UpdateTierImages();
+}
+
+public void SellTower() {
+    /*
+    1. Get sellprice
+    2. Destroy object
+    3. Set LvlUp Menu inactive
+    4. Add Money
+    */
+    int money = currentTower.GetComponent<TowerController>().sellPrice;
+    Destroy(currentTower);
+    lvlUpMenu.SetActive(false);
+    levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(money);
 }
 
 private void UpdateTierImages() {
@@ -134,6 +158,7 @@ public void LevelUp(int branch) {
                 float magnitude = lvlTree[branch].Peek().magnitude;
                 ImproveStats(index, magnitude);
                 levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+                currentTower.GetComponent<TowerController>().UpdateSellPrice(Mathf.Abs(cost));
                 lvlTree[branch].Dequeue();
             }
         }

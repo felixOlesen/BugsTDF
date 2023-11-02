@@ -30,7 +30,6 @@ public class LevelManager : MonoBehaviour
     public GameObject lvlUpMenu;
     public GameObject lvlCompleteMenu;
     public TMP_Text waveUI;
-
     private float spawnDelay;
 
     private bool waveTimeUp;
