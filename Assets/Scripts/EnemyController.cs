@@ -24,18 +24,21 @@ private int currentCheckpointIndex;
 public float armour;
 public int moneyReward;
 public bool stealthy;
+public bool swarmHost;
+public GameObject swarmChild;
 private float timeCount = 0.0f;
+public bool isSwarmChild;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
     pathController = path.GetComponent<SpriteShapeController>();
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
-
-    transform.position = pathSpline.GetPosition(0);
-    currentCheckpointIndex = 1;
-    currentCheckpointPos = pathSpline.GetPosition(currentCheckpointIndex);
-
+    if(!isSwarmChild) {
+        transform.position = pathSpline.GetPosition(0);
+        currentCheckpointIndex = 1;
+        currentCheckpointPos = pathSpline.GetPosition(currentCheckpointIndex);
+    }
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
     
@@ -48,12 +51,8 @@ private void Update() {
 }
 
 private void Aim(Vector3 targetPos) {
-    
-
     if(targetPos != null) {
         Vector3 dir = (targetPos - transform.position).normalized;
-
-
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
     }
@@ -74,6 +73,20 @@ private Vector3 UpdateCheckpoint() {
     return currentCheckpointPos;
 }
 
+public void SpawnSwarm() {
+    for(int i = 0; i < 10; i++) {
+        GameObject tempEnemy = Instantiate(swarmChild);
+        tempEnemy.GetComponent<EnemyController>().SetCurrentCheckpoint(currentCheckpointPos, currentCheckpointIndex);
+        tempEnemy.transform.position = transform.position;
+    }
+}
+
+public void SetCurrentCheckpoint(Vector3 pos, int ind) {
+    this.currentCheckpointPos = pos;
+    this.currentCheckpointIndex = ind;
+}
+
+
 public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
@@ -84,10 +97,12 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);
     if(currentHealth <= 0) {
+        if(swarmHost) {
+            int nEnemy = 10;
+            levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
+        }
         Destroy(gameObject);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }
 }
-
-
 }

@@ -119,13 +119,29 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
+    public void SwarmSpawning(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
+        StartCoroutine(SwarmCoroutine(numEn, enPrefab, checkPointInd, checkPointPos, pos));
+    }
+
+    IEnumerator SwarmCoroutine(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
+            prefab.GetComponent<EnemyController>().SetCurrentCheckpoint(checkPointPos, checkPointInd);
+            prefab.transform.position = pos;
             currentEnemies.Add(prefab);
             yield return new WaitForSeconds(spawnDelay);
         }
     }
+
+    IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
+        for(int i = 1; i <= numEn; i++) {
+            GameObject prefab = Instantiate(enPrefab);
+
+            currentEnemies.Add(prefab);
+            yield return new WaitForSeconds(spawnDelay);
+        }
+    }
+
 
     public void LevelDamage(int dmg) {
         int currentHealth = Int32.Parse(healthUI.text);
