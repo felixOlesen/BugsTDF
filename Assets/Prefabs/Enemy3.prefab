@@ -545,11 +545,14 @@ MonoBehaviour:
   speed: 4
   currentHealth: 0
   attackDamage: 20
-  maxHealth: 75
+  maxHealth: 100
   healthBar: {fileID: 1812481271718209484}
   armour: 1
   moneyReward: 300
   stealthy: 1
+  swarmHost: 0
+  swarmChild: {fileID: 0}
+  isSwarmChild: 0
 --- !u!70 &4620967215459786881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

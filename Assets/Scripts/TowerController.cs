@@ -135,7 +135,6 @@ public class TowerController : MonoBehaviour
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
-
         if (other.CompareTag("Enemy") && enemyList.Count > 0)
         {
             enemyList.Remove(other.gameObject);
