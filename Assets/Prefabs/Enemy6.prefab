@@ -371,10 +371,10 @@ MonoBehaviour:
   speed: 2
   currentHealth: 0
   attackDamage: 30
-  maxHealth: 50
+  maxHealth: 75
   healthBar: {fileID: 1812481271718209484}
   armour: 1
-  moneyReward: 200
+  moneyReward: 50
   stealthy: 0
   swarmHost: 0
   swarmChild: {fileID: 0}
