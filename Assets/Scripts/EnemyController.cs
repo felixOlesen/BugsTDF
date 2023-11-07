@@ -26,7 +26,6 @@ public int moneyReward;
 public bool stealthy;
 public bool swarmHost;
 public GameObject swarmChild;
-private float timeCount = 0.0f;
 public bool isSwarmChild;
 
 private void Start() {
