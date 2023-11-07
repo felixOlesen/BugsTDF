@@ -100,11 +100,6 @@ public class TowerController : MonoBehaviour
             Destroy(tempProjectile, 3f);
             tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying);
         } 
-        // else if(enemyList[0] == null) {
-        //     enemyQueue.Dequeue();
-        // }
-        
-
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;
     }
@@ -113,7 +108,6 @@ public class TowerController : MonoBehaviour
     private void LockOn(GameObject target) {
         if(target != null) {
             Vector3 offset = (target.transform.position - weapon.transform.position).normalized;
-
             weapon.transform.rotation = Quaternion.LookRotation(
             Vector3.forward, // Keep z+ pointing straight into the screen.
             offset           // Point y+ toward the target.
@@ -127,13 +121,12 @@ public class TowerController : MonoBehaviour
         {
             if (other.gameObject.GetComponent<EnemyController>().stealthy && stealthVision) {
                 enemyList.Add(other.gameObject);
-
             } else if (!other.gameObject.GetComponent<EnemyController>().stealthy) {
                 enemyList.Add(other.gameObject);
-
             }
         }
     }
+    
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Enemy") && enemyList.Count > 0)
         {

@@ -467,7 +467,7 @@ MonoBehaviour:
   armour: 1
   moneyReward: 200
   stealthy: 0
-  swarmHost: 1
+  swarmHost: 0
   swarmChild: {fileID: 3473553886208834737, guid: 32c388ebb7d1c4a2da42f5980668568f, type: 3}
   isSwarmChild: 0
 --- !u!70 &4620967215459786881
