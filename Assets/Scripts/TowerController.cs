@@ -58,9 +58,7 @@ public class TowerController : MonoBehaviour
     private void Update() {
         towerRange.radius = rangeRadius;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
-        
         if(enemyList.Count > 0 && placed) {
-            
             LockOn(enemyList[0]);
             if(currentCoroutine == null) {
                 currentCoroutine = StartCoroutine(Fire());
@@ -71,7 +69,6 @@ public class TowerController : MonoBehaviour
         } else {
             rangeShape.GetComponent<SpriteRenderer>().enabled = false;
         }
-
         if(!placed) {
             towerRange.enabled = false;
         } else {
@@ -126,7 +123,7 @@ public class TowerController : MonoBehaviour
             }
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Enemy") && enemyList.Count > 0)
         {
