@@ -38,6 +38,15 @@ public class TowerController : MonoBehaviour
 
     public List<Queue<TowerData>> lvlTree;
     public GameObject weapon;
+    public GameObject weapon1;
+    public GameObject weapon2;
+    public GameObject weapon3;
+    public GameObject activeWeapon;
+    public GameObject towerBase;
+    public GameObject towerBase1;
+    public GameObject towerBase2;
+    public GameObject towerBase3;
+    public GameObject activeTowerBase;
     public bool stealthVision;
     public bool armourDestroying;
 
@@ -48,7 +57,8 @@ public class TowerController : MonoBehaviour
         placed = false;
         enemyList = new List<GameObject>();
         rangeShape = transform.GetChild(0).gameObject;
-        weapon = transform.GetChild(2).gameObject;
+        activeWeapon = weapon;
+        // weapon = transform.GetChild(2).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         sellPrice = Mathf.RoundToInt(Mathf.Abs(price) * 0.75f);
         isSelected = true;
@@ -89,6 +99,31 @@ public class TowerController : MonoBehaviour
         sellPrice += Mathf.RoundToInt(addedCost * 0.75f);
     }
 
+    public void UpdateSkinLevel(int ind) {
+        if(ind == 1) {
+            weapon.SetActive(false);
+            activeWeapon = weapon1;
+            weapon1.SetActive(true);
+            towerBase.SetActive(false);
+            activeTowerBase = towerBase1;
+            towerBase1.SetActive(true);
+        } else if(ind == 2) {
+            weapon1.SetActive(false);
+            activeWeapon = weapon2;
+            weapon2.SetActive(true);
+            towerBase1.SetActive(false);
+            activeTowerBase = towerBase2;
+            towerBase2.SetActive(true);
+        } else if(ind == 3) {
+            weapon2.SetActive(false);
+            activeWeapon = weapon3;
+            weapon3.SetActive(true);
+            towerBase2.SetActive(false);
+            activeTowerBase = towerBase3;
+            towerBase3.SetActive(true);
+        }
+    }
+
     IEnumerator Fire() {
         if(enemyList.Count > 0 && enemyList[0] != null) {
             Vector3 shootDir = enemyList[0].transform.position - transform.position;
@@ -104,8 +139,8 @@ public class TowerController : MonoBehaviour
 
     private void LockOn(GameObject target) {
         if(target != null) {
-            Vector3 offset = (target.transform.position - weapon.transform.position).normalized;
-            weapon.transform.rotation = Quaternion.LookRotation(
+            Vector3 offset = (target.transform.position - activeWeapon.transform.position).normalized;
+            activeWeapon.transform.rotation = Quaternion.LookRotation(
             Vector3.forward, // Keep z+ pointing straight into the screen.
             offset           // Point y+ toward the target.
             ); 
