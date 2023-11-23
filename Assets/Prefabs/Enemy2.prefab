@@ -376,6 +376,10 @@ MonoBehaviour:
   armour: 0.1
   moneyReward: 500
   stealthy: 0
+  swarmHost: 0
+  swarmChild: {fileID: 0}
+  isSwarmChild: 0
+  stunObject: {fileID: 6721063556026411498}
 --- !u!70 &4620967215459786881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

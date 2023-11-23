@@ -9,6 +9,7 @@ TagManager:
   - Tower
   - Path
   - Button
+  - StunObject
   layers:
   - Default
   - TransparentFX

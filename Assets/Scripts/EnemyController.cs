@@ -27,12 +27,18 @@ public bool stealthy;
 public bool swarmHost;
 public GameObject swarmChild;
 public bool isSwarmChild;
+private CircleCollider2D stunRange;
+
+public GameObject stunObject;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
     pathController = path.GetComponent<SpriteShapeController>();
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
+    stunRange = stunObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
+    stunRange.isTrigger = true;
+    stunRange.radius = 0.0f;
     if(!isSwarmChild) {
         transform.position = pathSpline.GetPosition(0);
         currentCheckpointIndex = 1;
@@ -70,6 +76,10 @@ private Vector3 UpdateCheckpoint() {
         }
     }
     return currentCheckpointPos;
+}
+
+private void UpdateStunRange(float range) {
+    stunRange.radius = range;
 }
 
 public void SpawnSwarm() {
