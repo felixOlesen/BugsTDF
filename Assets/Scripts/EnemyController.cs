@@ -79,10 +79,12 @@ private Vector3 UpdateCheckpoint() {
     return currentCheckpointPos;
 }
 
-IEnumerator UpdateAoeRange(float range, float duration, float scalar) {
+IEnumerator UpdateAoeRange(string effect, float range, float duration, float scalar) {
     aoeRange.radius = range;
     aoeScalar = scalar;
+    AoeEffect(scalar, effect, true);
     yield return new WaitForSeconds(duration);
+    AoeEffect(scalar, effect, false);
     aoeRange.radius = 0.0f;
     aoeScalar = 1;
 }
@@ -110,7 +112,7 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
     }
     if(aoeType == "stun" || aoeType == "explosive" ) {
         aoeObject.tag = aoeType;
-        StartCoroutine(UpdateAoeRange(aoeRadius, stunDuration, aoeScalar));
+        StartCoroutine(UpdateAoeRange(aoeType, aoeRadius, stunDuration, aoeScalar));
     }
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);
@@ -124,22 +126,36 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
     }
 }
 
+private void AoeEffect(float scalar, string aoeEffect, bool activate) {
+    if(activate) {
+        if(aoeEffect == "stun" && !stunned) {
+            speed *= scalar;
+            stunned = true;
+        } else if(aoeEffect == "explosive") {
+            float aoeDamage = 100 * aoeScalar;
+            TakeDamage( Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, 0.0f, 0.0f);
+        }
+    } else if(!activate) {
+        if(aoeEffect == "stun" && stunned) {
+            speed /= scalar;
+            stunned = false;
+        }
+    }
+}
+
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.CompareTag("stun")) {
-        if(!stunned) {
-            Debug.Log(other);
-            speed *= other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-            stunned = true;
-        }
+        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
+        AoeEffect(scalar, "stun", true);
     } else if(other.CompareTag("explosive")) {
-        float aoeDamage = 100 * aoeScalar;
-        TakeDamage( Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, 0.0f, 0.0f);
+        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
+        AoeEffect(scalar, "explosive", true);
     }
 }
 private void OnTriggerExit2D(Collider2D other) {
     if(other.CompareTag("stun")) {
-        speed /= other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        stunned = false;
+        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
+        AoeEffect(scalar, "stun", false);
     }
 }
 }
