@@ -547,7 +547,7 @@ MonoBehaviour:
   swarmHost: 0
   swarmChild: {fileID: 0}
   isSwarmChild: 0
-  stunObject: {fileID: 4581058859371970026}
+  aoeObject: {fileID: 4581058859371970026}
 --- !u!70 &4620967215459786881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

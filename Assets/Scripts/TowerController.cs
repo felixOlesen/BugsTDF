@@ -50,6 +50,12 @@ public class TowerController : MonoBehaviour
     public bool stealthVision;
     public bool armourDestroying;
 
+    public float stunDuration;
+    public string aoeType;
+    public float aoeRadius;
+    public float aoeScalar;
+
+
 
     private void Start() {
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
@@ -130,7 +136,7 @@ public class TowerController : MonoBehaviour
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying);
+            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, aoeType, aoeRadius, stunDuration, aoeScalar);
         } 
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;

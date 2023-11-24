@@ -27,18 +27,19 @@ public bool stealthy;
 public bool swarmHost;
 public GameObject swarmChild;
 public bool isSwarmChild;
-private CircleCollider2D stunRange;
-
-public GameObject stunObject;
+private CircleCollider2D aoeRange;
+public GameObject aoeObject;
+public float aoeScalar = 1.0f;
+public bool stunned;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
     pathController = path.GetComponent<SpriteShapeController>();
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
-    stunRange = stunObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
-    stunRange.isTrigger = true;
-    stunRange.radius = 0.0f;
+    aoeRange = aoeObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
+    aoeRange.isTrigger = true;
+    aoeRange.radius = 0.0f;
     if(!isSwarmChild) {
         transform.position = pathSpline.GetPosition(0);
         currentCheckpointIndex = 1;
@@ -78,8 +79,12 @@ private Vector3 UpdateCheckpoint() {
     return currentCheckpointPos;
 }
 
-private void UpdateStunRange(float range) {
-    stunRange.radius = range;
+IEnumerator UpdateAoeRange(float range, float duration, float scalar) {
+    aoeRange.radius = range;
+    aoeScalar = scalar;
+    yield return new WaitForSeconds(duration);
+    aoeRange.radius = 0.0f;
+    aoeScalar = 1;
 }
 
 public void SpawnSwarm() {
@@ -96,12 +101,16 @@ public void SetCurrentCheckpoint(Vector3 pos, int ind) {
 }
 
 
-public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
+public void TakeDamage(int damage, bool pierce, bool armourDestroying, string aoeType, float aoeRadius, float stunDuration, float aoeScalar) {
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
     }
     if(armourDestroying) {
         armour = 1;
+    }
+    if(aoeType == "stun" || aoeType == "explosive" ) {
+        aoeObject.tag = aoeType;
+        StartCoroutine(UpdateAoeRange(aoeRadius, stunDuration, aoeScalar));
     }
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);
@@ -112,6 +121,25 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
         }
         Destroy(gameObject);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
+    }
+}
+
+private void OnTriggerEnter2D(Collider2D other) {
+    if(other.CompareTag("stun")) {
+        if(!stunned) {
+            Debug.Log(other);
+            speed *= other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
+            stunned = true;
+        }
+    } else if(other.CompareTag("explosive")) {
+        float aoeDamage = 100 * aoeScalar;
+        TakeDamage( Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, 0.0f, 0.0f);
+    }
+}
+private void OnTriggerExit2D(Collider2D other) {
+    if(other.CompareTag("stun")) {
+        speed /= other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
+        stunned = false;
     }
 }
 }
