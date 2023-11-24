@@ -335,6 +335,10 @@ MonoBehaviour:
   activeTowerBase: {fileID: 0}
   stealthVision: 0
   armourDestroying: 0
+  stunDuration: 0.02
+  aoeType: explosive
+  aoeRadius: 7
+  aoeScalar: 0.4
 --- !u!1 &3259887509528293394
 GameObject:
   m_ObjectHideFlags: 0

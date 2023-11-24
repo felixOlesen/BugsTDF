@@ -82,9 +82,9 @@ private Vector3 UpdateCheckpoint() {
 IEnumerator UpdateAoeRange(string effect, float range, float duration, float scalar) {
     aoeRange.radius = range;
     aoeScalar = scalar;
-    AoeEffect(scalar, effect, true);
+    AoeEffect(scalar, effect, true, duration);
     yield return new WaitForSeconds(duration);
-    AoeEffect(scalar, effect, false);
+    AoeEffect(scalar, effect, false, duration);
     aoeRange.radius = 0.0f;
     aoeScalar = 1;
 }
@@ -107,6 +107,7 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
     }
+    Debug.Log("Damage: " + damage);
     if(armourDestroying) {
         armour = 1;
     }
@@ -121,19 +122,26 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
             int nEnemy = 10;
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
-        Destroy(gameObject);
-        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
+        StartCoroutine(DeathByExplosion(stunDuration));
     }
 }
 
-private void AoeEffect(float scalar, string aoeEffect, bool activate) {
+IEnumerator DeathByExplosion(float duration) {
+    //Debug.Log("Death Started");
+    yield return new WaitForSeconds(duration);
+    //Debug.Log("Death ended");
+    Destroy(gameObject);
+    levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
+}
+
+private void AoeEffect(float scalar, string aoeEffect, bool activate, float duration) {
     if(activate) {
         if(aoeEffect == "stun" && !stunned) {
             speed *= scalar;
             stunned = true;
         } else if(aoeEffect == "explosive") {
-            float aoeDamage = 100 * aoeScalar;
-            TakeDamage( Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, 0.0f, 0.0f);
+            float aoeDamage = 100 * scalar;
+            TakeDamage(Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, duration, 0.0f);
         }
     } else if(!activate) {
         if(aoeEffect == "stun" && stunned) {
@@ -146,16 +154,16 @@ private void AoeEffect(float scalar, string aoeEffect, bool activate) {
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.CompareTag("stun")) {
         float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "stun", true);
+        AoeEffect(scalar, "stun", true, 0.0f);
     } else if(other.CompareTag("explosive")) {
         float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "explosive", true);
+        AoeEffect(scalar, "explosive", true, 0.0f);
     }
 }
 private void OnTriggerExit2D(Collider2D other) {
     if(other.CompareTag("stun")) {
         float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "stun", false);
+        AoeEffect(scalar, "stun", false, 0.0f);
     }
 }
 }
