@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower2_B2
   m_EditorClassIdentifier: 
-  buffIdx: attackPower
-  magnitude: 2
-  description: T1 B2 Description
-  name: T1 B2
-  upgradeCost: -100
+  buffIdx: stunDuration
+  magnitude: 1.6
+  description: 'Slow Duration: +70%'
+  upgradeName: Zap Em' Hard!
+  upgradeCost: -2300

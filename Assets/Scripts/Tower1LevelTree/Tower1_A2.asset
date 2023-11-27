@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67ada24cc3244a35b5d7bf29384e540, type: 3}
   m_Name: Tower1_A2
   m_EditorClassIdentifier: 
-  buffIdx: addAoe
+  buffIdx: addExplosive
   magnitude: 1.5
   description: Explosive Ammo
   upgradeName: Explosive Fury

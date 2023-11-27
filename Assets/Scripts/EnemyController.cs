@@ -122,12 +122,15 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
             int nEnemy = 10;
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
-        StartCoroutine(DeathByExplosion(stunDuration));
+        StartCoroutine(DeathByExplosion(stunDuration, aoeType));
     }
 }
 
-IEnumerator DeathByExplosion(float duration) {
+IEnumerator DeathByExplosion(float duration, string aoeVersion) {
     //Debug.Log("Death Started");
+    if(aoeVersion == "stun") {
+        duration = 0.0f;
+    }
     yield return new WaitForSeconds(duration);
     //Debug.Log("Death ended");
     Destroy(gameObject);

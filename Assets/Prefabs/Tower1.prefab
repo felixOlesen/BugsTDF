@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armourPierce: 0
   price: -7500
+  sellPrice: 0
   attackPower: 60
   rangeRadius: 6
   attackSpeed: 0.2
@@ -153,7 +154,21 @@ MonoBehaviour:
   lvlc2: {fileID: 11400000, guid: f3866d92dba7949fb90372eb763e4920, type: 2}
   lvlc3: {fileID: 11400000, guid: abe286cc5a94542a69fbe65ae89cc53d, type: 2}
   weapon: {fileID: 0}
+  weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
+  weapon3: {fileID: 0}
+  activeWeapon: {fileID: 0}
+  towerBase: {fileID: 0}
+  towerBase1: {fileID: 0}
+  towerBase2: {fileID: 0}
+  towerBase3: {fileID: 0}
+  activeTowerBase: {fileID: 0}
   stealthVision: 0
+  armourDestroying: 0
+  stunDuration: 0.02
+  aoeType: 
+  aoeRadius: 4
+  aoeScalar: 0.3
 --- !u!1 &3259887509528293394
 GameObject:
   m_ObjectHideFlags: 0

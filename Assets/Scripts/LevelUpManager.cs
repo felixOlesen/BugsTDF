@@ -216,6 +216,9 @@ public void ImproveStats(string idx, float mag) {
     if(idx == "aoeRadius") {
         currentTower.GetComponent<TowerController>().aoeRadius *= mag;
     }
+    if(idx == "stunDuration") {
+        currentTower.GetComponent<TowerController>().stunDuration *= mag;
+    }
 
 }
 }
