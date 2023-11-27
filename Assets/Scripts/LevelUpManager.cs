@@ -207,6 +207,15 @@ public void ImproveStats(string idx, float mag) {
     if(idx == "addArmourDestroying") {
         currentTower.GetComponent<TowerController>().armourDestroying = true;
     }
+    if(idx == "addExplosive") {
+        currentTower.GetComponent<TowerController>().aoeType = "explosive";
+    }
+    if(idx == "addStun") {
+        currentTower.GetComponent<TowerController>().aoeType = "stun";
+    }
+    if(idx == "aoeRadius") {
+        currentTower.GetComponent<TowerController>().aoeRadius *= mag;
+    }
 
 }
 }
