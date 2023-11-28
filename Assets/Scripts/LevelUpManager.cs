@@ -95,11 +95,13 @@ public void DisplayOptions(GameObject tower) {
 }
 
 public void UpdateTierSkin(GameObject tower, List<Queue<TowerData>> tree) {
-    if(tree[0].Count == 2 && tree[1].Count == 2 && tree[2].Count == 2) {
+    if(tree[0].Count <= 2 && tree[1].Count <= 2 && tree[2].Count <= 2) {
         tower.GetComponent<TowerController>().UpdateSkinLevel(1);
-    } else if(tree[0].Count == 1 && tree[1].Count == 1 && tree[2].Count == 1) {
+    } 
+    if(tree[0].Count <= 1 && tree[1].Count <= 1 && tree[2].Count <= 1) {
         tower.GetComponent<TowerController>().UpdateSkinLevel(2);
-    } else if(tree[0].Count == 0 && tree[1].Count == 0 && tree[2].Count == 0) {
+    } 
+    if(tree[0].Count <= 0 && tree[1].Count <= 0 && tree[2].Count <= 0) {
         tower.GetComponent<TowerController>().UpdateSkinLevel(3);
     }
 }

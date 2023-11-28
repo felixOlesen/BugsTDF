@@ -12,6 +12,7 @@ private Spline pathSpline;
 
 [SerializeField]
 private float speed;
+private float initialSpeed;
 
 [SerializeField]
 private int currentHealth;
@@ -47,6 +48,7 @@ private void Start() {
     }
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
+    initialSpeed = speed;
     
 }
 
@@ -107,7 +109,6 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
     }
-    Debug.Log("Damage: " + damage);
     if(armourDestroying) {
         armour = 1;
     }
@@ -148,7 +149,7 @@ private void AoeEffect(float scalar, string aoeEffect, bool activate, float dura
         }
     } else if(!activate) {
         if(aoeEffect == "stun" && stunned) {
-            speed /= scalar;
+            speed = initialSpeed;
             stunned = false;
         }
     }
