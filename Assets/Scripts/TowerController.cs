@@ -54,6 +54,7 @@ public class TowerController : MonoBehaviour
     public string aoeType;
     public float aoeRadius;
     public float aoeScalar;
+    public GameObject aoeObject;
 
 
 
@@ -136,7 +137,7 @@ public class TowerController : MonoBehaviour
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, aoeType, aoeRadius, stunDuration, aoeScalar);
+            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, gameObject);
         } 
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;
@@ -150,6 +151,12 @@ public class TowerController : MonoBehaviour
             Vector3.forward, // Keep z+ pointing straight into the screen.
             offset           // Point y+ toward the target.
             ); 
+        }
+    }
+    public void SetAoePosition(Vector3 position) {
+        if(aoeType == "stun" || aoeType == "explosive") {
+            aoeObject.transform.position = position;
+            aoeObject.GetComponent<AoeObjectController>().InflictAoe(aoeRadius, stunDuration, aoeScalar, attackPower, aoeType);
         }
     }
 

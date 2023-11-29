@@ -10,20 +10,14 @@ public class BulletController : MonoBehaviour
     public float projectileSpeed;
     public bool armourPierce;
     public bool armourDestroying;
-    public string aoeType;
-    public float aoeRadius;
-    public float stunDuration;
-    public float aoeScalar;
+    private GameObject tower;
 
-    public void shot(Vector3 shootDir, bool piercing, bool destroying, string aoeType, float aoeRadius, float stunDuration, float aoeScalar) {
+    public void shot(Vector3 shootDir, bool piercing, bool destroying, GameObject parentTower) {
         this.shootDir = shootDir;
         this.projectileSpeed = 4f;
         this.armourPierce = piercing;
         this.armourDestroying = destroying;
-        this.aoeType = aoeType;
-        this.aoeRadius = aoeRadius;
-        this.stunDuration = stunDuration;
-        this.aoeScalar = aoeScalar;
+        this.tower = parentTower;
         // -90 is offset angle for bullet direction
         transform.eulerAngles = new Vector3(0, 0, AngleFromVectorFloat(shootDir)-90);
         
@@ -36,7 +30,8 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             //Debug.Log("GOBLIN HIT!");
-            other.gameObject.GetComponent<EnemyController>().TakeDamage(this.attackPower, this.armourPierce, this.armourDestroying, this.aoeType, this.aoeRadius, this.stunDuration, this.aoeScalar);
+            other.gameObject.GetComponent<EnemyController>().TakeDamage(this.attackPower, this.armourPierce, this.armourDestroying);
+            tower.GetComponent<TowerController>().SetAoePosition(other.gameObject.transform.position);
             Destroy(gameObject);
         }
     }

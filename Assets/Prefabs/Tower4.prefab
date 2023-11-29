@@ -284,6 +284,7 @@ Transform:
   - {fileID: 343337639002329012}
   - {fileID: 7984779020099588040}
   - {fileID: 503007042272501262}
+  - {fileID: 5130709952123555688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6743520775273493290
@@ -320,12 +321,19 @@ MonoBehaviour:
   weapon1: {fileID: 4283340662568218783}
   weapon2: {fileID: 9051265651077291523}
   weapon3: {fileID: 993706661296486464}
+  activeWeapon: {fileID: 0}
   towerBase: {fileID: 4677501389238425995}
   towerBase1: {fileID: 3629056456193762754}
   towerBase2: {fileID: 6135841106344721157}
   towerBase3: {fileID: 6135841106344721157}
+  activeTowerBase: {fileID: 0}
   stealthVision: 0
   armourDestroying: 0
+  stunDuration: 0
+  aoeType: 
+  aoeRadius: 0
+  aoeScalar: 0
+  aoeObject: {fileID: 9195842186528567350}
 --- !u!1 &3259887509528293394
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,3 +922,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &9195842186528567350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5130709952123555688}
+  - component: {fileID: 251925200283865979}
+  m_Layer: 0
+  m_Name: AoeObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5130709952123555688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195842186528567350}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.96249676, y: -0.003469944, z: -0.003765978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2916238928989650107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &251925200283865979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195842186528567350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef270f451f29d42fe84b35f8d737bae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoeScalar: 0
+  aoeDamage: 0

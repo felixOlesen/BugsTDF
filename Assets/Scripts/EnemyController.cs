@@ -28,8 +28,6 @@ public bool stealthy;
 public bool swarmHost;
 public GameObject swarmChild;
 public bool isSwarmChild;
-private CircleCollider2D aoeRange;
-public GameObject aoeObject;
 public float aoeScalar = 1.0f;
 public bool stunned;
 
@@ -38,9 +36,6 @@ private void Start() {
     pathController = path.GetComponent<SpriteShapeController>();
     pathSpline = pathController.spline;
     levelManager = GameObject.Find("LevelManager");
-    aoeRange = aoeObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
-    aoeRange.isTrigger = true;
-    aoeRange.radius = 0.0f;
     if(!isSwarmChild) {
         transform.position = pathSpline.GetPosition(0);
         currentCheckpointIndex = 1;
@@ -81,15 +76,6 @@ private Vector3 UpdateCheckpoint() {
     return currentCheckpointPos;
 }
 
-IEnumerator UpdateAoeRange(string effect, float range, float duration, float scalar) {
-    aoeRange.radius = range;
-    aoeScalar = scalar;
-    AoeEffect(scalar, effect, true, duration);
-    yield return new WaitForSeconds(duration);
-    AoeEffect(scalar, effect, false, duration);
-    aoeRange.radius = 0.0f;
-    aoeScalar = 1;
-}
 
 public void SpawnSwarm() {
     for(int i = 0; i < 10; i++) {
@@ -105,16 +91,12 @@ public void SetCurrentCheckpoint(Vector3 pos, int ind) {
 }
 
 
-public void TakeDamage(int damage, bool pierce, bool armourDestroying, string aoeType, float aoeRadius, float stunDuration, float aoeScalar) {
+public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
     }
     if(armourDestroying) {
         armour = 1;
-    }
-    if(aoeType == "stun" || aoeType == "explosive" ) {
-        aoeObject.tag = aoeType;
-        StartCoroutine(UpdateAoeRange(aoeType, aoeRadius, stunDuration, aoeScalar));
     }
     currentHealth -= damage;
     healthBar.SetHealth(currentHealth);
@@ -123,51 +105,31 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying, string ao
             int nEnemy = 10;
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
-        StartCoroutine(DeathByExplosion(stunDuration, aoeType));
-    }
-}
-
-IEnumerator DeathByExplosion(float duration, string aoeVersion) {
-    //Debug.Log("Death Started");
-    if(aoeVersion == "stun") {
-        duration = 0.0f;
-    }
-    yield return new WaitForSeconds(duration);
-    //Debug.Log("Death ended");
-    Destroy(gameObject);
-    levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
-}
-
-private void AoeEffect(float scalar, string aoeEffect, bool activate, float duration) {
-    if(activate) {
-        if(aoeEffect == "stun" && !stunned) {
-            speed *= scalar;
-            stunned = true;
-        } else if(aoeEffect == "explosive") {
-            float aoeDamage = 100 * scalar;
-            TakeDamage(Mathf.RoundToInt(aoeDamage), false, false, "Untagged", 0.0f, duration, 0.0f);
-        }
-    } else if(!activate) {
-        if(aoeEffect == "stun" && stunned) {
-            speed = initialSpeed;
-            stunned = false;
-        }
+        Destroy(gameObject);
+        levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }
 }
 
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.CompareTag("stun")) {
-        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "stun", true, 0.0f);
+        float scalarValue = other.gameObject.GetComponent<AoeObjectController>().aoeScalar;
+        if(!stunned) {
+            stunned = true;
+            speed *= scalarValue;
+        }
     } else if(other.CompareTag("explosive")) {
-        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "explosive", true, 0.0f);
+        int damageValue = other.gameObject.GetComponent<AoeObjectController>().aoeDamage;
+        float scalarValue = other.gameObject.GetComponent<AoeObjectController>().aoeScalar;
+        damageValue = Mathf.RoundToInt((float)damageValue * scalarValue);
+        TakeDamage(damageValue, false, false);
     }
 }
 private void OnTriggerExit2D(Collider2D other) {
     if(other.CompareTag("stun")) {
-        float scalar = other.transform.parent.gameObject.GetComponent<EnemyController>().aoeScalar;
-        AoeEffect(scalar, "stun", false, 0.0f);
+        if(stunned) {
+            stunned = false;
+            speed = initialSpeed;
+        }
     }
 }
 }
