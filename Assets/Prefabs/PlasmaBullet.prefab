@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6991981794947857863}
   - component: {fileID: 1530376095457156597}
-  - component: {fileID: 1119369161257945074}
   - component: {fileID: 8393046005491405445}
+  - component: {fileID: 6358287218960425252}
   m_Layer: 0
   m_Name: PlasmaBullet
   m_TagString: Projectile
@@ -86,8 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1119369161257945074
-BoxCollider2D:
+--- !u!114 &8393046005491405445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703044257907422920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a9f3f9b007442f1b1121f45bfff2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 0
+  projectileSpeed: 0
+  armourPierce: 0
+  armourDestroying: 0
+  aoeType: 
+  aoeRadius: 0
+  stunDuration: 0
+  aoeScalar: 0
+--- !u!58 &6358287218960425252
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,31 +138,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 1.03}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.00000023841858, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &8393046005491405445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4703044257907422920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a9f3f9b007442f1b1121f45bfff2b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPower: 0
-  projectileSpeed: 0
-  armourPierce: 0
+  m_Radius: 0.2966063

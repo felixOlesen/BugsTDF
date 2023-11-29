@@ -328,8 +328,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7708765306728692409}
   - component: {fileID: 1446777394484542347}
-  - component: {fileID: 4620967215459786881}
   - component: {fileID: 6186397609076304856}
+  - component: {fileID: 3794976005091802889}
   m_Layer: 0
   m_Name: Enemy6
   m_TagString: Enemy
@@ -380,8 +380,37 @@ MonoBehaviour:
   swarmChild: {fileID: 0}
   isSwarmChild: 1
   aoeObject: {fileID: 8562704152815169725}
---- !u!70 &4620967215459786881
-CapsuleCollider2D:
+  aoeScalar: 1
+  stunned: 0
+--- !u!50 &6186397609076304856
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473553886208834737}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &3794976005091802889
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -412,36 +441,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00467062, y: 0.029419363}
-  m_Size: {x: 1.2572145, y: 2.53969}
-  m_Direction: 0
---- !u!50 &6186397609076304856
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473553886208834737}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Offset: {x: 0, y: -0.03378436}
+  serializedVersion: 2
+  m_Radius: 0.9198914
 --- !u!1 &3691562806604936897
 GameObject:
   m_ObjectHideFlags: 0

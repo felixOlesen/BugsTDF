@@ -4,6 +4,8 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -42,6 +44,12 @@ public class LevelManager : MonoBehaviour
         waveUI.text = "Wave: 1";
         waveNumber = 0;
         spawnDelay = 0.2f;
+
+        //Performance Improvements
+        QualitySettings.vSyncCount = 1;
+        levelPath.GetComponent<SpriteShapeController>().BakeMesh();
+        levelPath.GetComponent<SpriteShapeController>().BakeCollider();
+
     }
     
     private void Update() {

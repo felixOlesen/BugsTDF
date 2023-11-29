@@ -419,8 +419,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7708765306728692409}
   - component: {fileID: 1446777394484542347}
-  - component: {fileID: 4620967215459786881}
   - component: {fileID: 6186397609076304856}
+  - component: {fileID: -7314545003573592632}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -467,12 +467,41 @@ MonoBehaviour:
   armour: 1
   moneyReward: 200
   stealthy: 0
-  swarmHost: 0
+  swarmHost: 1
   swarmChild: {fileID: 3473553886208834737, guid: 32c388ebb7d1c4a2da42f5980668568f, type: 3}
   isSwarmChild: 0
   aoeObject: {fileID: 1993259185084414744}
---- !u!70 &4620967215459786881
-CapsuleCollider2D:
+  aoeScalar: 0
+  stunned: 0
+--- !u!50 &6186397609076304856
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473553886208834737}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &-7314545003573592632
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -503,36 +532,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0880301, y: 0.18972889}
-  m_Size: {x: 2.7833533, y: 2.783356}
-  m_Direction: 0
---- !u!50 &6186397609076304856
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473553886208834737}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Offset: {x: 0, y: 0.3310609}
+  serializedVersion: 2
+  m_Radius: 1.2925398
 --- !u!1 &3691562806604936897
 GameObject:
   m_ObjectHideFlags: 0
