@@ -32,6 +32,10 @@ public GameObject bronzeOne;
 public GameObject bronzeTwo;
 public GameObject bronzeThree;
 
+public GameObject completePanel1;
+public GameObject completePanel2;
+public GameObject completePanel3;
+
 
 private void Update() {
     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -63,31 +67,37 @@ public void DisplayOptions(GameObject tower) {
     sellPrice.text = "$" + currentTower.GetComponent<TowerController>().sellPrice.ToString();
 
     if(lvlTree[0].Count != 0) {
+        completePanel1.SetActive(false);
         nameOne.text = lvlTree[0].Peek().upgradeName;
         descOne.text = lvlTree[0].Peek().description;
         priceOne.text = "$" + Mathf.Abs(lvlTree[0].Peek().upgradeCost).ToString();
     } else {
-        nameOne.text = "Empty";
-        descOne.text = "Empty";
-        priceOne.text = "$0";
+        completePanel1.SetActive(true);
+        nameOne.text = "";
+        descOne.text = "";
+        priceOne.text = "";
     }
     if(lvlTree[1].Count != 0) {
+        completePanel2.SetActive(false);
         nameTwo.text = lvlTree[1].Peek().upgradeName;
         descTwo.text = lvlTree[1].Peek().description;
         priceTwo.text = "$" + Mathf.Abs(lvlTree[1].Peek().upgradeCost).ToString();
     } else {
-        nameTwo.text = "Empty";
-        descTwo.text = "Empty";
-        priceTwo.text = "$0";
+        completePanel2.SetActive(true);
+        nameTwo.text = "";
+        descTwo.text = "";
+        priceTwo.text = "";
     }
     if(lvlTree[2].Count != 0) {
+        completePanel3.SetActive(false);
         nameThree.text = lvlTree[2].Peek().upgradeName;
         descThree.text = lvlTree[2].Peek().description;
         priceThree.text = "$" + Mathf.Abs(lvlTree[2].Peek().upgradeCost).ToString();
     } else {
-        nameThree.text = "Empty";
-        descThree.text = "Empty";
-        priceThree.text = "$0";
+        completePanel3.SetActive(true);
+        nameThree.text = "";
+        descThree.text = "";
+        priceThree.text = "";
     }
     UpdateTierImages();
     UpdateTierSkin(tower, lvlTree);
@@ -177,8 +187,6 @@ public void LevelUp(int branch) {
             }
         }
     }
-    
-    
     DisplayOptions(currentTower);
 }
 
