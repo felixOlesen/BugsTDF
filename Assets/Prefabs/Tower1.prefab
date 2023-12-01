@@ -594,7 +594,7 @@ MonoBehaviour:
   activeTowerBase: {fileID: 8911969434301055810}
   stealthVision: 0
   armourDestroying: 0
-  stunDuration: 0.02
+  stunDuration: 0.1
   aoeType: 
   aoeRadius: 4
   aoeScalar: 0.3
@@ -895,6 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef270f451f29d42fe84b35f8d737bae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aoeScalar: 0
+  aoeDamage: 0
 --- !u!1 &5818883325573133265
 GameObject:
   m_ObjectHideFlags: 0

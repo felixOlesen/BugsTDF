@@ -18,10 +18,13 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
     aoeScalar = scalar;
     aoeDamage = damage;
     gameObject.tag = attackType;
-    Invoke("FinishAoe", duration);
+    StartCoroutine(FinishAoe(duration));
+    //Invoke("FinishAoe", duration);
 }
 
-private void FinishAoe() {
+IEnumerator FinishAoe(float duration) {
+    yield return new WaitForSeconds(duration);
     aoeCollider.radius = 0.0f;
+    //Debug.Log("Aoe Off");
 }
 }
