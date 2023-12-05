@@ -55,6 +55,7 @@ public class TowerController : MonoBehaviour
     public float aoeRadius;
     public float aoeScalar;
     public GameObject aoeObject;
+    public AudioSource placementSound;
 
 
 
@@ -100,6 +101,9 @@ public class TowerController : MonoBehaviour
 
     public void SetPlacement(bool placement) {
         placed = placement;
+        if(placement && placementSound != null) {
+            placementSound.Play();
+        }
     }
 
     public void UpdateSellPrice(int addedCost) {
