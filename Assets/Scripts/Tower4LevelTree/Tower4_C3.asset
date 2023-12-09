@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffIdx: attackSpeed
   magnitude: 1.8
-  description: 'Fire Rate: +45%'
+  description: 'Fire Rate: +80%'
   upgradeName: Efficiency Overload
   upgradeCost: -2500

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffIdx: attackSpeed
   magnitude: 1.65
-  description: 'Fire Rate: +40%'
+  description: 'Fire Rate: +65%'
   upgradeName: Barrel Cooling
   upgradeCost: -1400
