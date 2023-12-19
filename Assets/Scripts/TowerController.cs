@@ -47,6 +47,10 @@ public class TowerController : MonoBehaviour
     public GameObject towerBase2;
     public GameObject towerBase3;
     public GameObject activeTowerBase;
+    public bool skin1;
+    public bool skin2;
+    public bool skin3;
+    
     public bool stealthVision;
     public bool armourDestroying;
 
@@ -56,6 +60,8 @@ public class TowerController : MonoBehaviour
     public float aoeScalar;
     public GameObject aoeObject;
     public AudioSource placementSound;
+    public AudioSource shotSound;
+    public AudioSource upgradeSound;
 
 
 
@@ -66,6 +72,9 @@ public class TowerController : MonoBehaviour
         enemyList = new List<GameObject>();
         rangeShape = transform.GetChild(0).gameObject;
         activeWeapon = weapon;
+        skin1 = false;
+        skin2 = false;
+        skin3 = false;
         // weapon = transform.GetChild(2).gameObject;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
         sellPrice = Mathf.RoundToInt(Mathf.Abs(price) * 0.75f);
@@ -111,33 +120,43 @@ public class TowerController : MonoBehaviour
     }
 
     public void UpdateSkinLevel(int ind) {
-        if(ind == 1) {
+        if(ind == 1 && !skin1) {
+            Debug.Log("index 1");
+            skin1 = true;
             weapon.SetActive(false);
             activeWeapon = weapon1;
             weapon1.SetActive(true);
             towerBase.SetActive(false);
             activeTowerBase = towerBase1;
             towerBase1.SetActive(true);
-        } else if(ind == 2) {
+            upgradeSound.Play();
+        } else if(ind == 2 && !skin2) {
+            skin2 = true;
+            Debug.Log("index 2");
             weapon1.SetActive(false);
             activeWeapon = weapon2;
             weapon2.SetActive(true);
             towerBase1.SetActive(false);
             activeTowerBase = towerBase2;
             towerBase2.SetActive(true);
-        } else if(ind == 3) {
+            upgradeSound.Play();
+        } else if(ind == 3 && !skin3) {
+            skin3 = true;
+            Debug.Log("index 3");
             weapon2.SetActive(false);
             activeWeapon = weapon3;
             weapon3.SetActive(true);
             towerBase2.SetActive(false);
             activeTowerBase = towerBase3;
             towerBase3.SetActive(true);
+            upgradeSound.Play();
         }
     }
 
     IEnumerator Fire() {
         if(enemyList.Count > 0 && enemyList[0] != null) {
             Vector3 shootDir = enemyList[0].transform.position - transform.position;
+            shotSound.Play();
             GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
