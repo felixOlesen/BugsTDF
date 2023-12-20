@@ -36,6 +36,10 @@ public class LevelManager : MonoBehaviour
 
     private bool waveTimeUp;
     private bool rewardGiven;
+
+    public AudioSource waveStartSound1;
+    public AudioSource waveStartSound2;
+    public AudioSource gameOverSound1;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -81,6 +85,12 @@ public class LevelManager : MonoBehaviour
     }
     public void InitializeWave() {
         if(!midWave) {
+            int waveSoundIndex = UnityEngine.Random.Range(0,2);
+            if(waveSoundIndex == 1){
+                waveStartSound2.Play();
+            } else {
+                waveStartSound1.Play();
+            }
             waveNumber += 1;
             waveUI.text = "Wave: " + waveNumber.ToString();
             // Debug.Log("Starting Wave: " + waveNumber);
@@ -156,6 +166,7 @@ public class LevelManager : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0) {
             Debug.Log("Game over Trigger");
+            gameOverSound1.Play();
             gameOverMenu.SetActive(true);
             Time.timeScale = 0f;
             PauseMenuController.isPaused = true;
