@@ -62,6 +62,8 @@ public class TowerController : MonoBehaviour
     public AudioSource placementSound;
     public AudioSource shotSound;
     public AudioSource upgradeSound;
+    public int enemiesInRange;
+    public bool firing;
 
 
 
@@ -85,9 +87,14 @@ public class TowerController : MonoBehaviour
     private void Update() {
         towerRange.radius = rangeRadius;
         rangeShape.transform.localScale = new Vector3(rangeRadius*2, rangeRadius*2, 1);
+        enemiesInRange = enemyList.Count;
         if(enemyList.Count > 0 && placed) {
+            if(!firing) {
+                enemyList.RemoveAll(x => x == null);
+            }
             LockOn(enemyList[0]);
             if(currentCoroutine == null) {
+                firing = true;
                 currentCoroutine = StartCoroutine(Fire());
             }
         }
@@ -161,9 +168,10 @@ public class TowerController : MonoBehaviour
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
             tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, gameObject);
-        } 
+        }
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;
+        firing = false;
     }
     
 

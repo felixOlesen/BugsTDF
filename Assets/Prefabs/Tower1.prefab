@@ -691,6 +691,8 @@ MonoBehaviour:
   placementSound: {fileID: -2501845062167964822}
   shotSound: {fileID: -2384098280176416060}
   upgradeSound: {fileID: -1402776309718669935}
+  enemiesInRange: 0
+  firing: 0
 --- !u!82 &-2501845062167964822
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1257,8 +1259,8 @@ Transform:
   m_GameObject: {fileID: 5339470439568150259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3749954, y: -0.004957063, z: -0.003765978}
-  m_LocalScale: {x: 1.4285715, y: 1.4285715, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2916238928989650107}

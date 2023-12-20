@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
         midWave = false;
         waveUI.text = "Wave: 1";
         waveNumber = 0;
-        spawnDelay = 0.2f;
+        spawnDelay = 0.75f;
 
         //Performance Improvements
         QualitySettings.vSyncCount = 1;

@@ -639,6 +639,8 @@ MonoBehaviour:
   placementSound: {fileID: 7557618318984475978}
   shotSound: {fileID: -3482462067394483281}
   upgradeSound: {fileID: -2196258963860377617}
+  enemiesInRange: 0
+  firing: 0
 --- !u!82 &7557618318984475978
 AudioSource:
   m_ObjectHideFlags: 0
