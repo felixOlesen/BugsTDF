@@ -383,6 +383,7 @@ MonoBehaviour:
   isSwarmChild: 0
   aoeScalar: 1
   stunned: 0
+  deathSound: {fileID: 8300000, guid: 05aab9c0dfcc7c6408633c268d8ee808, type: 3}
 --- !u!50 &6186397609076304856
 Rigidbody2D:
   serializedVersion: 4

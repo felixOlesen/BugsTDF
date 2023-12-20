@@ -30,6 +30,7 @@ public GameObject swarmChild;
 public bool isSwarmChild;
 public float aoeScalar = 1.0f;
 public bool stunned;
+public AudioClip deathSound;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
@@ -105,6 +106,7 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
             int nEnemy = 10;
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
+        AudioSource.PlayClipAtPoint(deathSound, transform.position, 1.0f);
         Destroy(gameObject);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }

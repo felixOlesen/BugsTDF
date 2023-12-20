@@ -494,6 +494,9 @@ MonoBehaviour:
   towerBase2: {fileID: 6135841106344721157}
   towerBase3: {fileID: 6135841106344721157}
   activeTowerBase: {fileID: 0}
+  skin1: 0
+  skin2: 0
+  skin3: 0
   stealthVision: 0
   armourDestroying: 0
   stunDuration: 0
