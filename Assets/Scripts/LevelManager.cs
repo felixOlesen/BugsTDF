@@ -40,6 +40,13 @@ public class LevelManager : MonoBehaviour
     public AudioSource waveStartSound1;
     public AudioSource waveStartSound2;
     public AudioSource gameOverSound1;
+
+    public Button startWaveButton;
+    public Button speedUpButton;
+    public Sprite buttonOnSprite;
+    public Sprite buttonOffSprite;
+
+    private bool spedUp;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -60,6 +67,8 @@ public class LevelManager : MonoBehaviour
         if(currentEnemies.TrueForAll(EnemyCheck) && waveTimeUp) {
             currentEnemies.Clear();
             midWave = false;
+            startWaveButton.gameObject.SetActive(true);
+            speedUpButton.gameObject.SetActive(false);
             if(!rewardGiven) {
                 ChangeMoneyTotal(500);
                 rewardGiven = true;
@@ -85,6 +94,8 @@ public class LevelManager : MonoBehaviour
     }
     public void InitializeWave() {
         if(!midWave) {
+            startWaveButton.gameObject.SetActive(false);
+            speedUpButton.gameObject.SetActive(true);
             int waveSoundIndex = UnityEngine.Random.Range(0,2);
             if(waveSoundIndex == 1){
                 waveStartSound2.Play();
@@ -108,7 +119,19 @@ public class LevelManager : MonoBehaviour
         // Debug.Log("Timer Started: " + totalWaveTime );
         yield return new WaitForSeconds(totalWaveTime);
         // Debug.Log("Wave Finished");
-        waveTimeUp = true;
+        waveTimeUp = true; 
+    }
+
+    public void ChangeGameSpeed() {
+        if(spedUp) {
+            Time.timeScale = 1;
+            spedUp = false;
+            speedUpButton.image.sprite = buttonOffSprite;
+        } else {
+            Time.timeScale = 1.5f;
+            spedUp = true;
+            speedUpButton.image.sprite = buttonOnSprite;
+        }
     }
 
     private void SpawnEnemies() {

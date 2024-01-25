@@ -17,7 +17,6 @@ public class ButtonManager : MonoBehaviour
     private bool goodPlacement;
     public GameObject cancelText;
 
-
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
             {"purpleWizard", purpleWizardPreFab},
