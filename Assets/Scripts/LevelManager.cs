@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour
     public GameObject lvlUpMenu;
     public GameObject lvlCompleteMenu;
     public TMP_Text waveUI;
+    public TMP_Text initializedWaveText;
     private float spawnDelay;
 
     private bool waveTimeUp;
@@ -52,7 +53,7 @@ public class LevelManager : MonoBehaviour
         lvlUpMenu.SetActive(false);
         lvlCompleteMenu.SetActive(false);
         midWave = false;
-        waveUI.text = "Wave: 1";
+        waveUI.text = "Wave 0";
         waveNumber = 0;
         spawnDelay = 0.75f;
 
@@ -103,11 +104,12 @@ public class LevelManager : MonoBehaviour
                 waveStartSound1.Play();
             }
             waveNumber += 1;
-            waveUI.text = "Wave: " + waveNumber.ToString();
+            waveUI.text = "Wave " + waveNumber.ToString();
             // Debug.Log("Starting Wave: " + waveNumber);
             SpawnEnemies();
             midWave = true;
             rewardGiven = false;
+            initializedWaveText.text = waveUI.text;
         } else {
             // Debug.Log("Wave already started");
         }
