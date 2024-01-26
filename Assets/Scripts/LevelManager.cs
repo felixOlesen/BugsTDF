@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
         waveUI.text = "Wave 0";
         waveNumber = 0;
         spawnDelay = 0.75f;
-
+        initializedWaveText.color = new Color(1, 1, 1, 0);
         //Performance Improvements
         QualitySettings.vSyncCount = 1;
         levelPath.GetComponent<SpriteShapeController>().BakeMesh();
@@ -110,6 +110,8 @@ public class LevelManager : MonoBehaviour
             midWave = true;
             rewardGiven = false;
             initializedWaveText.text = waveUI.text;
+            StartCoroutine(FadeImage());
+            
         } else {
             // Debug.Log("Wave already started");
         }
@@ -122,6 +124,19 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(totalWaveTime);
         // Debug.Log("Wave Finished");
         waveTimeUp = true; 
+    }
+
+    IEnumerator FadeImage() {
+        for (float i = 0; i <= 1; i += Time.deltaTime/2) {
+            // set color with i as alpha
+            initializedWaveText.color = new Color(1, 1, 1, i);
+            yield return null;
+        }
+        for (float i = 1; i >= 0; i -= Time.deltaTime) {
+            // set color with i as alpha
+            initializedWaveText.color = new Color(1, 1, 1, i/2);
+            yield return null;
+        }
     }
 
     public void ChangeGameSpeed() {
