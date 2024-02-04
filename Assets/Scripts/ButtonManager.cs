@@ -16,6 +16,8 @@ public class ButtonManager : MonoBehaviour
     private IDictionary<string, GameObject> towers;
     private bool goodPlacement;
     public GameObject cancelText;
+    public AudioSource buttonHoverSound;
+    public AudioSource buttonClickSound;
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
@@ -112,6 +114,14 @@ public class ButtonManager : MonoBehaviour
 
     public void CallPause() {
         levelManager.GetComponent<PauseMenuController>().PauseGame();
+    }
+
+    public void HoverButtonSound() {
+        buttonHoverSound.Play();
+    }
+
+    public void ClickButtonSound() {
+        buttonClickSound.Play();
     }
 
 }

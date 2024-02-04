@@ -41,6 +41,14 @@ public class LevelManager : MonoBehaviour
     public AudioSource waveStartSound1;
     public AudioSource waveStartSound2;
     public AudioSource gameOverSound1;
+    public AudioSource ost1;
+    public AudioSource ost2;
+    public AudioSource ost3;
+    public AudioSource ost4;
+    public AudioSource ost5;
+    public AudioSource ost6;
+    public AudioSource ost7;
+    public AudioSource ost8;
 
     public Button startWaveButton;
     public Button speedUpButton;

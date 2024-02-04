@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639292437103924636}
   - component: {fileID: 1519986734186574854}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503007042272501262}
   - component: {fileID: 3850257073258669245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300879385547468839}
   - component: {fileID: 7020826077726927483}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,11 +502,14 @@ MonoBehaviour:
   stunDuration: 0
   aoeType: 
   aoeRadius: 0
+  aoeParticles: {fileID: 0}
   aoeScalar: 0
   aoeObject: {fileID: 9195842186528567350}
   placementSound: {fileID: 8539382030359041899}
   shotSound: {fileID: 7473805164086233995}
   upgradeSound: {fileID: 2246391553349089428}
+  enemiesInRange: 0
+  firing: 0
 --- !u!82 &8539382030359041899
 AudioSource:
   m_ObjectHideFlags: 0
@@ -889,7 +892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3686344429143712961}
   - component: {fileID: 4207103057160540071}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7216448495603604803}
   - component: {fileID: 8444098502265108427}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939178053271706412}
   - component: {fileID: 9070985514368418792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770557422411766178}
   - component: {fileID: 3393105182300700871}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7984779020099588040}
   - component: {fileID: 5572107091999891932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343337639002329012}
   - component: {fileID: 7148650208543492382}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5130709952123555688}
   - component: {fileID: 251925200283865979}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AoeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,3 +1434,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeScalar: 0
   aoeDamage: 0
+  aoeParticles: {fileID: 0}
+  system: {fileID: 0}

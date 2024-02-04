@@ -57,6 +57,7 @@ public class TowerController : MonoBehaviour
     public float stunDuration;
     public string aoeType;
     public float aoeRadius;
+    public GameObject aoeParticles;
     public float aoeScalar;
     public GameObject aoeObject;
     public AudioSource placementSound;

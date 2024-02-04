@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4769692294849534004}
   - component: {fileID: 3730707157849502219}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6244615263504772829}
   - component: {fileID: 8901257396302475467}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6652726134000802064}
   - component: {fileID: 4251907313099717126}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8301018368784790654}
   - component: {fileID: 2223675650066358468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281569075474924993}
   - component: {fileID: 6661806568677092087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3566860019953786305}
   - component: {fileID: 8376060706706642171}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chevron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7961151576170609785}
   - component: {fileID: 1534135972176232345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chevron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 3171698622614978067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.54, y: -7.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -686,6 +686,7 @@ MonoBehaviour:
   stunDuration: 0.1
   aoeType: 
   aoeRadius: 4
+  aoeParticles: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   aoeScalar: 0.3
   aoeObject: {fileID: 5339470439568150259}
   placementSound: {fileID: -2501845062167964822}
@@ -1075,7 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554259905297408333}
   - component: {fileID: 7537247609094894653}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2973125044671216655}
   - component: {fileID: 9216328461781271336}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chevron2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562295094249842408}
   - component: {fileID: 6744254616274477513}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AoeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 5339470439568150259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.17, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1279,6 +1280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeScalar: 0
   aoeDamage: 0
+  aoeParticles: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  system: {fileID: 0}
 --- !u!1 &5818883325573133265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,8 +1311,8 @@ Transform:
   m_GameObject: {fileID: 5818883325573133265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0055, y: -0.2067, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2916238928989650107}
@@ -1398,9 +1401,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0027331985, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.72138685
 --- !u!50 &5202037599141933548
 Rigidbody2D:
   serializedVersion: 4
@@ -1450,7 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5391091732039211500}
   - component: {fileID: 6760746013246229819}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chevron1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1534,7 +1537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6597684294527323023}
   - component: {fileID: 3900208288131496644}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chevron3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2295974359627406934}
   - component: {fileID: 2711757575940769212}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1703,7 +1706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7369072966391069690}
   - component: {fileID: 5703008113504673678}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,7 +1790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6628604125051067086}
   - component: {fileID: 6955592515061598347}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661903712656674047}
   - component: {fileID: 3775145494426305761}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
