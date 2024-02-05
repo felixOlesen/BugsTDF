@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class LevelManager : MonoBehaviour
 {
@@ -56,6 +57,9 @@ public class LevelManager : MonoBehaviour
     public Sprite buttonOffSprite;
 
     private bool spedUp;
+
+    public GameObject globalLightObject;
+    public Light2D globalLight;
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -69,7 +73,8 @@ public class LevelManager : MonoBehaviour
         QualitySettings.vSyncCount = 1;
         levelPath.GetComponent<SpriteShapeController>().BakeMesh();
         levelPath.GetComponent<SpriteShapeController>().BakeCollider();
-
+        globalLight = globalLightObject.GetComponent<Light2D>();
+        globalLight.intensity = 0.5f;
     }
     
     private void Update() {
@@ -81,6 +86,7 @@ public class LevelManager : MonoBehaviour
             if(!rewardGiven) {
                 ChangeMoneyTotal(500);
                 rewardGiven = true;
+                StartCoroutine(FadeDayNight("day"));
             }
             
         }
@@ -105,6 +111,7 @@ public class LevelManager : MonoBehaviour
         if(!midWave) {
             startWaveButton.gameObject.SetActive(false);
             speedUpButton.gameObject.SetActive(true);
+            StartCoroutine(FadeDayNight("night"));
             int waveSoundIndex = UnityEngine.Random.Range(0,2);
             if(waveSoundIndex == 1){
                 waveStartSound2.Play();
@@ -135,16 +142,34 @@ public class LevelManager : MonoBehaviour
     }
 
     IEnumerator FadeImage() {
+        initializedWaveText.gameObject.SetActive(true);
         for (float i = 0; i <= 1; i += Time.deltaTime/2) {
             // set color with i as alpha
             initializedWaveText.color = new Color(1, 1, 1, i);
             yield return null;
         }
-        for (float i = 1; i >= 0; i -= Time.deltaTime) {
+        for (float i = 1; i >= 0; i -= Time.deltaTime/2) {
             // set color with i as alpha
-            initializedWaveText.color = new Color(1, 1, 1, i/2);
+            initializedWaveText.color = new Color(1, 1, 1, i);
             yield return null;
         }
+        initializedWaveText.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeDayNight(string dayOrNight) {
+        if(dayOrNight == "day"){
+            for (float i = 0; i <= 0.5f; i += Time.deltaTime/2) {
+                globalLight.intensity = i;
+                yield return null;
+            }
+        }
+        if(dayOrNight == "night") {
+            for (float i = 0.5f; i >= 0.1f; i -= Time.deltaTime/2) {
+            globalLight.intensity = i;
+            yield return null;
+        }
+        }
+        
     }
 
     public void ChangeGameSpeed() {
