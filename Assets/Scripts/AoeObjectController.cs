@@ -13,9 +13,12 @@ public GameObject aoeParticles;
 public ParticleSystem system;
 void Start() {
     aoeCollider = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
-    aoeParticles = Instantiate(aoeParticles, transform.position, Quaternion.identity);
-    aoeParticles.SetActive(true);
-    system = aoeParticles.GetComponent<ParticleSystem>();
+    if(aoeParticles) {
+        aoeParticles = Instantiate(aoeParticles, transform.position, Quaternion.identity);
+        aoeParticles.SetActive(true);
+        system = aoeParticles.GetComponent<ParticleSystem>();
+    }
+    
 }
 
 public void InflictAoe(float radius, float duration, float scalar, int damage, string attackType) {
@@ -23,7 +26,9 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
     aoeScalar = scalar;
     aoeDamage = damage;
     gameObject.tag = attackType;
-    aoeParticles.transform.position = transform.position;
+    if(aoeParticles) {
+        aoeParticles.transform.position = transform.position;
+    }
     system.Play();
     StartCoroutine(FinishAoe(duration));
     //Invoke("FinishAoe", duration);
