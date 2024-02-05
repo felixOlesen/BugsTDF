@@ -18,6 +18,9 @@ public class ButtonManager : MonoBehaviour
     public GameObject cancelText;
     public AudioSource buttonHoverSound;
     public AudioSource buttonClickSound;
+    public GameObject muteSymbol;
+
+    public bool muted;
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
@@ -27,6 +30,8 @@ public class ButtonManager : MonoBehaviour
             {"tower4", tower4PreFab}
         };
         goodPlacement = true;
+        muted = false;
+        muteSymbol.SetActive(false);
     }
 
     void Update() {
@@ -122,6 +127,18 @@ public class ButtonManager : MonoBehaviour
 
     public void ClickButtonSound() {
         buttonClickSound.Play();
+    }
+
+    public void MuteButton() {
+        if(muted) {
+            AudioListener.volume = 1;
+            muted = false;
+            muteSymbol.SetActive(false);
+        } else {
+            AudioListener.volume = 0;
+            muted = true;
+            muteSymbol.SetActive(true);
+        }
     }
 
 }
