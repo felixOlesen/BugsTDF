@@ -102,6 +102,7 @@ public class ButtonManager : MonoBehaviour
             if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
                 currentTower.SetActive(true);
                 cancelText.SetActive(true);
+                ClickButtonSound();
             } else {
                 towerHeld = false;
                 Destroy(currentTower);
