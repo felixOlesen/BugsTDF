@@ -211,6 +211,8 @@ public class LevelManager : MonoBehaviour
     }
 
     public void SwarmSpawning(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
+        int buffer = 2;
+        StartCoroutine(WaveTimer(numEn + buffer));
         StartCoroutine(SwarmCoroutine(numEn, enPrefab, checkPointInd, checkPointPos, pos));
     }
 

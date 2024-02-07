@@ -391,7 +391,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.011764706}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -733,6 +733,9 @@ MonoBehaviour:
   firingPoint4: {fileID: 1391127679588498394}
   firingPointSpare1: {fileID: 0}
   firingPointSpare2: {fileID: 0}
+  firingPoints: []
+  currentFiringPoint: {x: 0, y: 0, z: 0}
+  currentFiringPointSpare: {x: 0, y: 0, z: 0}
   stealthVision: 1
   armourDestroying: 0
   stunDuration: 3
@@ -746,6 +749,9 @@ MonoBehaviour:
   upgradeSound: {fileID: -2196258963860377617}
   enemiesInRange: 0
   firing: 0
+  currentFiringObject: {fileID: 0}
+  currentFiringObjectSpare: {fileID: 0}
+  firingBarrel: 0
 --- !u!82 &7557618318984475978
 AudioSource:
   m_ObjectHideFlags: 0
