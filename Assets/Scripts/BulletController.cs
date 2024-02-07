@@ -31,7 +31,9 @@ public class BulletController : MonoBehaviour
         if (other.CompareTag("Enemy")) {
             //Debug.Log("GOBLIN HIT!");
             other.gameObject.GetComponent<EnemyController>().TakeDamage(this.attackPower, this.armourPierce, this.armourDestroying);
-            tower.GetComponent<TowerController>().SetAoePosition(other.gameObject.transform.position);
+            if(tower) {
+                tower.GetComponent<TowerController>().SetAoePosition(other.gameObject.transform.position);
+            }
             Destroy(gameObject);
         }
     }
