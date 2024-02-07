@@ -75,6 +75,7 @@ public class LevelManager : MonoBehaviour
         levelPath.GetComponent<SpriteShapeController>().BakeCollider();
         globalLight = globalLightObject.GetComponent<Light2D>();
         globalLight.intensity = 0.5f;
+        PauseMenuController.isPaused = false;
     }
     
     private void Update() {
