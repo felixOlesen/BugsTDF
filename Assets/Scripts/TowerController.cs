@@ -50,7 +50,19 @@ public class TowerController : MonoBehaviour
     public bool skin1;
     public bool skin2;
     public bool skin3;
+
+    public GameObject firingPoint1;
+    public GameObject firingPoint2;
+    public GameObject firingPoint3;
+    public GameObject firingPoint4;
+
+    public GameObject firingPointSpare1;
+    public GameObject firingPointSpare2;
+
+    public List<Vector3> firingPoints = new List<Vector3>();
     
+    public Vector3 currentFiringPoint;
+    public Vector3 currentFiringPointSpare;
     public bool stealthVision;
     public bool armourDestroying;
 
@@ -65,6 +77,9 @@ public class TowerController : MonoBehaviour
     public AudioSource upgradeSound;
     public int enemiesInRange;
     public bool firing;
+    public GameObject currentFiringObject;
+    public GameObject currentFiringObjectSpare;
+    public int firingBarrel;
 
 
 
@@ -83,6 +98,13 @@ public class TowerController : MonoBehaviour
         sellPrice = Mathf.RoundToInt(Mathf.Abs(price) * 0.75f);
         isSelected = true;
         CreateLvlTree();
+        currentFiringObject = firingPoint1;
+        currentFiringObjectSpare = null;
+        currentFiringPoint = firingPoint1.transform.position;
+        currentFiringPointSpare = new Vector3 (0,0,0);
+        firingPoints.Add(currentFiringPoint);
+        firingPoints.Add(currentFiringPointSpare);
+        firingBarrel = 0;
     }
 
     private void Update() {
@@ -108,6 +130,10 @@ public class TowerController : MonoBehaviour
             towerRange.enabled = false;
         } else {
             towerRange.enabled = true;
+            firingPoints[0] = currentFiringObject.transform.position;
+            if(currentFiringObjectSpare) {
+                firingPoints[1] = currentFiringObjectSpare.transform.position;
+            }
         }
         
     }
@@ -129,7 +155,6 @@ public class TowerController : MonoBehaviour
 
     public void UpdateSkinLevel(int ind) {
         if(ind == 1 && !skin1) {
-            Debug.Log("index 1");
             skin1 = true;
             weapon.SetActive(false);
             activeWeapon = weapon1;
@@ -138,9 +163,20 @@ public class TowerController : MonoBehaviour
             activeTowerBase = towerBase1;
             towerBase1.SetActive(true);
             upgradeSound.Play();
+            currentFiringObject = firingPoint2;
+            firingPoints[0] = firingPoint2.transform.position;
+            if(firingPointSpare1 && firingPointSpare1.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare1;
+                //firingPoints[1] = firingPointSpare1.transform.position;
+            } else if(firingPointSpare2 && firingPointSpare2.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare2;
+                //firingPoints[1] = firingPointSpare2.transform.position;
+            } else {
+                currentFiringObjectSpare = null;
+                firingPoints[1] = new Vector3 (0, 0, 0);
+            }
         } else if(ind == 2 && !skin2) {
             skin2 = true;
-            Debug.Log("index 2");
             weapon1.SetActive(false);
             activeWeapon = weapon2;
             weapon2.SetActive(true);
@@ -148,9 +184,20 @@ public class TowerController : MonoBehaviour
             activeTowerBase = towerBase2;
             towerBase2.SetActive(true);
             upgradeSound.Play();
+            currentFiringObject = firingPoint3;
+            firingPoints[0] = firingPoint3.transform.position;
+            if(firingPointSpare1 && firingPointSpare1.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare1;
+                //firingPoints[1] = firingPointSpare1.transform.position;
+            } else if(firingPointSpare2 && firingPointSpare2.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare2;
+                //firingPoints[1] = firingPointSpare2.transform.position;
+            } else {
+                currentFiringObjectSpare = null;
+                firingPoints[1] = new Vector3 (0, 0, 0);
+            }
         } else if(ind == 3 && !skin3) {
             skin3 = true;
-            Debug.Log("index 3");
             weapon2.SetActive(false);
             activeWeapon = weapon3;
             weapon3.SetActive(true);
@@ -158,6 +205,18 @@ public class TowerController : MonoBehaviour
             activeTowerBase = towerBase3;
             towerBase3.SetActive(true);
             upgradeSound.Play();
+            currentFiringObject = firingPoint4;
+            firingPoints[0] = firingPoint4.transform.position;
+            if(firingPointSpare1 && firingPointSpare1.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare1;
+                //firingPoints[1] = firingPointSpare1.transform.position;
+            } else if(firingPointSpare2 && firingPointSpare2.transform.IsChildOf(activeWeapon.transform)) {
+                currentFiringObjectSpare = firingPointSpare2;
+                //firingPoints[1] = firingPointSpare2.transform.position;
+            } else {
+                currentFiringObjectSpare = null;
+                firingPoints[1] = new Vector3 (0, 0, 0);
+            }
         }
     }
 
@@ -165,7 +224,18 @@ public class TowerController : MonoBehaviour
         if(enemyList.Count > 0 && enemyList[0] != null) {
             Vector3 shootDir = enemyList[0].transform.position - transform.position;
             shotSound.Play();
-            GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject tempProjectile;
+            if(firingPoints[1] != new Vector3 (0,0,0) && firingBarrel == 1) {
+                tempProjectile = Instantiate(projectile, firingPoints[1], Quaternion.identity);
+                firingBarrel = 0;
+            } else if(firingPoints[1] != new Vector3 (0,0,0) && firingBarrel == 0) {
+                tempProjectile = Instantiate(projectile, firingPoints[0], Quaternion.identity);
+                firingBarrel = 1;
+            } else {
+                tempProjectile = Instantiate(projectile, firingPoints[0], Quaternion.identity);
+                firingBarrel = 0;
+            }
+            //GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
             tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, gameObject);
