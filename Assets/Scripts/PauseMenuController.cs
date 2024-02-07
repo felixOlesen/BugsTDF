@@ -36,10 +36,12 @@ public class PauseMenuController : MonoBehaviour
 
     public void MainMenu() {
         SceneManager.LoadScene("MainMenu");
+        isPaused = false;
     }
 
     public void QuitGame() {
         Debug.Log("Quitting Game");
+        isPaused = false;
         Application.Quit();
     }
 }

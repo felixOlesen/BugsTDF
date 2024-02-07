@@ -115,7 +115,9 @@ public class TowerController : MonoBehaviour
             if(!firing) {
                 enemyList.RemoveAll(x => x == null);
             }
-            LockOn(enemyList[0]);
+            if(enemyList.Count > 0) {
+                LockOn(enemyList[0]);
+            }
             if(currentCoroutine == null) {
                 firing = true;
                 currentCoroutine = StartCoroutine(Fire());

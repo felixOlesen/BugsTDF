@@ -15,7 +15,7 @@ void Start() {
     aoeCollider = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
     if(aoeParticles) {
         aoeParticles = Instantiate(aoeParticles, transform.position, Quaternion.identity);
-        aoeParticles.SetActive(true);
+        aoeParticles.SetActive(false);
         system = aoeParticles.GetComponent<ParticleSystem>();
     }
     
@@ -27,6 +27,7 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
     aoeDamage = damage;
     gameObject.tag = attackType;
     if(aoeParticles) {
+        aoeParticles.SetActive(true);
         aoeParticles.transform.position = transform.position;
     }
     system.Play();

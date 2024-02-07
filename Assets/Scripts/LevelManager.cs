@@ -84,7 +84,7 @@ public class LevelManager : MonoBehaviour
             startWaveButton.gameObject.SetActive(true);
             speedUpButton.gameObject.SetActive(false);
             if(!rewardGiven) {
-                ChangeMoneyTotal(500);
+                ChangeMoneyTotal(100 * waveNumber);
                 rewardGiven = true;
                 StartCoroutine(FadeDayNight("day"));
             }
@@ -121,7 +121,7 @@ public class LevelManager : MonoBehaviour
             waveNumber += 1;
             waveUI.text = "Wave " + waveNumber.ToString();
             // Debug.Log("Starting Wave: " + waveNumber);
-            SpawnEnemies();
+            StartCoroutine(SpawnEnemies());
             midWave = true;
             rewardGiven = false;
             initializedWaveText.text = waveUI.text;
@@ -184,7 +184,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemies() {
+    IEnumerator SpawnEnemies() {
         //implement wave waiting feature for the entire wave based off the spawning time as a constant
         int nEnemy = enemyWaves[waveNumber-1];
 
@@ -192,21 +192,31 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Number of Goblins Spawned: " + nEnemy);
         StartCoroutine(EnemyCoroutine(nEnemy, enemy));
 
+        yield return new WaitForSeconds(spawnDelay * nEnemy);
+
         int nEnemy1 = enemy1Waves[waveNumber-1];
         Debug.Log("Number of Mushrooms Spawned: " + nEnemy1);
         StartCoroutine(EnemyCoroutine(nEnemy1, enemy1));
+
+        yield return new WaitForSeconds(spawnDelay * nEnemy1);
 
         int nEnemy2 = enemy2Waves[waveNumber-1];
         Debug.Log("Number of Mushrooms Spawned: " + nEnemy2);
         StartCoroutine(EnemyCoroutine(nEnemy2, enemy2));
 
+        yield return new WaitForSeconds(spawnDelay * nEnemy2);
+
         int nEnemy3 = enemy3Waves[waveNumber-1];
         Debug.Log("Number of Mushrooms Spawned: " + nEnemy3);
         StartCoroutine(EnemyCoroutine(nEnemy3, enemy3));
 
+        yield return new WaitForSeconds(spawnDelay * nEnemy3);
+
         int nEnemy4 = enemy4Waves[waveNumber-1];
         Debug.Log("Number of Mushrooms Spawned: " + nEnemy4);
         StartCoroutine(EnemyCoroutine(nEnemy4, enemy4));
+
+        yield return new WaitForSeconds(spawnDelay * nEnemy4);
 
     }
 
