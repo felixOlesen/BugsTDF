@@ -14,7 +14,7 @@ public class BulletController : MonoBehaviour
 
     public void shot(Vector3 shootDir, bool piercing, bool destroying, GameObject parentTower) {
         this.shootDir = shootDir;
-        this.projectileSpeed = 12f;
+        this.projectileSpeed = 15f;
         this.armourPierce = piercing;
         this.armourDestroying = destroying;
         this.tower = parentTower;

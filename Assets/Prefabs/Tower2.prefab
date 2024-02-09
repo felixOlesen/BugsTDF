@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armourPierce: 0
-  price: -3000
+  price: -1500
   sellPrice: 0
   attackPower: 10
   rangeRadius: 4

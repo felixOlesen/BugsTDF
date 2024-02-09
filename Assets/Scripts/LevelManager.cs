@@ -18,11 +18,11 @@ public class LevelManager : MonoBehaviour
     public GameObject enemy4;
     public GameObject levelPath;
     public int waveNumber;
-    private List<int> enemyWaves = new List<int>() {3, 5, 7, 8, 10, 13, 16, 20, 30, 45};
-    private List<int> enemy1Waves = new List<int>() {0, 0, 2, 4, 6, 10, 13, 17, 20, 30};
-    private List<int> enemy2Waves = new List<int>() {0, 0, 0, 3, 5, 7, 9, 13, 17, 20};
-    private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 2, 5, 7, 10, 15, 19};
-    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 3, 7, 9, 11, 14, 16};
+    private List<int> enemyWaves = new List<int>() {15, 25, 20, 15, 20, 10, 0, 10, 30, 45};
+    private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15};
+    private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20};
+    private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 15, 10, 50, 0, 15, 20};
+    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1};
     private int totalHealth;
     public TMP_Text healthUI;
     private int totalMoney;
