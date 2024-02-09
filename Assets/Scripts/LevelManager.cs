@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
             startWaveButton.gameObject.SetActive(true);
             speedUpButton.gameObject.SetActive(false);
             if(!rewardGiven) {
-                ChangeMoneyTotal(100 * waveNumber);
+                ChangeMoneyTotal(75 * waveNumber);
                 rewardGiven = true;
                 StartCoroutine(FadeDayNight("day"));
             }

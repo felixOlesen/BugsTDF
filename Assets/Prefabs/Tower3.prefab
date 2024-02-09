@@ -459,7 +459,7 @@ MonoBehaviour:
   armourPierce: 1
   price: -2000
   sellPrice: 0
-  attackPower: 90
+  attackPower: 70
   rangeRadius: 5
   attackSpeed: 1
   placed: 0
