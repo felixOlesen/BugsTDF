@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.2
   description: 'Range: +20%'
   upgradeName: Sniper Mentality
-  upgradeCost: -400
+  upgradeCost: -500

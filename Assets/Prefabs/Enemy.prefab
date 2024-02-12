@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   levelManager: {fileID: 0}
-  speed: 2.5
+  speed: 2.8
   currentHealth: 0
   attackDamage: 10
   maxHealth: 60
@@ -443,9 +443,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7}
+  m_Offset: {x: 0, y: 0.65532196}
   serializedVersion: 2
-  m_Radius: 1.273875
+  m_Radius: 1.5330093
 --- !u!1 &3691562806604936897
 GameObject:
   m_ObjectHideFlags: 0

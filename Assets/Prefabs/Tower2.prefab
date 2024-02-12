@@ -521,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeScalar: 0
   aoeDamage: 0
-  aoeParticles: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
+  aoeParticles: {fileID: 9027514048236820045, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
   system: {fileID: 0}
 --- !u!1 &2686776049697884361
 GameObject:
@@ -699,7 +699,7 @@ MonoBehaviour:
   armourPierce: 0
   price: -1000
   sellPrice: 0
-  attackPower: 30
+  attackPower: 35
   rangeRadius: 4
   attackSpeed: 0.7
   placed: 0

@@ -459,9 +459,9 @@ MonoBehaviour:
   armourPierce: 1
   price: -2000
   sellPrice: 0
-  attackPower: 70
+  attackPower: 60
   rangeRadius: 5
-  attackSpeed: 1
+  attackSpeed: 1.1
   placed: 0
   projectile: {fileID: 4703044257907422920, guid: 6aecb9822bec4438e9febcdbc41ad275, type: 3}
   isSelected: 0

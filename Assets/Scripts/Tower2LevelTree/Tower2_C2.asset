@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.8
   description: 'Slow Duration: +80%'
   upgradeName: Hell Shock
-  upgradeCost: -3000
+  upgradeCost: -1600

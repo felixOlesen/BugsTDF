@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.1
   description: 'Attack: +10%'
   upgradeName: Hollow Points
-  upgradeCost: -300
+  upgradeCost: -400

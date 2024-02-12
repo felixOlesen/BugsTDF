@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.5
   description: 'Slow Duration: +50%'
   upgradeName: Forced Hesitance
-  upgradeCost: -1200
+  upgradeCost: -500

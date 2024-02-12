@@ -720,8 +720,8 @@ MonoBehaviour:
   sellPrice: 0
   attackPower: 50
   rangeRadius: 6
-  attackSpeed: 0.8
-  placed: 0
+  attackSpeed: 0.9
+  placed: 1
   projectile: {fileID: 4703044257907422920, guid: 6aecb9822bec4438e9febcdbc41ad275, type: 3}
   isSelected: 0
   lvla1: {fileID: 11400000, guid: 9bd2a0ef67dd246c088192a6a6286772, type: 2}
@@ -757,7 +757,7 @@ MonoBehaviour:
   currentFiringPointSpare: {x: 0, y: 0, z: 0}
   stealthVision: 0
   armourDestroying: 0
-  stunDuration: 0.1
+  stunDuration: 0.05
   aoeType: 
   aoeRadius: 4
   aoeParticles: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeScalar: 0
   aoeDamage: 0
-  aoeParticles: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  aoeParticles: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   system: {fileID: 0}
 --- !u!1 &5556117277915739513
 GameObject:

@@ -536,12 +536,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   levelManager: {fileID: 0}
-  speed: 1
+  speed: 2
   currentHealth: 0
-  attackDamage: 75
-  maxHealth: 1000
+  attackDamage: 100
+  maxHealth: 2250
   healthBar: {fileID: 1812481271718209484}
-  armour: 1
+  armour: 0.7
   moneyReward: 500
   stealthy: 0
   swarmHost: 0
@@ -609,9 +609,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000023841858, y: 0.20302683}
+  m_Offset: {x: 0.031019846, y: 0.23404935}
   serializedVersion: 2
-  m_Radius: 2.191887
+  m_Radius: 2.5331335
 --- !u!1 &3691562806604936897
 GameObject:
   m_ObjectHideFlags: 0

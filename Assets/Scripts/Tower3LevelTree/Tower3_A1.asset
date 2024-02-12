@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.2
   description: 'Attack Speed: +20%'
   upgradeName: Efficient Firing
-  upgradeCost: -200
+  upgradeCost: -900

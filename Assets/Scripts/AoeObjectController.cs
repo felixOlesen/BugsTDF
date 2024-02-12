@@ -27,8 +27,12 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
     aoeDamage = damage;
     gameObject.tag = attackType;
     if(aoeParticles) {
+        //var shape = system.shape;
+        //var emitter = system.emission;
         aoeParticles.SetActive(true);
         aoeParticles.transform.position = transform.position;
+        //emitter.rateOverTime = radius;
+        //shape.radius = radius;
     }
     system.Play();
     StartCoroutine(FinishAoe(duration));

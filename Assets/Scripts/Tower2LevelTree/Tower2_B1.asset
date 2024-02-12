@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'Slow Area: +30%'
   upgradeName: Larger Batteries
-  upgradeCost: -1800
+  upgradeCost: -1000
