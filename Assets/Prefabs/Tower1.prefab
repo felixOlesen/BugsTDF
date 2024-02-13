@@ -757,9 +757,9 @@ MonoBehaviour:
   currentFiringPointSpare: {x: 0, y: 0, z: 0}
   stealthVision: 0
   armourDestroying: 0
-  stunDuration: 0.05
+  stunDuration: 0.1
   aoeType: 
-  aoeRadius: 4
+  aoeRadius: 2.5
   aoeParticles: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   aoeScalar: 0.3
   aoeObject: {fileID: 5339470439568150259}
@@ -1390,6 +1390,7 @@ MonoBehaviour:
   aoeDamage: 0
   aoeParticles: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   system: {fileID: 0}
+  demoCircle: {fileID: 0}
 --- !u!1 &5556117277915739513
 GameObject:
   m_ObjectHideFlags: 0

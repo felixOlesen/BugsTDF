@@ -740,7 +740,7 @@ MonoBehaviour:
   armourDestroying: 0
   stunDuration: 3
   aoeType: 
-  aoeRadius: 4
+  aoeRadius: 2.5
   aoeParticles: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
   aoeScalar: 0.5
   aoeObject: {fileID: 2441235526789337168}

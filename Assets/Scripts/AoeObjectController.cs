@@ -11,6 +11,7 @@ public float aoeScalar;
 public int aoeDamage;
 public GameObject aoeParticles;
 public ParticleSystem system;
+
 void Start() {
     aoeCollider = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
     if(aoeParticles) {
@@ -18,7 +19,7 @@ void Start() {
         aoeParticles.SetActive(false);
         system = aoeParticles.GetComponent<ParticleSystem>();
     }
-    
+    this.transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);
 }
 
 public void InflictAoe(float radius, float duration, float scalar, int damage, string attackType) {
@@ -27,22 +28,27 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
     aoeDamage = damage;
     gameObject.tag = attackType;
     if(aoeParticles) {
-        //var shape = system.shape;
-        //var emitter = system.emission;
+        this.transform.localScale = new Vector3(radius, radius, radius);
+        var systemMain = system.main;
         aoeParticles.SetActive(true);
         aoeParticles.transform.position = transform.position;
-        //emitter.rateOverTime = radius;
-        //shape.radius = radius;
+        if( attackType == "explosive"){
+            systemMain.startSize = radius*2.0f;
+        } else if(attackType == "stun") {
+            systemMain.startSize = radius/1.2f;
+        }
+
     }
     system.Play();
     StartCoroutine(FinishAoe(duration));
-    //Invoke("FinishAoe", duration);
+
 }
 
 IEnumerator FinishAoe(float duration) {
     yield return new WaitForSeconds(duration);
     aoeCollider.radius = 0.0f;
-    //Debug.Log("Aoe Off");
+    this.transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);
+    this.transform.position = transform.parent.position;
 }
 
 }
