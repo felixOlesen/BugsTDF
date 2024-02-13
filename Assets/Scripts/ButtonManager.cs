@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject purpleWizardPreFab;
-    public GameObject bloodMoonPreFab;
+    public GameObject tower2PreFab;
+    public GameObject tower1PreFab;
     public GameObject tower3PreFab;
     public GameObject tower4PreFab;
     public GameObject levelManager;
@@ -19,19 +19,26 @@ public class ButtonManager : MonoBehaviour
     public AudioSource buttonHoverSound;
     public AudioSource buttonClickSound;
     public GameObject muteSymbol;
-
     public bool muted;
+    public TMP_Text t1Price;
+    public TMP_Text t2Price;
+    public TMP_Text t3Price;
+    public TMP_Text t4Price;
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
-            {"purpleWizard", purpleWizardPreFab},
-            {"bloodMoon", bloodMoonPreFab},
+            {"tower2", tower2PreFab},
+            {"tower1", tower1PreFab},
             {"tower3", tower3PreFab},
             {"tower4", tower4PreFab}
         };
         goodPlacement = true;
         muted = false;
         muteSymbol.SetActive(false);
+        t1Price.overrideColorTags = true;
+        t2Price.overrideColorTags = true;
+        t3Price.overrideColorTags = true;
+        t4Price.overrideColorTags = true;
     }
 
     void Update() {
@@ -77,6 +84,27 @@ public class ButtonManager : MonoBehaviour
             } 
             if(!towerHeld) {
                 cancelText.SetActive(false);
+            }
+
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t1Price.text.Substring(t1Price.text.Length - 4))) == true) {
+                t1Price.color = new Color32(205, 250, 252, 255);
+            } else {
+                t1Price.color = new Color32(104, 104, 104, 255);
+            }
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t2Price.text.Substring(t2Price.text.Length - 4)))) {
+                t2Price.color = new Color32(205, 250, 252, 255);
+            } else {
+                t2Price.color = new Color32(104, 104, 104, 255);
+            }
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t3Price.text.Substring(t3Price.text.Length - 4)))) {
+                t3Price.color = new Color32(205, 250, 252, 255);
+            } else {
+                t3Price.color = new Color32(104, 104, 104, 255);
+            }
+            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t4Price.text.Substring(t4Price.text.Length - 3)))) {
+                t4Price.color = new Color32(205, 250, 252, 255);
+            } else {
+                t4Price.color = new Color32(104, 104, 104, 255);
             }
             
         }

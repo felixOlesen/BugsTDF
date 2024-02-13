@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using TMPro;
 
 public class LevelUpManager : MonoBehaviour
@@ -31,6 +32,9 @@ public GameObject silverThree;
 public GameObject bronzeOne;
 public GameObject bronzeTwo;
 public GameObject bronzeThree;
+public GameObject buttonOne;
+public GameObject buttonTwo;
+public GameObject buttonThree;
 
 public GameObject completePanel1;
 public GameObject completePanel2;
@@ -52,6 +56,28 @@ private void Update() {
             } 
         }
     }
+    if(lvlTree != null && !PauseMenuController.isPaused) {
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[0].Peek().upgradeCost)) {
+            buttonOne.GetComponent<Button>().interactable = true;
+        } else {
+            buttonOne.GetComponent<Button>().interactable = false;
+        }
+
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[1].Peek().upgradeCost)) {
+            buttonTwo.GetComponent<Button>().interactable = true;
+        } else {
+            buttonTwo.GetComponent<Button>().interactable = false;
+        }
+
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[2].Peek().upgradeCost)) {
+            buttonThree.GetComponent<Button>().interactable = true;
+        } else {
+            buttonThree.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    
+    
 }
 
 public void DisplayOptions(GameObject tower) {

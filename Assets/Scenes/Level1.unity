@@ -25133,7 +25133,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -26323,7 +26323,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: purpleWizard
+          m_StringArgument: tower2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &469500572
@@ -29518,7 +29518,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -32549,8 +32549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d0e3e7115ea452e96bf492b6f570af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purpleWizardPreFab: {fileID: 3171698622614978067, guid: d636980e2c2094072a4896e4a940d701, type: 3}
-  bloodMoonPreFab: {fileID: 3171698622614978067, guid: 8fcbe367d8aba4f86a2e27ac642d454e, type: 3}
+  tower2PreFab: {fileID: 3171698622614978067, guid: d636980e2c2094072a4896e4a940d701, type: 3}
+  tower1PreFab: {fileID: 3171698622614978067, guid: 8fcbe367d8aba4f86a2e27ac642d454e, type: 3}
   tower3PreFab: {fileID: 3171698622614978067, guid: 2aee24814b94e42c484a1fea97836ca3, type: 3}
   tower4PreFab: {fileID: 3171698622614978067, guid: a1654fbb9f0cc46dd8810cf1bdbe2b9d, type: 3}
   levelManager: {fileID: 1727942502}
@@ -32559,6 +32559,10 @@ MonoBehaviour:
   buttonClickSound: {fileID: 1532694496}
   muteSymbol: {fileID: 1381019147}
   muted: 0
+  t1Price: {fileID: 1689420329}
+  t2Price: {fileID: 185828655}
+  t3Price: {fileID: 1359988218}
+  t4Price: {fileID: 1075082605}
 --- !u!4 &1532694494
 Transform:
   m_ObjectHideFlags: 0
@@ -32607,6 +32611,9 @@ MonoBehaviour:
   bronzeOne: {fileID: 1481421650}
   bronzeTwo: {fileID: 1996387724}
   bronzeThree: {fileID: 400579587}
+  buttonOne: {fileID: 1565026219}
+  buttonTwo: {fileID: 387394334}
+  buttonThree: {fileID: 1016314640}
   completePanel1: {fileID: 1503199737}
   completePanel2: {fileID: 1733329696}
   completePanel3: {fileID: 351968202}
@@ -33098,7 +33105,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -35546,7 +35553,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: bloodMoon
+          m_StringArgument: tower1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1737774213
