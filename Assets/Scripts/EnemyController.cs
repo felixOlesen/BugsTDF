@@ -58,7 +58,8 @@ private void Aim(Vector3 targetPos) {
     if(targetPos != null) {
         Vector3 dir = (targetPos - transform.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
+        //transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
+        transform.GetChild(0).rotation = Quaternion.Euler( 0, 0, angle - 90.0f); 
     }
 }
 
