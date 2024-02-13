@@ -71,8 +71,6 @@ public class ButtonManager : MonoBehaviour
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
                     //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
                     gameObject.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
-
-
                 }
             }
 
@@ -86,29 +84,19 @@ public class ButtonManager : MonoBehaviour
                 cancelText.SetActive(false);
             }
 
-            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t1Price.text.Substring(t1Price.text.Length - 4))) == true) {
-                t1Price.color = new Color32(205, 250, 252, 255);
-            } else {
-                t1Price.color = new Color32(104, 104, 104, 255);
-            }
-            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t2Price.text.Substring(t2Price.text.Length - 4)))) {
-                t2Price.color = new Color32(205, 250, 252, 255);
-            } else {
-                t2Price.color = new Color32(104, 104, 104, 255);
-            }
-            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t3Price.text.Substring(t3Price.text.Length - 4)))) {
-                t3Price.color = new Color32(205, 250, 252, 255);
-            } else {
-                t3Price.color = new Color32(104, 104, 104, 255);
-            }
-            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(t4Price.text.Substring(t4Price.text.Length - 3)))) {
-                t4Price.color = new Color32(205, 250, 252, 255);
-            } else {
-                t4Price.color = new Color32(104, 104, 104, 255);
-            }
-            
+            CheckTextColorChange(t1Price);
+            CheckTextColorChange(t2Price);
+            CheckTextColorChange(t3Price);
+            CheckTextColorChange(t4Price);
         }
-        
+    }
+
+    public void CheckTextColorChange(TMP_Text priceText) {
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(-int.Parse(priceText.text.Replace("$", "")))) {
+            priceText.color = new Color32(205, 250, 252, 255);
+        } else {
+            priceText.color = new Color32(104, 104, 104, 255);
+        }
     }
 
     public void DetermineTowerPlacement(bool placement) {
