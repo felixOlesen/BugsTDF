@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.8
   description: 'Fire Rate: +80%'
   upgradeName: Efficiency Overload
-  upgradeCost: -2500
+  upgradeCost: -2000

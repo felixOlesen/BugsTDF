@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower4_A1
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.6
-  description: +60% Range
+  magnitude: 1.4
+  description: +40% Range
   upgradeName: Improved Sights
   upgradeCost: -300
