@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.4
   description: 'Attack Speed: +40%'
   upgradeName: Engineering+++
-  upgradeCost: -650
+  upgradeCost: -2000

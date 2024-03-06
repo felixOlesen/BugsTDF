@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'Attack Speed: +25%'
   upgradeName: Fast Recharge
-  upgradeCost: -1400
+  upgradeCost: -2100

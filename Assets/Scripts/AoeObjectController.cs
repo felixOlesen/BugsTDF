@@ -33,7 +33,7 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
         aoeParticles.SetActive(true);
         aoeParticles.transform.position = transform.position;
         if( attackType == "explosive"){
-            systemMain.startSize = radius*2.0f;
+            systemMain.startSize = radius*0.9f;
         } else if(attackType == "stun") {
             systemMain.startSize = radius/1.2f;
         }

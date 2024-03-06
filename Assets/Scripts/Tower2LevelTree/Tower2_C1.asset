@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.4
   description: 'Slow Area: +40%'
   upgradeName: Premium Power
-  upgradeCost: -1500
+  upgradeCost: -2300

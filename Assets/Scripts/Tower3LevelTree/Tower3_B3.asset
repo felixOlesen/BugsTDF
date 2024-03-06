@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.2
   description: 'Attack: +20%'
   upgradeName: Fire Power
-  upgradeCost: -900
+  upgradeCost: -1750

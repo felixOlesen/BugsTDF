@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.4
   description: 'Range: +40%'
   upgradeName: Magnification++
-  upgradeCost: -1400
+  upgradeCost: -2500

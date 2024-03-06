@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'Range: +30%'
   upgradeName: Farsight
-  upgradeCost: -1500
+  upgradeCost: -1900

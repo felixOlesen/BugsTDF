@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
+    public GameObject tower1Button;
+    public GameObject tower2Button;
+    public GameObject tower3Button;
+    public GameObject tower4Button;
     public GameObject tower2PreFab;
     public GameObject tower1PreFab;
     public GameObject tower3PreFab;
@@ -47,9 +53,18 @@ public class ButtonManager : MonoBehaviour
         
         if(towerHeld){
             currentTower.transform.position = mousePos;
+            tower1Button.GetComponent<Button>().interactable = false;
+            tower2Button.GetComponent<Button>().interactable = false;
+            tower3Button.GetComponent<Button>().interactable = false;
+            tower4Button.GetComponent<Button>().interactable = false;
+        } else {
+            tower1Button.GetComponent<Button>().interactable = true;
+            tower2Button.GetComponent<Button>().interactable = true;
+            tower3Button.GetComponent<Button>().interactable = true;
+            tower4Button.GetComponent<Button>().interactable = true;
         }
         if(!PauseMenuController.isPaused) {
-            if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement)){
+            if(Input.GetMouseButtonDown(0) && (towerHeld && goodPlacement && EventSystem.current.IsPointerOverGameObject())){
                 currentTower.GetComponent<TowerController>().SetSelection(false);
                 currentTower.GetComponent<TowerController>().SetPlacement(true);
                 towerHeld = false;
@@ -67,7 +82,7 @@ public class ButtonManager : MonoBehaviour
                 Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
                 
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
-                if (hit.collider != null && hit.collider.CompareTag("Tower") && goodPlacement) {
+                if (hit.collider != null && hit.collider.CompareTag("Tower") && goodPlacement && EventSystem.current.IsPointerOverGameObject()) {
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
                     //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
                     gameObject.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);

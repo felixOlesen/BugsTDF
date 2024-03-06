@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'Range: +30%'
   upgradeName: Digital Foresight
-  upgradeCost: -1000
+  upgradeCost: -1500

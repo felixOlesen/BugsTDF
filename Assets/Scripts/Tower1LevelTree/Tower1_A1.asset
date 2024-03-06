@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.2
   description: 'Range: +20%'
   upgradeName: Improved Targeting
-  upgradeCost: -800
+  upgradeCost: -1200

@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.8
   description: 'AOE Radius: +80%'
   upgradeName: Smell of Napalm...
-  upgradeCost: -2000
+  upgradeCost: -3500

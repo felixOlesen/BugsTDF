@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 0
   description: 'Stealth Vision: Active'
   upgradeName: Infra-Red Optics
-  upgradeCost: -2000
+  upgradeCost: -3500

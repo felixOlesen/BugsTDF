@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.6
   description: 'Slow Duration: +70%'
   upgradeName: Zap Em' Hard!
-  upgradeCost: -1100
+  upgradeCost: -1700

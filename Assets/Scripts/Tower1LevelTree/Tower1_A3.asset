@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.1
   description: 'Attack: +10%'
   upgradeName: Sizzling Rounds
-  upgradeCost: -1000
+  upgradeCost: -1200

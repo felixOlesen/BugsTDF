@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'Attack Speed: +30%'
   upgradeName: Attentive Frenzy
-  upgradeCost: -100
+  upgradeCost: -4000

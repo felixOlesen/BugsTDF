@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.5
   description: Explosive Ammo
   upgradeName: Explosive Fury
-  upgradeCost: -1500
+  upgradeCost: -2000

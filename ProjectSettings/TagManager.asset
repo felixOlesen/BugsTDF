@@ -12,6 +12,7 @@ TagManager:
   - explosive
   - stun
   - FxTemporaire
+  - UI
   layers:
   - Default
   - TransparentFX

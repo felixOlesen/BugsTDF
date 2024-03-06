@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7649541}
   - component: {fileID: 7649542}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Chevron1 [Marker]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23363,7 +23363,7 @@ GameObject:
   - component: {fileID: 185828655}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23407,7 +23407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $1000
+  m_text: $1400
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -24654,9 +24654,9 @@ GameObject:
   m_Component:
   - component: {fileID: 343669113}
   - component: {fileID: 343669114}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GreenTurret1
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26244,7 +26244,7 @@ GameObject:
   - component: {fileID: 469500571}
   m_Layer: 5
   m_Name: Tower2
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27241,7 +27241,7 @@ GameObject:
   - component: {fileID: 528816429}
   m_Layer: 5
   m_Name: BuyTowerTextBG
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29383,7 +29383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011123878}
   - component: {fileID: 1011123879}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29658,7 +29658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: / 45
+  m_text: / 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 486841638d1dd4490b1487b7fb545e07, type: 2}
   m_sharedMaterial: {fileID: -5058601809970551776, guid: 486841638d1dd4490b1487b7fb545e07, type: 2}
@@ -30016,7 +30016,7 @@ GameObject:
   - component: {fileID: 1075082605}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30060,7 +30060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $500
+  m_text: $650
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -30365,7 +30365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165070118}
   - component: {fileID: 1165070119}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30449,7 +30449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176542955}
   - component: {fileID: 1176542956}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30537,7 +30537,7 @@ GameObject:
   - component: {fileID: 1194549110}
   m_Layer: 5
   m_Name: StartWaveButton
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30812,9 +30812,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1227555245}
   - component: {fileID: 1227555244}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Inventory_Frame_01 (2)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30907,7 +30907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236606897}
   - component: {fileID: 1236606898}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Chevron2 [Marker]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31141,9 +31141,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1267671116}
   - component: {fileID: 1267671117}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Flamethrower
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31232,7 +31232,7 @@ GameObject:
   - component: {fileID: 1335490509}
   m_Layer: 5
   m_Name: Tower4
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31440,7 +31440,7 @@ GameObject:
   - component: {fileID: 1359988218}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31484,7 +31484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $2000
+  m_text: $2200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -32073,7 +32073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458500308}
   - component: {fileID: 1458500309}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Chevron3 [Marker]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32232,9 +32232,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1500583255}
   - component: {fileID: 1500583256}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BlueTurret1
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32549,6 +32549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d0e3e7115ea452e96bf492b6f570af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower1Button: {fileID: 1737774210}
+  tower2Button: {fileID: 469500569}
+  tower3Button: {fileID: 2112813984}
+  tower4Button: {fileID: 1335490507}
   tower2PreFab: {fileID: 3171698622614978067, guid: d636980e2c2094072a4896e4a940d701, type: 3}
   tower1PreFab: {fileID: 3171698622614978067, guid: 8fcbe367d8aba4f86a2e27ac642d454e, type: 3}
   tower3PreFab: {fileID: 3171698622614978067, guid: 2aee24814b94e42c484a1fea97836ca3, type: 3}
@@ -32894,9 +32898,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1561877390}
   - component: {fileID: 1561877391}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RedTurret1
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33202,7 +33206,7 @@ GameObject:
   - component: {fileID: 1610540546}
   m_Layer: 5
   m_Name: SpeedUpButton
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33765,7 +33769,7 @@ GameObject:
   - component: {fileID: 1689420329}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33809,7 +33813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $5000
+  m_text: $6500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -35474,7 +35478,7 @@ GameObject:
   - component: {fileID: 1737774212}
   m_Layer: 5
   m_Name: Tower1
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36218,7 +36222,7 @@ GameObject:
   - component: {fileID: 1895506549}
   m_Layer: 5
   m_Name: CancelPlacement
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37169,7 +37173,7 @@ GameObject:
   - component: {fileID: 2030606862}
   m_Layer: 5
   m_Name: BuyTowerText
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37640,7 +37644,7 @@ GameObject:
   - component: {fileID: 2112813986}
   m_Layer: 5
   m_Name: Tower3
-  m_TagString: Button
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

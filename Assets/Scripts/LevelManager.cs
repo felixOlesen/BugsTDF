@@ -18,11 +18,11 @@ public class LevelManager : MonoBehaviour
     public GameObject enemy4;
     public GameObject levelPath;
     public int waveNumber;
-    private List<int> enemyWaves = new List<int>() {15, 25, 20, 15, 20, 10, 0, 10, 30, 45};
-    private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15};
-    private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20};
-    private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 15, 10, 50, 0, 15, 20};
-    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1};
+    private List<int> enemyWaves = new List<int>() {15, 25, 20, 15, 20, 10, 0, 10, 30, 45, 30, 0, 30, 0, 120, 30, 50, 0, 50, 70, 55, 0, 0, 0, 0, 0, 40, 120, 200, 300};
+    private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15, 40, 30, 30, 0, 0, 20, 10, 40, 0, 90, 0, 45, 35, 0, 60, 0, 0, 30, 90, 100};
+    private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20, 10, 40, 0, 70, 0, 20, 10, 60, 30, 0, 90, 45, 70, 130, 0, 0, 60, 45, 75, 100};
+    private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 15, 10, 50, 0, 15, 20, 5, 0, 70, 0, 0, 20, 10, 0, 60, 0, 0, 45, 70, 0, 0, 200, 60, 150, 200, 250};
+    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 30};
     private int totalHealth;
     public TMP_Text healthUI;
     private int totalMoney;
@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
             }
             
         }
-        if(!midWave && waveNumber >= 10) {
+        if(!midWave && waveNumber >= 30) {
             Debug.Log("Level Complete!");
             lvlCompleteMenu.SetActive(true);
             gameOverMenu.SetActive(false);
@@ -240,6 +240,11 @@ public class LevelManager : MonoBehaviour
     IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
+            if(waveNumber >= 10) {
+                prefab.GetComponent<EnemyController>().speed *= (waveNumber * 0.1f);
+                prefab.GetComponent<EnemyController>().maxHealth = Mathf.RoundToInt(prefab.GetComponent<EnemyController>().maxHealth * (waveNumber * 0.1f));
+                prefab.GetComponent<EnemyController>().armour /= (waveNumber * 0.1f);
+            }
 
             currentEnemies.Add(prefab);
             yield return new WaitForSeconds(spawnDelay);

@@ -57,19 +57,19 @@ private void Update() {
         }
     }
     if(lvlTree != null && !PauseMenuController.isPaused) {
-        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[0].Peek().upgradeCost)) {
+        if(lvlTree[0].Count > 0 && levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[0].Peek().upgradeCost)) {
             buttonOne.GetComponent<Button>().interactable = true;
         } else {
             buttonOne.GetComponent<Button>().interactable = false;
         }
 
-        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[1].Peek().upgradeCost)) {
+        if(lvlTree[1].Count > 0 && levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[1].Peek().upgradeCost)) {
             buttonTwo.GetComponent<Button>().interactable = true;
         } else {
             buttonTwo.GetComponent<Button>().interactable = false;
         }
 
-        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[2].Peek().upgradeCost)) {
+        if(lvlTree[2].Count > 0 && levelManager.GetComponent<LevelManager>().CheckMoneyTotal(lvlTree[2].Peek().upgradeCost)) {
             buttonThree.GetComponent<Button>().interactable = true;
         } else {
             buttonThree.GetComponent<Button>().interactable = false;

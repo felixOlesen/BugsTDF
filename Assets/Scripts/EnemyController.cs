@@ -11,7 +11,7 @@ private SpriteShapeController pathController;
 private Spline pathSpline;
 
 [SerializeField]
-private float speed;
+public float speed;
 private float initialSpeed;
 
 [SerializeField]

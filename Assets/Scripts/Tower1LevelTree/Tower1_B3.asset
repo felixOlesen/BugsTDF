@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.2
   description: 'Attack: +20%'
   upgradeName: Flaming Rage
-  upgradeCost: -1750
+  upgradeCost: -2300

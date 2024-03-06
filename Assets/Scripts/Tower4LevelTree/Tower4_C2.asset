@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 0
   description: 'Armour Piercing: Active'
   upgradeName: Piercing Shells
-  upgradeCost: -2000
+  upgradeCost: -3500

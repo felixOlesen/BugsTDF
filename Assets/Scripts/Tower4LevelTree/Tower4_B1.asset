@@ -16,4 +16,4 @@ MonoBehaviour:
   magnitude: 1.6
   description: +60% Range
   upgradeName: Sleek Balistics
-  upgradeCost: -600
+  upgradeCost: -1400
