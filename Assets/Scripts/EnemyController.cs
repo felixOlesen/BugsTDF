@@ -31,6 +31,7 @@ public bool isSwarmChild;
 public float aoeScalar = 1.0f;
 public bool stunned;
 public AudioClip deathSound;
+public GameObject stunIcon;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
@@ -45,6 +46,7 @@ private void Start() {
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
     initialSpeed = speed;
+    stunIcon.SetActive(false);
     
 }
 
@@ -58,7 +60,6 @@ private void Aim(Vector3 targetPos) {
     if(targetPos != null) {
         Vector3 dir = (targetPos - transform.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler( 0, 0, angle - 90.0f);
         transform.GetChild(0).rotation = Quaternion.Euler( 0, 0, angle - 90.0f); 
     }
 }
@@ -116,6 +117,7 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.CompareTag("stun")) {
         float scalarValue = other.gameObject.GetComponent<AoeObjectController>().aoeScalar;
+        stunIcon.SetActive(true);
         if(!stunned) {
             stunned = true;
             speed *= scalarValue;
@@ -123,7 +125,7 @@ private void OnTriggerEnter2D(Collider2D other) {
     } else if(other.CompareTag("explosive")) {
         int damageValue = other.gameObject.GetComponent<AoeObjectController>().aoeDamage;
         float scalarValue = other.gameObject.GetComponent<AoeObjectController>().aoeScalar;
-        damageValue = Mathf.RoundToInt((float)damageValue * scalarValue);
+        damageValue = Mathf.RoundToInt((float)damageValue * scalarValue * armour);
         TakeDamage(damageValue, false, false);
     }
 }
@@ -132,6 +134,7 @@ private void OnTriggerExit2D(Collider2D other) {
         if(stunned) {
             stunned = false;
             speed = initialSpeed;
+            stunIcon.SetActive(false);
         }
     }
 }
