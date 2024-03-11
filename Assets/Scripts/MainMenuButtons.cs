@@ -16,6 +16,10 @@ public class MainMenuButtons : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
+    public GameObject backgroundImage;
+    public float degreesPerSecond = 0.0001f;
+    public float timer;
+
     private void Start() {
         mainCanvas.SetActive(true);
         levelCanvas.SetActive(false);
@@ -37,7 +41,16 @@ public class MainMenuButtons : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+        Time.timeScale = 0.2f;
+        
 
+    }
+
+    private void Update() {
+        timer += Time.deltaTime * degreesPerSecond;
+        if(backgroundImage.transform.position.x < 3.0f && backgroundImage.transform.position.y < 2.6f) {
+            backgroundImage.transform.position = new Vector3 (timer - 3.0f, timer - 2.6f, 0);
+        }
     }
 
     public void StartGame() {
@@ -49,6 +62,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void EnterLevel(string lvlNum) {
         Debug.Log(lvlNum);
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level"+lvlNum);
     }
 

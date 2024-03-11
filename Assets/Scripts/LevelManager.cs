@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15, 40, 30, 30, 0, 0, 20, 10, 40, 0, 90, 0, 45, 35, 0, 60, 0, 0, 30, 90, 100};
     private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20, 10, 40, 0, 70, 0, 20, 10, 60, 30, 0, 90, 45, 70, 130, 0, 0, 60, 45, 75, 100};
     private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 15, 10, 50, 0, 15, 20, 5, 0, 70, 0, 0, 20, 10, 0, 60, 0, 0, 45, 70, 0, 0, 200, 60, 150, 200, 250};
-    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 20, 30};
+    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 6, 10};
     private int totalHealth;
     public TMP_Text healthUI;
     private int totalMoney;
@@ -121,7 +121,6 @@ public class LevelManager : MonoBehaviour
             }
             waveNumber += 1;
             waveUI.text = "Wave " + waveNumber.ToString();
-            // Debug.Log("Starting Wave: " + waveNumber);
             StartCoroutine(SpawnEnemies());
             midWave = true;
             rewardGiven = false;
@@ -187,9 +186,15 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator SpawnEnemies() {
         //implement wave waiting feature for the entire wave based off the spawning time as a constant
-        int nEnemy = enemyWaves[waveNumber-1];
+        
+        int waveTime = enemyWaves[waveNumber-1];
+        waveTime += enemy1Waves[waveNumber-1];
+        waveTime += enemy2Waves[waveNumber-1];
+        waveTime += enemy3Waves[waveNumber-1];
+        waveTime += enemy4Waves[waveNumber-1];
 
-        StartCoroutine(WaveTimer(nEnemy));
+        StartCoroutine(WaveTimer(waveTime));
+        int nEnemy = enemyWaves[waveNumber-1];
         Debug.Log("Number of Goblins Spawned: " + nEnemy);
         StartCoroutine(EnemyCoroutine(nEnemy, enemy));
 

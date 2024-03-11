@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 2246391553349089428}
   m_Layer: 2
   m_Name: Tower4
-  m_TagString: Untagged
+  m_TagString: OverallTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 8444098502265108427}
   m_Layer: 2
   m_Name: Base1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 3393105182300700871}
   m_Layer: 2
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 5572107091999891932}
   m_Layer: 2
   m_Name: Base2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
