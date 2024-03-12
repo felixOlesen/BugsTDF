@@ -42,14 +42,10 @@ public class LevelManager : MonoBehaviour
     public AudioSource waveStartSound1;
     public AudioSource waveStartSound2;
     public AudioSource gameOverSound1;
-    public AudioSource ost1;
-    public AudioSource ost2;
     public AudioSource ost3;
-    public AudioSource ost4;
     public AudioSource ost5;
     public AudioSource ost6;
     public AudioSource ost7;
-    public AudioSource ost8;
 
     public Button startWaveButton;
     public Button speedUpButton;
@@ -88,6 +84,14 @@ public class LevelManager : MonoBehaviour
                 ChangeMoneyTotal(75 * waveNumber);
                 rewardGiven = true;
                 StartCoroutine(FadeDayNight("day"));
+                if(ost5.isPlaying) {
+                    StartCoroutine(FadeMusic(false, ost5));
+                } else if(ost3.isPlaying) {
+                    StartCoroutine(FadeMusic(false, ost3));
+                } else {
+                    StartCoroutine(FadeMusic(false, ost6));
+                }
+                StartCoroutine(FadeMusic(true, ost7));
             }
             
         }
@@ -120,6 +124,14 @@ public class LevelManager : MonoBehaviour
                 waveStartSound1.Play();
             }
             waveNumber += 1;
+            StartCoroutine(FadeMusic(false, ost7));
+            if(enemy4Waves[waveNumber-1] > 0) {
+                StartCoroutine(FadeMusic(true, ost5));
+            } else if(waveNumber < 20) {
+                StartCoroutine(FadeMusic(true, ost3));
+            } else {
+                StartCoroutine(FadeMusic(true, ost6));
+            }
             waveUI.text = "Wave " + waveNumber.ToString();
             StartCoroutine(SpawnEnemies());
             midWave = true;
@@ -154,6 +166,24 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
         initializedWaveText.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeMusic(bool fadeIn, AudioSource ost) {
+        if(fadeIn) {
+            ost.Play();
+            for (float i = 0; i <= 1; i += Time.deltaTime/2) {
+            // set color with i as alpha
+            ost.volume = i;
+            yield return null;
+            }
+        } else {
+            for (float i = 1; i >= 0; i -= Time.deltaTime/2) {
+            // set color with i as alpha
+            ost.volume = i;
+            yield return null;
+            }
+            ost.Pause();
+        }
     }
 
     IEnumerator FadeDayNight(string dayOrNight) {

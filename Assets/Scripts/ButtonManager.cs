@@ -116,9 +116,9 @@ public class ButtonManager : MonoBehaviour
 
     public void DetermineTowerPlacement(bool placement) {
         goodPlacement = placement;
-        if(!placement) {
+        if(currentTower != null && !placement) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);
-        } else {
+        } else if(currentTower != null) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 0f , 0f, 0.3f);
         }
     }

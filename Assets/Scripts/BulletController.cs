@@ -27,6 +27,7 @@ public class BulletController : MonoBehaviour
         transform.position += shootDir * projectileSpeed * Time.deltaTime;
     }
 
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             //Debug.Log("GOBLIN HIT!");

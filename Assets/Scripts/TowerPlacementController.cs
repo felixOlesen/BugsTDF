@@ -16,7 +16,7 @@ private void OnTriggerEnter2D(Collider2D other) {
     }
 }
 private void OnTriggerExit2D(Collider2D other) {
-    if (other != null && (other.CompareTag("Path") || other.CompareTag("Tower"))){
+    if (other && buttonEntity && (other.CompareTag("Path") || other.CompareTag("Tower"))){
         buttonEntity.GetComponent<ButtonManager>().DetermineTowerPlacement(true);
     }
     

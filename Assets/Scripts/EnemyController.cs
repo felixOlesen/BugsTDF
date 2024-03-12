@@ -30,7 +30,7 @@ public GameObject swarmChild;
 public bool isSwarmChild;
 public float aoeScalar = 1.0f;
 public bool stunned;
-public AudioClip deathSound;
+public AudioSource deathSound;
 public GameObject stunIcon;
 
 private void Start() {
@@ -108,7 +108,7 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
             int nEnemy = 10;
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
-        AudioSource.PlayClipAtPoint(deathSound, transform.position, 1.0f);
+        AudioSource.PlayClipAtPoint(deathSound.clip, transform.position, deathSound.volume);
         Destroy(gameObject);
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
     }
