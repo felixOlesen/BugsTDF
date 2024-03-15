@@ -81,6 +81,8 @@ public class TowerController : MonoBehaviour
     public GameObject currentFiringObjectSpare;
     public int firingBarrel;
 
+    public GameObject towerPlacement;
+
 
 
     private void Start() {

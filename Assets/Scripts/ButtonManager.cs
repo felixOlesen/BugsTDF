@@ -21,6 +21,8 @@ public class ButtonManager : MonoBehaviour
     private bool towerHeld;
     private IDictionary<string, GameObject> towers;
     private bool goodPlacement;
+    private bool goodPlacementTowers;
+    private bool goodPlacementPath;
     public GameObject cancelText;
     public AudioSource buttonHoverSound;
     public AudioSource buttonClickSound;
@@ -39,6 +41,8 @@ public class ButtonManager : MonoBehaviour
             {"tower4", tower4PreFab}
         };
         goodPlacement = true;
+        goodPlacementTowers = true;
+        goodPlacementPath = true;
         muted = false;
         muteSymbol.SetActive(false);
         t1Price.overrideColorTags = true;
@@ -114,9 +118,22 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void DetermineTowerPlacement(bool placement) {
-        goodPlacement = placement;
-        if(currentTower != null && !placement) {
+    public void DetermineTowerPlacement(bool clear, string clearanceType) {
+        if(clearanceType == "path") {
+            goodPlacementPath = clear;
+        } else if(clearanceType == "tower") {
+            goodPlacementTowers = clear;
+        }
+        // Debug.Log("Path:" + goodPlacementPath);
+        Debug.Log("Towers:" + goodPlacementTowers);
+        if(goodPlacementPath && goodPlacementTowers) {
+            goodPlacement = true;
+        } else {
+            goodPlacement = false;
+        }
+        Debug.Log("Overall Placement:" + goodPlacement);
+        
+        if(currentTower != null && !goodPlacement) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);
         } else if(currentTower != null) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0f, 0f , 0f, 0.3f);

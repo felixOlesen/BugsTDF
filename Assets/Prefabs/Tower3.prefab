@@ -512,6 +512,7 @@ MonoBehaviour:
   currentFiringObject: {fileID: 0}
   currentFiringObjectSpare: {fileID: 0}
   firingBarrel: 0
+  towerPlacement: {fileID: 7565169788521162152}
 --- !u!82 &-5494627682429029163
 AudioSource:
   m_ObjectHideFlags: 0
