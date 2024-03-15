@@ -15,5 +15,6 @@ MonoBehaviour:
   buffIdx: aoeRadius
   magnitude: 1.4
   description: 'Slow Area: +40%'
-  upgradeName: Premium Power
+  upgradeName: Electric Chains
   upgradeCost: -2300
+  upgradeIcon: {fileID: 21300000, guid: b8749074cbff04a1f9a9e3390de5633c, type: 3}

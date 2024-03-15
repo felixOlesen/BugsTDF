@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Adds Slowing Effect on Attack
   upgradeName: Shock Weaponry
   upgradeCost: -850
+  upgradeIcon: {fileID: 21300000, guid: 87ed2fa6b341741e997a1915efe76550, type: 3}

@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack: +20%'
   upgradeName: Fire Power
   upgradeCost: -1750
+  upgradeIcon: {fileID: 21300000, guid: d0ee22dbd8a164c709a126356e524ef9, type: 3}

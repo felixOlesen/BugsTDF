@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Explosive Ammo
   upgradeName: Explosive Fury
   upgradeCost: -2000
+  upgradeIcon: {fileID: 21300000, guid: e1776f0761f2f4872b3d10927ce1b10f, type: 3}

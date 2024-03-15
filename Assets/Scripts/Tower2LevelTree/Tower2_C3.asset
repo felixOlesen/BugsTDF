@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack Speed: +40%'
   upgradeName: Engineering+++
   upgradeCost: -2000
+  upgradeIcon: {fileID: 21300000, guid: b809cd51ebc49443a9da11b8ddd0bf0d, type: 3}

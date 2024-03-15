@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Fire Rate: +20%'
   upgradeName: Faster Firing
   upgradeCost: -550
+  upgradeIcon: {fileID: 21300000, guid: eb51d828509a346c68e243a53ec4338c, type: 3}

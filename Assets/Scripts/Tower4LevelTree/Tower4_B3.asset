@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Fire Rate: +50%'
   upgradeName: Barrel Cooling
   upgradeCost: -1950
+  upgradeIcon: {fileID: 21300000, guid: 309e45f5f0f3e4d0aae9d0ac41e5168d, type: 3}

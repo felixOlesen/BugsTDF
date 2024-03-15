@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack Speed: +20%'
   upgradeName: Efficient Firing
   upgradeCost: -900
+  upgradeIcon: {fileID: 21300000, guid: 4956a773db1864dc69629d3d7848588d, type: 3}

@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack: +20%'
   upgradeName: Flaming Rage
   upgradeCost: -2300
+  upgradeIcon: {fileID: 21300000, guid: 987e16b46aa174abca3861655bb35206, type: 3}

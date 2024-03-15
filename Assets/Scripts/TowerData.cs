@@ -10,5 +10,6 @@ public class TowerData : ScriptableObject {
     public string description;
     public string upgradeName;
     public int upgradeCost;
+    public Sprite upgradeIcon;
 
 }

@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack: +40%'
   upgradeName: Plasma Munitions
   upgradeCost: -1800
+  upgradeIcon: {fileID: 21300000, guid: c8672655e05cb462f839a50eda99ee23, type: 3}

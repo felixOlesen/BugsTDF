@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Range: +20%'
   upgradeName: Improved Targeting
   upgradeCost: -1200
+  upgradeIcon: {fileID: 21300000, guid: fcd8ee39a6e3742c9b9f58aae72a01ca, type: 3}

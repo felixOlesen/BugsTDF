@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Slow Duration: +80%'
   upgradeName: Hell Shock
   upgradeCost: -2100
+  upgradeIcon: {fileID: 21300000, guid: 14b036e8807ef4f278c0a7efc1ee31ed, type: 3}

@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'AOE Radius: +80%'
   upgradeName: Smell of Napalm...
   upgradeCost: -3500
+  upgradeIcon: {fileID: 21300000, guid: edc283d53a04245db8165d0a7f71115f, type: 3}

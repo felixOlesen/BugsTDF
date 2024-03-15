@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Range: +40%'
   upgradeName: Magnification++
   upgradeCost: -2500
+  upgradeIcon: {fileID: 21300000, guid: 0ed364bcbccf540989278a130060341e, type: 3}

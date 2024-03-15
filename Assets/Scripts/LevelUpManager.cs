@@ -40,6 +40,10 @@ public GameObject completePanel1;
 public GameObject completePanel2;
 public GameObject completePanel3;
 
+public GameObject upgradeIcon1;
+public GameObject upgradeIcon2;
+public GameObject upgradeIcon3;
+
 
 private void Update() {
     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -94,36 +98,63 @@ public void DisplayOptions(GameObject tower) {
 
     if(lvlTree[0].Count != 0) {
         completePanel1.SetActive(false);
+        upgradeIcon1.SetActive(true);
+        buttonOne.SetActive(true);
+        goldOne.SetActive(true);
         nameOne.text = lvlTree[0].Peek().upgradeName;
         descOne.text = lvlTree[0].Peek().description;
         priceOne.text = "$" + Mathf.Abs(lvlTree[0].Peek().upgradeCost).ToString();
+        upgradeIcon1.GetComponent<Image>().sprite = lvlTree[0].Peek().upgradeIcon;
     } else {
         completePanel1.SetActive(true);
         nameOne.text = "";
         descOne.text = "";
         priceOne.text = "";
+        upgradeIcon1.SetActive(false);
+        buttonOne.SetActive(false);
+        // goldOne.SetActive(false);
+        // silverOne.SetActive(false);
+        // bronzeOne.SetActive(false);
     }
     if(lvlTree[1].Count != 0) {
         completePanel2.SetActive(false);
+        upgradeIcon2.SetActive(true);
+        buttonTwo.SetActive(true);
+        goldTwo.SetActive(true);
         nameTwo.text = lvlTree[1].Peek().upgradeName;
         descTwo.text = lvlTree[1].Peek().description;
         priceTwo.text = "$" + Mathf.Abs(lvlTree[1].Peek().upgradeCost).ToString();
+        upgradeIcon2.GetComponent<Image>().sprite = lvlTree[1].Peek().upgradeIcon;
     } else {
         completePanel2.SetActive(true);
         nameTwo.text = "";
         descTwo.text = "";
         priceTwo.text = "";
+        upgradeIcon2.SetActive(false);
+        buttonTwo.SetActive(false);
+        // goldTwo.SetActive(false);
+        // silverTwo.SetActive(false);
+        // bronzeTwo.SetActive(false);
     }
     if(lvlTree[2].Count != 0) {
         completePanel3.SetActive(false);
+        upgradeIcon3.SetActive(true);
+        buttonThree.SetActive(true);
+        goldThree.SetActive(true);
         nameThree.text = lvlTree[2].Peek().upgradeName;
         descThree.text = lvlTree[2].Peek().description;
         priceThree.text = "$" + Mathf.Abs(lvlTree[2].Peek().upgradeCost).ToString();
+        upgradeIcon3.GetComponent<Image>().sprite = lvlTree[2].Peek().upgradeIcon;
     } else {
         completePanel3.SetActive(true);
         nameThree.text = "";
         descThree.text = "";
         priceThree.text = "";
+        upgradeIcon3.SetActive(false);
+        buttonThree.SetActive(false);
+        // goldThree.SetActive(false);
+        // silverThree.SetActive(false);
+        // bronzeThree.SetActive(false);
     }
     UpdateTierImages();
     UpdateTierSkin(tower, lvlTree);
@@ -174,7 +205,7 @@ private void UpdateTierImages() {
             silver = silverThree;
             gold = goldThree;
         }
-        if(lvlTree[i].Count >= 3) {
+        if(lvlTree[i].Count == 3) {
             bronze.SetActive(true);
             silver.SetActive(false);
             gold.SetActive(false);
@@ -182,10 +213,14 @@ private void UpdateTierImages() {
             bronze.SetActive(false);
             silver.SetActive(true);
             gold.SetActive(false);
-        } else if(lvlTree[i].Count <= 1) {
+        } else if(lvlTree[i].Count == 1) {
             bronze.SetActive(false);
             silver.SetActive(false);
             gold.SetActive(true);
+        } else {
+            bronze.SetActive(false);
+            silver.SetActive(false);
+            gold.SetActive(false);
         }
     }
 }

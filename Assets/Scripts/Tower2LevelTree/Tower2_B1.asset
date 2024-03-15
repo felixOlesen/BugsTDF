@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Slow Area: +30%'
   upgradeName: Larger Batteries
   upgradeCost: -1800
+  upgradeIcon: {fileID: 21300000, guid: 4c1d4d40ff0484a67be56a01d5840e79, type: 3}

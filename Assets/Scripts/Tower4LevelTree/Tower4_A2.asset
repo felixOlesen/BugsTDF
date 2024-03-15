@@ -17,3 +17,4 @@ MonoBehaviour:
   description: 'Attack: +25%'
   upgradeName: Improved Balistics
   upgradeCost: -425
+  upgradeIcon: {fileID: 21300000, guid: cdd94e98ae59c491b9d979418b88ee37, type: 3}
