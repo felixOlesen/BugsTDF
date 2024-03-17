@@ -603,7 +603,7 @@ MonoBehaviour:
   rangeRadius: 6
   attackSpeed: 0.9
   placed: 1
-  projectile: {fileID: 4703044257907422920, guid: 6aecb9822bec4438e9febcdbc41ad275, type: 3}
+  projectile: {fileID: 4703044257907422920, guid: 4ad339bc2e34441eb957e5cb6bdccd76, type: 3}
   isSelected: 0
   lvla1: {fileID: 11400000, guid: 9bd2a0ef67dd246c088192a6a6286772, type: 2}
   lvla2: {fileID: 11400000, guid: edf4db6b1e9964da2af51647a9c10bdf, type: 2}
