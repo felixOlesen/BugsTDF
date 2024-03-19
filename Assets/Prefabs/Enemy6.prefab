@@ -384,6 +384,7 @@ MonoBehaviour:
   stunned: 0
   deathSound: {fileID: -7363192434624144319}
   stunIcon: {fileID: 6284150822952730202}
+  damagePopup: {fileID: 8876595750485121321, guid: 640d6ea13266a4572b6a3c7d985e87bb, type: 3}
 --- !u!50 &6186397609076304856
 Rigidbody2D:
   serializedVersion: 4

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
+using TMPro;
 public class EnemyController : MonoBehaviour
 {
 public GameObject path;
@@ -32,6 +33,7 @@ public float aoeScalar = 1.0f;
 public bool stunned;
 public AudioSource deathSound;
 public GameObject stunIcon;
+public GameObject damagePopup;
 
 private void Start() {
     path = GameObject.Find("WoodenPath");
@@ -102,6 +104,11 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
         armour = 1;
     }
     currentHealth -= damage;
+    var dp = Instantiate(damagePopup, transform.position, Quaternion.identity);
+    dp.GetComponent<TMP_Text>().text = damage.ToString();
+    if(armour < 1 && !pierce) {
+        dp.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f);
+    }
     healthBar.SetHealth(currentHealth);
     if(currentHealth <= 0) {
         if(swarmHost) {

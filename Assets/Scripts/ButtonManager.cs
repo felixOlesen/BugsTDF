@@ -124,14 +124,11 @@ public class ButtonManager : MonoBehaviour
         } else if(clearanceType == "tower") {
             goodPlacementTowers = clear;
         }
-        // Debug.Log("Path:" + goodPlacementPath);
-        Debug.Log("Towers:" + goodPlacementTowers);
         if(goodPlacementPath && goodPlacementTowers) {
             goodPlacement = true;
         } else {
             goodPlacement = false;
         }
-        Debug.Log("Overall Placement:" + goodPlacement);
         
         if(currentTower != null && !goodPlacement) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);
