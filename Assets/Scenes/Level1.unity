@@ -23323,7 +23323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $1400
+  m_text: $1500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -28105,7 +28105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3000
+  m_text: 3750
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 486841638d1dd4490b1487b7fb545e07, type: 2}
   m_sharedMaterial: {fileID: -5058601809970551776, guid: 486841638d1dd4490b1487b7fb545e07, type: 2}
@@ -30206,7 +30206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $1000
+  m_text: $750
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -31521,7 +31521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $2200
+  m_text: $1500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -34084,7 +34084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $6500
+  m_text: $3200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
   m_sharedMaterial: {fileID: 6008340400974042575, guid: c0df59e47caa64cf097ecde887c794e0, type: 2}
@@ -34472,6 +34472,7 @@ MonoBehaviour:
   enemy4: {fileID: 3473553886208834737, guid: fe7019bdcc05e4b9ebc9bb3b4723c960, type: 3}
   levelPath: {fileID: 262339352}
   waveNumber: 0
+  levelStructure: {fileID: 11400000, guid: ed627c5cec5504b3ebec02b1c78c5f95, type: 2}
   healthUI: {fileID: 2084168039}
   moneyUI: {fileID: 707362549}
   gameOverMenu: {fileID: 872774076}

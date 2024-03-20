@@ -543,13 +543,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   levelManager: {fileID: 0}
-  speed: 3.5
+  speed: 3.4
   currentHealth: 0
   attackDamage: 20
-  maxHealth: 40
+  maxHealth: 50
   healthBar: {fileID: 1812481271718209484}
   armour: 1
-  moneyReward: 50
+  moneyReward: 60
   stealthy: 1
   swarmHost: 0
   swarmChild: {fileID: 0}

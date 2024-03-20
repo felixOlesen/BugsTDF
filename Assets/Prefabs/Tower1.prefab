@@ -597,11 +597,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armourPierce: 0
-  price: -6500
+  price: -3200
   sellPrice: 0
-  attackPower: 50
-  rangeRadius: 6
-  attackSpeed: 0.9
+  attackPower: 65
+  rangeRadius: 4
+  attackSpeed: 1.2
   placed: 1
   projectile: {fileID: 4703044257907422920, guid: 4ad339bc2e34441eb957e5cb6bdccd76, type: 3}
   isSelected: 0

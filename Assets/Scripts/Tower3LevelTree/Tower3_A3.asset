@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower3_A3
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 1.1
-  description: 'Attack: +10%'
+  magnitude: 10
+  description: 'Attack: +10'
   upgradeName: Hollow Points
   upgradeCost: -400
   upgradeIcon: {fileID: 21300000, guid: 1ccf66e4571524852bca255820f9a9ab, type: 3}

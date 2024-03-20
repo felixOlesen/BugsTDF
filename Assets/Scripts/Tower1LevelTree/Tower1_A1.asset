@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower1_A1
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.2
-  description: 'Range: +20%'
+  magnitude: 1
+  description: 'Range: +1m'
   upgradeName: Improved Targeting
   upgradeCost: -1200
   upgradeIcon: {fileID: 21300000, guid: fcd8ee39a6e3742c9b9f58aae72a01ca, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower4_B3
   m_EditorClassIdentifier: 
   buffIdx: attackSpeed
-  magnitude: 1.5
-  description: 'Fire Rate: +50%'
+  magnitude: 0.15
+  description: 'Fire Rate: +15%'
   upgradeName: Barrel Cooling
   upgradeCost: -1950
   upgradeIcon: {fileID: 21300000, guid: 309e45f5f0f3e4d0aae9d0ac41e5168d, type: 3}

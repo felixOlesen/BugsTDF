@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower1_B3
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 1.2
-  description: 'Attack: +20%'
+  magnitude: 20
+  description: 'Attack: +20'
   upgradeName: Flaming Rage
   upgradeCost: -2300
   upgradeIcon: {fileID: 21300000, guid: 987e16b46aa174abca3861655bb35206, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower4_A2
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 1.25
-  description: 'Attack: +25%'
+  magnitude: 10
+  description: 'Attack: +10'
   upgradeName: Improved Balistics
   upgradeCost: -425
   upgradeIcon: {fileID: 21300000, guid: cdd94e98ae59c491b9d979418b88ee37, type: 3}

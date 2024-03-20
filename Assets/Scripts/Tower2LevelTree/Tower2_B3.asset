@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffIdx: attackPower
   magnitude: 1.4
-  description: 'Attack: +40%'
+  description: 'Attack: +25'
   upgradeName: Engineering++
   upgradeCost: -1300
   upgradeIcon: {fileID: 21300000, guid: 2d72a138d148f45e3b4c3962da673413, type: 3}

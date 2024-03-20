@@ -257,15 +257,15 @@ public void ImproveStats(string idx, float mag) {
         2. Improve tower stat by a magnitude param 
     */
     if(idx == "attackSpeed") {
-        currentTower.GetComponent<TowerController>().attackSpeed /= mag;
+        currentTower.GetComponent<TowerController>().attackSpeed -= mag;
     }
     if(idx == "rangeRadius") {
-        float changed = (float)currentTower.GetComponent<TowerController>().rangeRadius * mag;
+        float changed = (float)currentTower.GetComponent<TowerController>().rangeRadius + mag;
         Mathf.RoundToInt(changed);
-        currentTower.GetComponent<TowerController>().rangeRadius = (int)changed;
+        currentTower.GetComponent<TowerController>().rangeRadius = changed;
     }
     if(idx == "attackPower") {
-        float changed = (float)currentTower.GetComponent<TowerController>().attackPower * mag;
+        float changed = (float)currentTower.GetComponent<TowerController>().attackPower + mag;
         Mathf.RoundToInt(changed);
         currentTower.GetComponent<TowerController>().attackPower = (int)changed;
     }

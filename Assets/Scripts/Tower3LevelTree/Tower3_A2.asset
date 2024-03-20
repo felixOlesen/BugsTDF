@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower3_A2
   m_EditorClassIdentifier: 
   buffIdx: rangeRadius
-  magnitude: 1.2
-  description: 'Range: +20%'
+  magnitude: 0.5
+  description: 'Range: +0.5m'
   upgradeName: Sniper Mentality
   upgradeCost: -500
   upgradeIcon: {fileID: 21300000, guid: fcd8ee39a6e3742c9b9f58aae72a01ca, type: 3}

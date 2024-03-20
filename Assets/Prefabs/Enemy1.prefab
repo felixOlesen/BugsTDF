@@ -544,10 +544,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   levelManager: {fileID: 0}
-  speed: 2.3
+  speed: 2
   currentHealth: 0
   attackDamage: 30
-  maxHealth: 110
+  maxHealth: 175
   healthBar: {fileID: 1812481271718209484}
   armour: 1
   moneyReward: 75

@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   levelManager: {fileID: 0}
-  speed: 2.8
+  speed: 2.4
   currentHealth: 0
   attackDamage: 10
   maxHealth: 60

@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
     public GameObject enemy4;
     public GameObject levelPath;
     public int waveNumber;
+    [SerializeField]
+    private LevelStructure levelStructure;
     private List<int> enemyWaves = new List<int>() {15, 25, 20, 15, 20, 10, 0, 10, 30, 45, 30, 0, 30, 0, 120, 30, 50, 0, 50, 70, 55, 0, 0, 0, 0, 0, 40, 120, 200, 300};
     private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15, 40, 30, 30, 0, 0, 20, 10, 40, 0, 90, 0, 45, 35, 0, 60, 0, 0, 30, 90, 100};
     private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20, 10, 40, 0, 70, 0, 20, 10, 60, 30, 0, 90, 45, 70, 130, 0, 0, 60, 45, 75, 100};
@@ -215,44 +217,57 @@ public class LevelManager : MonoBehaviour
     }
 
     IEnumerator SpawnEnemies() {
-        //implement wave waiting feature for the entire wave based off the spawning time as a constant
-        
-        int waveTime = enemyWaves[waveNumber-1];
-        waveTime += enemy1Waves[waveNumber-1];
-        waveTime += enemy2Waves[waveNumber-1];
-        waveTime += enemy3Waves[waveNumber-1];
-        waveTime += enemy4Waves[waveNumber-1];
+        int waveTime = levelStructure.GetTotalEnemyNumberAtWave(waveNumber-1);
 
         StartCoroutine(WaveTimer(waveTime));
-        int nEnemy = enemyWaves[waveNumber-1];
-        Debug.Log("Number of Goblins Spawned: " + nEnemy);
-        StartCoroutine(EnemyCoroutine(nEnemy, enemy));
 
-        yield return new WaitForSeconds(spawnDelay * nEnemy);
+        string[] waveOrder = levelStructure.GetWaveOrder(waveNumber-1);
+        int basicOccurences = 0;
+        int swarmOccurences = 0;
+        int armourOccurences = 0;
+        int stealthOccurences = 0;
+        int bossOccurences = 0;
 
-        int nEnemy1 = enemy1Waves[waveNumber-1];
-        Debug.Log("Number of Mushrooms Spawned: " + nEnemy1);
-        StartCoroutine(EnemyCoroutine(nEnemy1, enemy1));
+        foreach(string enemyType in waveOrder) {
+            if(enemyType == "Basic") {
+                basicOccurences++;
+            } else if(enemyType == "Swarm") {
+                swarmOccurences++;
+            } else if(enemyType == "Armour") {
+                armourOccurences++;
+            } else if(enemyType == "Stealth") {
+                stealthOccurences++;
+            } else if(enemyType == "Boss") {
+                bossOccurences++;
+            }                   
+        }
 
-        yield return new WaitForSeconds(spawnDelay * nEnemy1);
+        Debug.Log("Basic: " + basicOccurences);
+        Debug.Log("Swarm: " + swarmOccurences);
+        Debug.Log("Armour: " + armourOccurences);
+        Debug.Log("Stealth: " + stealthOccurences);
+        Debug.Log("Boss: " + bossOccurences);
 
-        int nEnemy2 = enemy2Waves[waveNumber-1];
-        Debug.Log("Number of Mushrooms Spawned: " + nEnemy2);
-        StartCoroutine(EnemyCoroutine(nEnemy2, enemy2));
-
-        yield return new WaitForSeconds(spawnDelay * nEnemy2);
-
-        int nEnemy3 = enemy3Waves[waveNumber-1];
-        Debug.Log("Number of Mushrooms Spawned: " + nEnemy3);
-        StartCoroutine(EnemyCoroutine(nEnemy3, enemy3));
-
-        yield return new WaitForSeconds(spawnDelay * nEnemy3);
-
-        int nEnemy4 = enemy4Waves[waveNumber-1];
-        Debug.Log("Number of Mushrooms Spawned: " + nEnemy4);
-        StartCoroutine(EnemyCoroutine(nEnemy4, enemy4));
-
-        yield return new WaitForSeconds(spawnDelay * nEnemy4);
+        foreach(string enemyType in waveOrder) {
+            int nEnemy = levelStructure.GetEnemyNumberAtWave(waveNumber-1, enemyType);
+            if(enemyType == "Basic") {
+                StartCoroutine(EnemyCoroutine(nEnemy/basicOccurences, enemy));
+                yield return new WaitForSeconds(spawnDelay * nEnemy/basicOccurences);
+            } else if(enemyType == "Swarm") {
+                StartCoroutine(EnemyCoroutine(nEnemy/swarmOccurences, enemy1));
+                yield return new WaitForSeconds(spawnDelay * nEnemy/swarmOccurences);
+            } else if(enemyType == "Armour") {
+                StartCoroutine(EnemyCoroutine(nEnemy/armourOccurences, enemy2));
+                yield return new WaitForSeconds(spawnDelay * nEnemy/armourOccurences);
+            } else if(enemyType == "Stealth") {
+                StartCoroutine(EnemyCoroutine(nEnemy/stealthOccurences, enemy3));
+                yield return new WaitForSeconds(spawnDelay * nEnemy/stealthOccurences);
+            } else if(enemyType == "Boss") {
+                StartCoroutine(EnemyCoroutine(nEnemy/bossOccurences, enemy4));
+                yield return new WaitForSeconds(spawnDelay * nEnemy/bossOccurences);
+            }
+            
+        }
 
     }
 
@@ -275,11 +290,11 @@ public class LevelManager : MonoBehaviour
     IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
-            if(waveNumber >= 10) {
-                prefab.GetComponent<EnemyController>().speed *= (waveNumber * 0.08f);
-                prefab.GetComponent<EnemyController>().maxHealth = Mathf.RoundToInt(prefab.GetComponent<EnemyController>().maxHealth * (waveNumber * 0.08f));
-                prefab.GetComponent<EnemyController>().armour /= (waveNumber * 0.08f);
-            }
+            // if(waveNumber >= 10) {
+            //     prefab.GetComponent<EnemyController>().speed *= (waveNumber * 0.08f);
+            //     prefab.GetComponent<EnemyController>().maxHealth = Mathf.RoundToInt(prefab.GetComponent<EnemyController>().maxHealth * (waveNumber * 0.08f));
+            //     prefab.GetComponent<EnemyController>().armour /= (waveNumber * 0.08f);
+            // }
 
             currentEnemies.Add(prefab);
             yield return new WaitForSeconds(spawnDelay);

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower4_A3
   m_EditorClassIdentifier: 
   buffIdx: attackSpeed
-  magnitude: 1.2
-  description: 'Fire Rate: +20%'
+  magnitude: 0.15
+  description: 'Fire Rate: +12%'
   upgradeName: Faster Firing
   upgradeCost: -550
   upgradeIcon: {fileID: 21300000, guid: eb51d828509a346c68e243a53ec4338c, type: 3}

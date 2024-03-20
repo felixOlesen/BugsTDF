@@ -9,7 +9,7 @@ public class TowerController : MonoBehaviour
     public int price;
     public int sellPrice;
     public int attackPower;
-    public int rangeRadius;
+    public float rangeRadius;
     public float attackSpeed;
     public bool placed;
     private CircleCollider2D towerRange;

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower4_B2
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 1.4
-  description: 'Attack: +40%'
+  magnitude: 25
+  description: 'Attack: +25'
   upgradeName: Plasma Munitions
   upgradeCost: -1800
   upgradeIcon: {fileID: 21300000, guid: c8672655e05cb462f839a50eda99ee23, type: 3}
