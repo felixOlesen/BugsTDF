@@ -7,6 +7,7 @@ public class TowerPlacementController : MonoBehaviour
 
 private GameObject buttonEntity;
 private List <GameObject> currentTowerCollisions = new List <GameObject> ();
+private List <GameObject> currentEnvCollisions = new List <GameObject> ();
 
 private void Start() {
     buttonEntity = GameObject.Find("ButtonEntity");
@@ -18,6 +19,9 @@ private void OnTriggerEnter2D(Collider2D other) {
         buttonEntity.GetComponent<ButtonManager>().DetermineTowerPlacement(false, "tower");
         currentTowerCollisions.Add(other.gameObject);
         
+    } else if (other.CompareTag("UnplaceableGrid")){
+        buttonEntity.GetComponent<ButtonManager>().DetermineTowerPlacement(false, "envObject");
+        currentEnvCollisions.Add(other.gameObject);
     }
 }
 private void OnTriggerExit2D(Collider2D other) {
@@ -28,6 +32,12 @@ private void OnTriggerExit2D(Collider2D other) {
         currentTowerCollisions.Remove(other.gameObject);
         if(currentTowerCollisions.Count == 0) {
             buttonEntity.GetComponent<ButtonManager>().DetermineTowerPlacement(true , "tower");
+        }
+    }
+    if (other && buttonEntity && other.CompareTag("UnplaceableGrid")){
+        currentEnvCollisions.Remove(other.gameObject);
+        if(currentEnvCollisions.Count == 0) {
+            buttonEntity.GetComponent<ButtonManager>().DetermineTowerPlacement(true , "envObject");
         }
     }
     
