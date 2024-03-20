@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 2
   description: 'Range: +2m'
   upgradeName: Engineering+
-  upgradeCost: -650
+  upgradeCost: -600
   upgradeIcon: {fileID: 21300000, guid: 2450ab80a767e4e42bf94b6c82d884cb, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 2
   description: 'Range: +2m'
   upgradeName: Magnification++
-  upgradeCost: -2500
+  upgradeCost: -1900
   upgradeIcon: {fileID: 21300000, guid: 0ed364bcbccf540989278a130060341e, type: 3}

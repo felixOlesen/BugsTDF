@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 1
   description: 'Range: +1m'
   upgradeName: Farsight
-  upgradeCost: -1900
+  upgradeCost: -1300
   upgradeIcon: {fileID: 21300000, guid: f31ca331c37854f76a7bf0c43b2926cd, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 1.5
   description: 'Range: +1.5m'
   upgradeName: Digital Foresight
-  upgradeCost: -1500
+  upgradeCost: -1200
   upgradeIcon: {fileID: 21300000, guid: f31ca331c37854f76a7bf0c43b2926cd, type: 3}

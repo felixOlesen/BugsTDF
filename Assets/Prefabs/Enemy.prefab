@@ -374,7 +374,7 @@ MonoBehaviour:
   speed: 2.4
   currentHealth: 0
   attackDamage: 10
-  maxHealth: 60
+  maxHealth: 65
   healthBar: {fileID: 1812481271718209484}
   armour: 1
   moneyReward: 50

@@ -289,8 +289,8 @@ Transform:
   m_GameObject: {fileID: 2469029632147606332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.01, z: 0}
-  m_LocalScale: {x: 2.1722214, y: 2.1826842, z: 1}
+  m_LocalPosition: {x: 0.017, y: -0.0065, z: 0}
+  m_LocalScale: {x: 1.6966265, y: 1.6583267, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2916238928989650107}
@@ -406,9 +406,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007144998, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5039567
 --- !u!114 &1288838829600470744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armourPierce: 0
-  price: -850
+  price: -750
   sellPrice: 0
   attackPower: 30
   rangeRadius: 3

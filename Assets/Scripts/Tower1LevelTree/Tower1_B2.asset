@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 1.3
   description: 'AOE Radius: +30%'
   upgradeName: Further Fire
-  upgradeCost: -2500
+  upgradeCost: -1600
   upgradeIcon: {fileID: 21300000, guid: 2d22a54989f664a36b48fba6476e5ab8, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 0.2
   description: 'Fire Rate: +20%'
   upgradeName: Efficiency Overload
-  upgradeCost: -5000
+  upgradeCost: -2000
   upgradeIcon: {fileID: 21300000, guid: 6a32c3dc23491479f9c5094f186268d2, type: 3}

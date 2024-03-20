@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower2_B3
   m_EditorClassIdentifier: 
   buffIdx: attackPower
-  magnitude: 1.4
+  magnitude: 25
   description: 'Attack: +25'
   upgradeName: Engineering++
   upgradeCost: -1300

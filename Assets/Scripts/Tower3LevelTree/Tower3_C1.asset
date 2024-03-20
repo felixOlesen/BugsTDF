@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 0
   description: Dissolves Armour
   upgradeName: Acidic Plasma
-  upgradeCost: -4200
+  upgradeCost: -2800
   upgradeIcon: {fileID: 21300000, guid: 556f8bf2e9f174ba08ef9c0916a961ba, type: 3}

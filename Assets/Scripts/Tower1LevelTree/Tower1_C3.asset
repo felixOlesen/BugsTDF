@@ -16,5 +16,5 @@ MonoBehaviour:
   magnitude: 1.5
   description: 'Attack: +25'
   upgradeName: Unbeatable
-  upgradeCost: -4000
+  upgradeCost: -2300
   upgradeIcon: {fileID: 21300000, guid: a10896398e4ea402cbc06e2c874b2fbb, type: 3}
