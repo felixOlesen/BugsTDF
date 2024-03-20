@@ -79,13 +79,11 @@ public class LevelManager : MonoBehaviour
     private void Update() {
         if(currentEnemies.TrueForAll(EnemyCheck) && waveTimeUp) {
             currentEnemies.Clear();
+            
             midWave = false;
             startWaveButton.gameObject.SetActive(true);
             speedUpButton.gameObject.SetActive(false);
             if(!rewardGiven) {
-                ChangeMoneyTotal(75 * waveNumber);
-                rewardGiven = true;
-                StartCoroutine(FadeDayNight("day"));
                 if(ost5.isPlaying) {
                     StartCoroutine(FadeMusic(false, ost5));
                 } else if(ost3.isPlaying) {
@@ -94,10 +92,13 @@ public class LevelManager : MonoBehaviour
                     StartCoroutine(FadeMusic(false, ost6));
                 }
                 StartCoroutine(FadeMusic(true, ost7));
+                ChangeMoneyTotal(75 * waveNumber);
+                rewardGiven = true;
+                StartCoroutine(FadeDayNight("day"));
             }
             
         }
-        if(!midWave && waveNumber >= 30) {
+        if(!midWave && waveNumber >= levelStructure.GetTotalWaves()) {
             Debug.Log("Level Complete!");
             lvlCompleteMenu.SetActive(true);
             gameOverMenu.SetActive(false);
@@ -115,7 +116,7 @@ public class LevelManager : MonoBehaviour
         return check;
     }
     public void InitializeWave() {
-        if(!midWave) {
+        if(!midWave && !ost5.isPlaying && !ost3.isPlaying && !ost6.isPlaying) {
             startWaveButton.gameObject.SetActive(false);
             speedUpButton.gameObject.SetActive(true);
             StartCoroutine(FadeDayNight("night"));
@@ -127,9 +128,9 @@ public class LevelManager : MonoBehaviour
             }
             waveNumber += 1;
             StartCoroutine(FadeMusic(false, ost7));
-            if(enemy4Waves[waveNumber-1] > 0) {
+            if(levelStructure.GetEnemyNumberAtWave(waveNumber-1, "Boss") > 0) {
                 StartCoroutine(FadeMusic(true, ost5));
-            } else if(waveNumber < 20) {
+            } else if(waveNumber < 10) {
                 StartCoroutine(FadeMusic(true, ost3));
             } else {
                 StartCoroutine(FadeMusic(true, ost6));
@@ -184,7 +185,7 @@ public class LevelManager : MonoBehaviour
             ost.volume = i;
             yield return null;
             }
-            ost.Pause();
+            ost.Stop();
         }
     }
 
@@ -272,7 +273,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void SwarmSpawning(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
-        int buffer = 2;
+        int buffer = 10;
         StartCoroutine(WaveTimer(numEn + buffer));
         StartCoroutine(SwarmCoroutine(numEn, enPrefab, checkPointInd, checkPointPos, pos));
     }

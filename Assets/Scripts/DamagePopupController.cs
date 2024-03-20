@@ -36,7 +36,7 @@ public class DamagePopupController : MonoBehaviour
         }
         disappearTimer -= Time.deltaTime;
         if(disappearTimer < 0) {
-            float disappearSpeed = 3f;
+            float disappearSpeed = 1.5f;
             textColor.a -= disappearSpeed * Time.deltaTime;
             textMesh.color = textColor;
             if(textColor.a < 0) {

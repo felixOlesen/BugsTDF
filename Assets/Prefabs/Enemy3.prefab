@@ -549,7 +549,7 @@ MonoBehaviour:
   maxHealth: 50
   healthBar: {fileID: 1812481271718209484}
   armour: 1
-  moneyReward: 60
+  moneyReward: 40
   stealthy: 1
   swarmHost: 0
   swarmChild: {fileID: 0}
