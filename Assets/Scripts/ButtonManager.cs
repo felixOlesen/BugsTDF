@@ -33,6 +33,7 @@ public class ButtonManager : MonoBehaviour
     public TMP_Text t2Price;
     public TMP_Text t3Price;
     public TMP_Text t4Price;
+    
 
     private void Start() {
         towers = new Dictionary<string, GameObject>(){
@@ -128,15 +129,15 @@ public class ButtonManager : MonoBehaviour
         } else if(clearanceType == "envObject") {
             goodPlacementEnvObjects = clear;
         }
-        Debug.Log("Path: " + goodPlacementPath);
-        Debug.Log("Towers: " + goodPlacementTowers);
-        Debug.Log("EnvObjects: " + goodPlacementEnvObjects);
+        // Debug.Log("Path: " + goodPlacementPath);
+        // Debug.Log("Towers: " + goodPlacementTowers);
+        // Debug.Log("EnvObjects: " + goodPlacementEnvObjects);
         if(goodPlacementPath && goodPlacementTowers && goodPlacementEnvObjects) {
             goodPlacement = true;
         } else {
             goodPlacement = false;
         }
-        Debug.Log("Overall Placement: " + goodPlacement);
+        // Debug.Log("Overall Placement: " + goodPlacement);
         
         if(currentTower != null && !goodPlacement) {
             currentTower.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 0f , 0f, 0.3f);

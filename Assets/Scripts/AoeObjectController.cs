@@ -11,6 +11,7 @@ public float aoeScalar;
 public int aoeDamage;
 public GameObject aoeParticles;
 public ParticleSystem system;
+public AudioSource aoeSfx;
 
 void Start() {
     aoeCollider = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
@@ -32,6 +33,7 @@ public void InflictAoe(float radius, float duration, float scalar, int damage, s
         var systemMain = system.main;
         aoeParticles.SetActive(true);
         aoeParticles.transform.position = transform.position;
+        aoeSfx.Play();
         if( attackType == "explosive"){
             systemMain.startSize = radius*0.9f;
         } else if(attackType == "stun") {
