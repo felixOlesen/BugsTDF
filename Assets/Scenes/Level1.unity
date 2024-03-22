@@ -37834,6 +37834,7 @@ GameObject:
   - component: {fileID: 1727942504}
   - component: {fileID: 1727942503}
   - component: {fileID: 1727942505}
+  - component: {fileID: 1727942515}
   - component: {fileID: 1727942506}
   - component: {fileID: 1727942508}
   - component: {fileID: 1727942507}
@@ -37888,6 +37889,11 @@ MonoBehaviour:
   buttonOffSprite: {fileID: 21300000, guid: 650a37308ca8ee84a8927d7c22b21870, type: 3}
   globalLightObject: {fileID: 536935045}
   globalLight: {fileID: 536935046}
+  remainingHealth: 0
+  bugsKilled: 0
+  moneySpent: 0
+  turretsPlaced: 0
+  levelComplete: 0
 --- !u!4 &1727942504
 Transform:
   m_ObjectHideFlags: 0
@@ -37919,6 +37925,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 1345321768}
   audioMixer: {fileID: 24100000, guid: 3e0c0288c03c14f52bf8023019e7bfc1, type: 2}
   resolutionDropdown: {fileID: 1738487414}
+  gameOver: 0
 --- !u!82 &1727942506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38591,6 +38598,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1727942515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727942502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5fa8c8cb7c54dd5b6cb4c940852c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallBugsKilled: 0
+  overallMoneySpent: 0
+  overallTurretsPlaced: 0
 --- !u!1 &1731389690
 GameObject:
   m_ObjectHideFlags: 0

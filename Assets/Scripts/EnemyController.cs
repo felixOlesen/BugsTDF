@@ -116,8 +116,9 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
             levelManager.GetComponent<LevelManager>().SwarmSpawning(nEnemy, swarmChild, currentCheckpointIndex, currentCheckpointPos, transform.position);
         }
         AudioSource.PlayClipAtPoint(deathSound.clip, transform.position, deathSound.volume);
-        Destroy(gameObject);
+        levelManager.GetComponent<LevelManager>().IncrementBugsKilled();
         levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(moneyReward);
+        Destroy(gameObject);
     }
 }
 

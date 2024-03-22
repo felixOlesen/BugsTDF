@@ -58,6 +58,15 @@ public class LevelManager : MonoBehaviour
 
     public GameObject globalLightObject;
     public Light2D globalLight;
+
+    public int remainingHealth;
+    public int bugsKilled;
+    public int moneySpent;
+    public int turretsPlaced;
+
+    public bool levelComplete;
+
+
     private void Start() {
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
@@ -67,6 +76,7 @@ public class LevelManager : MonoBehaviour
         waveNumber = 0;
         spawnDelay = 0.75f;
         initializedWaveText.color = new Color(1, 1, 1, 0);
+
         //Performance Improvements
         QualitySettings.vSyncCount = 1;
         levelPath.GetComponent<SpriteShapeController>().BakeMesh();
@@ -74,6 +84,12 @@ public class LevelManager : MonoBehaviour
         globalLight = globalLightObject.GetComponent<Light2D>();
         globalLight.intensity = 0.5f;
         PauseMenuController.isPaused = false;
+
+        remainingHealth = 0;
+        bugsKilled = 0;
+        moneySpent = 0;
+        turretsPlaced = 0;
+        levelComplete = false;
     }
     
     private void Update() {
@@ -98,11 +114,17 @@ public class LevelManager : MonoBehaviour
             }
             
         }
-        if(!midWave && waveNumber >= levelStructure.GetTotalWaves()) {
+        if(!midWave && waveNumber >= levelStructure.GetTotalWaves() && !levelComplete) {
             Debug.Log("Level Complete!");
+
+            remainingHealth = int.Parse(healthUI.text);
+
+            levelComplete = true;
+            gameObject.GetComponent<PauseMenuController>().levelComplete = true;
             lvlCompleteMenu.SetActive(true);
             gameOverMenu.SetActive(false);
             lvlUpMenu.SetActive(false);
+            SaveLevelData();
         }
     }
 
@@ -115,6 +137,20 @@ public class LevelManager : MonoBehaviour
         }
         return check;
     }
+
+    public void IncrementBugsKilled() {
+        bugsKilled++;
+    }
+
+    public void IncrementTurretsPlaced() {
+        turretsPlaced++;
+    }
+
+    public List<int> GetGameData() {
+        List<int> data = new List<int>{bugsKilled, moneySpent, turretsPlaced};
+        return data;
+    }
+
     public void InitializeWave() {
         if(!midWave && !ost5.isPlaying && !ost3.isPlaying && !ost6.isPlaying) {
             startWaveButton.gameObject.SetActive(false);
@@ -273,7 +309,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void SwarmSpawning(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
-        int buffer = 10;
+        int buffer = 12;
         StartCoroutine(WaveTimer(numEn + buffer));
         StartCoroutine(SwarmCoroutine(numEn, enPrefab, checkPointInd, checkPointPos, pos));
     }
@@ -310,6 +346,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Game over Trigger");
             gameOverSound1.Play();
             gameOverMenu.SetActive(true);
+            gameObject.GetComponent<PauseMenuController>().SetGameOverFlag(true);
             Time.timeScale = 0f;
             PauseMenuController.isPaused = true;
         }
@@ -333,13 +370,28 @@ public class LevelManager : MonoBehaviour
         int currentMoney = Int32.Parse(moneyUI.text);
         currentMoney += amount;
         moneyUI.SetText(currentMoney.ToString());
+        if(amount < 0) {
+            moneySpent -= amount;
+        }
     }
 
     public void RetryLevel() {
         Scene scene = SceneManager.GetActiveScene();
         PauseMenuController.isPaused = false;
+        Debug.Log("Retry Level Saving Game Data");
+        gameObject.GetComponent<PauseMenuController>().SaveGameData();
         SceneManager.LoadScene(scene.name);
         Time.timeScale = 1f;
+    }
+
+    public void SaveLevelData() {
+        Debug.Log("Saving Level Data");
+        SaveSystem.SaveLevelData(this, SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadLevelData() {
+        Debug.Log("Loading Level Data");
+        SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
     }
 
 }

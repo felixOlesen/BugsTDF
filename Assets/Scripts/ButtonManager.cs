@@ -78,6 +78,7 @@ public class ButtonManager : MonoBehaviour
                 int cost = currentTower.GetComponent<TowerController>().price;
                 if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
                     levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+                    levelManager.GetComponent<LevelManager>().IncrementTurretsPlaced();
                 } else {
                     towerHeld = false;
                     Destroy(currentTower);
@@ -91,7 +92,6 @@ public class ButtonManager : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 4);
                 if (hit.collider != null && hit.collider.CompareTag("Tower") && goodPlacement && !EventSystem.current.IsPointerOverGameObject()) {
                     GameObject selectedTower = hit.collider.gameObject.transform.parent.gameObject;
-                    //selected.transform.parent.GetComponent<TowerController>().SetSelection(true);
                     gameObject.GetComponent<LevelUpManager>().DisplayOptions(selectedTower);
                 }
             }

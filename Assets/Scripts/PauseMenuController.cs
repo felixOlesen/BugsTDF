@@ -13,6 +13,8 @@ public class PauseMenuController : MonoBehaviour
     public AudioMixer audioMixer;
     Resolution[] resolutions;
     public TMP_Dropdown resolutionDropdown;
+    public bool gameOver;
+    public bool levelComplete;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class PauseMenuController : MonoBehaviour
         pauseMenu.SetActive(false);
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
+        gameOver = false;
+        levelComplete = false;
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
@@ -38,12 +42,15 @@ public class PauseMenuController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             PauseGame();
         }
         
+    }
+
+    public void SetGameOverFlag(bool over) {
+        gameOver = over;
     }
 
     public void PauseGame() {
@@ -59,8 +66,24 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void MainMenu() {
+        Debug.Log("Load Main Menu Saving Game Data");
+        if(!gameOver && levelComplete) {
+            LevelData data = SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
+            int currentRemainingHealth = gameObject.GetComponent<LevelManager>().remainingHealth;
+            if(data == null) {
+                Debug.Log("Load Main Menu Saving Level Data");
+                gameObject.GetComponent<LevelManager>().SaveLevelData();
+            } else if(data.remainingHealth < currentRemainingHealth) {
+                Debug.Log("Load Main Menu Saving Level Data");
+                gameObject.GetComponent<LevelManager>().SaveLevelData();
+            } else {
+                Debug.Log("Score lower than best saved score");
+            }
+        }
+        SaveGameData();
         SceneManager.LoadScene("MainMenu");
         isPaused = false;
+
     }
 
     public void SettingsMenu() {
@@ -74,7 +97,23 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void QuitGame() {
-        Debug.Log("Quitting Game");
+        Debug.Log("Quitting Game Saving Game Data");
+        if(!gameOver && levelComplete) {
+            LevelData data = SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
+            int currentRemainingHealth = gameObject.GetComponent<LevelManager>().remainingHealth;
+            if(data == null) {
+                Debug.Log("Quitting Game Saving Level Data");
+                gameObject.GetComponent<LevelManager>().SaveLevelData();
+            } else if(data.remainingHealth < currentRemainingHealth) {
+                Debug.Log("Quitting Game Saving Level Data");
+                gameObject.GetComponent<LevelManager>().SaveLevelData();
+            } else {
+                Debug.Log("Score lower than best saved score");
+            }
+
+            
+        }
+        SaveGameData();
         isPaused = false;
         Application.Quit();
     }
@@ -95,4 +134,13 @@ public class PauseMenuController : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
+    public void SaveGameData() {
+        List<int> data = gameObject.GetComponent<LevelManager>().GetGameData();
+        gameObject.GetComponent<GameDataController>().AddBugsKilled(data[0]);
+        gameObject.GetComponent<GameDataController>().AddMoneySpent(data[1]);
+        gameObject.GetComponent<GameDataController>().AddTurretsPlaced(data[2]);
+        gameObject.GetComponent<GameDataController>().SaveGameData();
+    }
+
 }
