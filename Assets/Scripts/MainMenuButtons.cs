@@ -19,6 +19,7 @@ public class MainMenuButtons : MonoBehaviour
     public GameObject backgroundImage;
     public float degreesPerSecond = 0.0001f;
     public float timer;
+    public AudioSource buttonClickSound;
 
     private void Start() {
         mainCanvas.SetActive(true);
@@ -98,6 +99,10 @@ public class MainMenuButtons : MonoBehaviour
     public void SetResolution(int resolutionIndex) {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void ButtonClick() {
+        buttonClickSound.Play();
     }
 
 

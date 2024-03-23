@@ -19,6 +19,10 @@ public class LevelStructure : ScriptableObject
     private List<string> levelOrder;
     [SerializeField] 
     private int totalWaves;
+    [SerializeField] 
+    private int startingMoney;
+    [SerializeField] 
+    private int startingHealth;
 
     public string[] GetWaveOrder(int waveNum) {
         string[] order = levelOrder[waveNum].Split(",");
@@ -51,9 +55,16 @@ public class LevelStructure : ScriptableObject
     totalEnemies += enemy4Waves[waveNum];
     return totalEnemies;
    }
+
    public int GetTotalWaves() {
     return totalWaves;
    }
 
-   
+   public int GetStartingMoney() {
+    return startingMoney;
+   }
+
+   public int GetStartingHealth() {
+    return startingHealth;
+   }
 }

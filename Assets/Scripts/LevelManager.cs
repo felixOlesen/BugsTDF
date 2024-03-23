@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     public GameObject lvlUpMenu;
     public GameObject lvlCompleteMenu;
     public TMP_Text waveUI;
+    public TMP_Text totalWaveText;
     public TMP_Text initializedWaveText;
     private float spawnDelay;
 
@@ -65,6 +66,10 @@ public class LevelManager : MonoBehaviour
     public int turretsPlaced;
 
     public bool levelComplete;
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
+    public AudioSource starSound;
 
 
     private void Start() {
@@ -90,6 +95,13 @@ public class LevelManager : MonoBehaviour
         moneySpent = 0;
         turretsPlaced = 0;
         levelComplete = false;
+        totalWaveText.text = "/ "+levelStructure.GetTotalWaves();
+        moneyUI.text = levelStructure.GetStartingMoney().ToString();
+        healthUI.text = levelStructure.GetStartingHealth().ToString();
+
+        star1.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+        star2.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+        star3.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
     }
     
     private void Update() {
@@ -116,15 +128,19 @@ public class LevelManager : MonoBehaviour
         }
         if(!midWave && waveNumber >= levelStructure.GetTotalWaves() && !levelComplete) {
             Debug.Log("Level Complete!");
-
             remainingHealth = int.Parse(healthUI.text);
-
+            if(remainingHealth >= 180) {
+                StartCoroutine(FadeStars(starSound, 3));
+            } else if(remainingHealth < 180 && remainingHealth > 100) {
+                StartCoroutine(FadeStars(starSound, 2));
+            } else if(remainingHealth < 100 && remainingHealth > 0) {
+                StartCoroutine(FadeStars(starSound, 1));
+            }
             levelComplete = true;
             gameObject.GetComponent<PauseMenuController>().levelComplete = true;
             lvlCompleteMenu.SetActive(true);
             gameOverMenu.SetActive(false);
             lvlUpMenu.SetActive(false);
-            SaveLevelData();
         }
     }
 
@@ -222,6 +238,34 @@ public class LevelManager : MonoBehaviour
             yield return null;
             }
             ost.Stop();
+        }
+    }
+
+    IEnumerator FadeStars(AudioSource ost, int starNumber) {
+        ost.Play();
+        for (float i = 0; i <= 1; i += Time.deltaTime/2) {
+            // set color with i as alpha
+            star1.GetComponent<SpriteRenderer>().color = new Color(i, i, i, 1);
+            yield return null;
+        }
+        ost.Play();
+        if(starNumber >= 2) {
+        yield return new WaitForSeconds(0.4f);
+            for (float i = 0; i <= 1; i += Time.deltaTime/2) {
+                // set color with i as alpha
+                star2.GetComponent<SpriteRenderer>().color = new Color(i, i, i, 1);
+                yield return null;
+            }
+            ost.Play();
+        }
+        if(starNumber == 3) {
+        yield return new WaitForSeconds(0.4f);
+            for (float i = 0; i <= 1; i += Time.deltaTime/2) {
+                // set color with i as alpha
+                star3.GetComponent<SpriteRenderer>().color = new Color(i, i, i, 1);
+                yield return null;
+            }
+            ost.Play();
         }
     }
 

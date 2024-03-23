@@ -28,7 +28,7 @@ public static class SaveSystem
 
             return data;
         } else {
-            Debug.LogError("Save file not found " + path);
+            Debug.Log("Save file not found " + path);
             return null;
         }
     }
@@ -56,7 +56,7 @@ public static class SaveSystem
 
             return data;
         } else {
-            Debug.LogError("Save file not found " + path);
+            Debug.Log("Save file not found " + path);
             return null;
         }
     }

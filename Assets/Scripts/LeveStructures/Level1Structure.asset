@@ -39,3 +39,5 @@ MonoBehaviour:
   - Stealth
   - Boss
   totalWaves: 20
+  startingMoney: 3750
+  startingHealth: 200

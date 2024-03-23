@@ -66,15 +66,14 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void MainMenu() {
-        Debug.Log("Load Main Menu Saving Game Data");
         if(!gameOver && levelComplete) {
             LevelData data = SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
             int currentRemainingHealth = gameObject.GetComponent<LevelManager>().remainingHealth;
+            Debug.Log("Current Remaining Health: " + currentRemainingHealth);
+            Debug.Log("Previously Saved Remaining Health: " + data.remainingHealth);
             if(data == null) {
-                Debug.Log("Load Main Menu Saving Level Data");
                 gameObject.GetComponent<LevelManager>().SaveLevelData();
             } else if(data.remainingHealth < currentRemainingHealth) {
-                Debug.Log("Load Main Menu Saving Level Data");
                 gameObject.GetComponent<LevelManager>().SaveLevelData();
             } else {
                 Debug.Log("Score lower than best saved score");
@@ -97,15 +96,14 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void QuitGame() {
-        Debug.Log("Quitting Game Saving Game Data");
         if(!gameOver && levelComplete) {
             LevelData data = SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
             int currentRemainingHealth = gameObject.GetComponent<LevelManager>().remainingHealth;
+            Debug.Log("Current Remaining Health: " + currentRemainingHealth);
+            Debug.Log("Previously Saved Remaining Health: " + currentRemainingHealth);
             if(data == null) {
-                Debug.Log("Quitting Game Saving Level Data");
                 gameObject.GetComponent<LevelManager>().SaveLevelData();
             } else if(data.remainingHealth < currentRemainingHealth) {
-                Debug.Log("Quitting Game Saving Level Data");
                 gameObject.GetComponent<LevelManager>().SaveLevelData();
             } else {
                 Debug.Log("Score lower than best saved score");

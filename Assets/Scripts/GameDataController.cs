@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameDataController : MonoBehaviour
 {
     public int overallBugsKilled;
     public int overallMoneySpent;
     public int overallTurretsPlaced;
+    public TMP_Text bugStats;
+    public TMP_Text moneyStats;
+    public TMP_Text turretStats;
 
     private void Start() {
         //Load game data
@@ -24,9 +28,12 @@ public class GameDataController : MonoBehaviour
             overallTurretsPlaced = 0;
             Debug.Log("Save File Not Found");
         }
-        Debug.Log("Bugs: " + overallBugsKilled);
-        Debug.Log("Money: " + overallMoneySpent);
-        Debug.Log("Turrets: " + overallTurretsPlaced);
+
+        if(bugStats && moneyStats && turretStats) {
+            bugStats.text = overallBugsKilled.ToString("N0") + " Bugs Killed";
+            moneyStats.text = "$" + overallMoneySpent.ToString("N0") + " Spent";
+            turretStats.text = overallTurretsPlaced.ToString("N0") + " Turrets Placed";
+        }
         
     }
 
