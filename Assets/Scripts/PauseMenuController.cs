@@ -54,6 +54,8 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void PauseGame() {
+        gameObject.GetComponent<LevelManager>().turretInfoMenu.SetActive(false);
+        gameObject.GetComponent<LevelManager>().bugInfoMenu.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;

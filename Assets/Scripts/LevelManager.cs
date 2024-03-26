@@ -20,11 +20,6 @@ public class LevelManager : MonoBehaviour
     public int waveNumber;
     [SerializeField]
     private LevelStructure levelStructure;
-    private List<int> enemyWaves = new List<int>() {15, 25, 20, 15, 20, 10, 0, 10, 30, 45, 30, 0, 30, 0, 120, 30, 50, 0, 50, 70, 55, 0, 0, 0, 0, 0, 40, 120, 200, 300};
-    private List<int> enemy1Waves = new List<int>() {0, 0, 3, 0, 0, 10, 0, 20, 20, 15, 40, 30, 30, 0, 0, 20, 10, 40, 0, 90, 0, 45, 35, 0, 60, 0, 0, 30, 90, 100};
-    private List<int> enemy2Waves = new List<int>() {0, 0, 0, 5, 0, 5, 0, 0, 17, 20, 10, 40, 0, 70, 0, 20, 10, 60, 30, 0, 90, 45, 70, 130, 0, 0, 60, 45, 75, 100};
-    private List<int> enemy3Waves = new List<int>() {0, 0, 0, 0, 15, 10, 50, 0, 15, 20, 5, 0, 70, 0, 0, 20, 10, 0, 60, 0, 0, 45, 70, 0, 0, 200, 60, 150, 200, 250};
-    private List<int> enemy4Waves = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 6, 10};
     private int totalHealth;
     public TMP_Text healthUI;
     private int totalMoney;
@@ -81,6 +76,9 @@ public class LevelManager : MonoBehaviour
     public bool gameOverFlag;
     public GameObject WaveIndicator;
 
+    public GameObject turretInfoMenu;
+    public GameObject bugInfoMenu;
+
     private void Start() {
         tutorialNeeded = GetComponent<GameDataController>().tutorialNeeded;
         gameOverMenu.SetActive(false);
@@ -93,6 +91,8 @@ public class LevelManager : MonoBehaviour
         waveNumber = 0;
         spawnDelay = 0.75f;
         initializedWaveText.color = new Color(1, 1, 1, 0);
+        turretInfoMenu.SetActive(false);
+        bugInfoMenu.SetActive(false);
 
         //Performance Improvements
         QualitySettings.vSyncCount = 1;
@@ -174,6 +174,14 @@ public class LevelManager : MonoBehaviour
             gameOverMenu.SetActive(false);
             lvlUpMenu.SetActive(false);
         }
+    }
+
+    public void DisplayTurretInfo() {
+        turretInfoMenu.SetActive(true);
+    }
+
+    public void DisplayBugInfo() {
+        bugInfoMenu.SetActive(true);
     }
 
     public void DisplayTutorial() {
