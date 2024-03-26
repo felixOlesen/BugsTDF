@@ -96,7 +96,7 @@ public void SetCurrentCheckpoint(Vector3 pos, int ind) {
 }
 
 
-public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
+public void TakeDamage(int damage, bool pierce, bool armourDestroying, bool crit) {
     if(!pierce){
         damage = Mathf.RoundToInt((float)damage * armour);
     }
@@ -108,6 +108,9 @@ public void TakeDamage(int damage, bool pierce, bool armourDestroying) {
     dp.GetComponent<TMP_Text>().text = damage.ToString();
     if(armour < 1 && !pierce) {
         dp.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f);
+    }
+    if(crit) {
+        dp.GetComponent<TMP_Text>().color = new Color(1f, 0f, 0f, 1f);
     }
     healthBar.SetHealth(currentHealth);
     if(currentHealth <= 0) {
@@ -134,7 +137,7 @@ private void OnTriggerEnter2D(Collider2D other) {
         int damageValue = other.gameObject.GetComponent<AoeObjectController>().aoeDamage;
         float scalarValue = other.gameObject.GetComponent<AoeObjectController>().aoeScalar;
         damageValue = Mathf.RoundToInt((float)damageValue * scalarValue * armour);
-        TakeDamage(damageValue, false, false);
+        TakeDamage(damageValue, false, false, false);
     }
 }
 private void OnTriggerExit2D(Collider2D other) {

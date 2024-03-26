@@ -12,8 +12,9 @@ public class GameDataController : MonoBehaviour
     public TMP_Text bugStats;
     public TMP_Text moneyStats;
     public TMP_Text turretStats;
+    public bool tutorialNeeded;
 
-    private void Start() {
+    private void Awake() {
         //Load game data
         GameData data = SaveSystem.LoadGameData();
 
@@ -21,11 +22,13 @@ public class GameDataController : MonoBehaviour
             overallBugsKilled = data.overallBugsKilled;
             overallMoneySpent = data.overallMoneySpent;
             overallTurretsPlaced = data.overallTurretsPlaced;
+            tutorialNeeded = data.tutorialNeeded;
             Debug.Log("Save File Found");
         } else {
             overallBugsKilled = 0;
             overallMoneySpent = 0;
             overallTurretsPlaced = 0;
+            tutorialNeeded = true;
             Debug.Log("Save File Not Found");
         }
 
@@ -53,6 +56,10 @@ public class GameDataController : MonoBehaviour
         Debug.Log("Before TurretsPlaces: " + overallTurretsPlaced);
         overallTurretsPlaced += turrets;
         Debug.Log("After TurretsPlaces: " + overallTurretsPlaced);
+    }
+
+    public void SetTutorialNeeded(bool needed) {
+        tutorialNeeded = needed;
     }
 
     public int GetBugsKilled() {

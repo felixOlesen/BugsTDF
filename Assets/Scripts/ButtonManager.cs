@@ -182,7 +182,6 @@ public class ButtonManager : MonoBehaviour
 
     public void ClickButtonSound() {
         buttonClickSound.Play();
-        Debug.Log("CLICKING");
     }
 
     public void MuteButton() {

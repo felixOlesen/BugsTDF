@@ -69,8 +69,6 @@ public class PauseMenuController : MonoBehaviour
         if(!gameOver && levelComplete) {
             LevelData data = SaveSystem.LoadLevelData(SceneManager.GetActiveScene().name);
             int currentRemainingHealth = gameObject.GetComponent<LevelManager>().remainingHealth;
-            Debug.Log("Current Remaining Health: " + currentRemainingHealth);
-            Debug.Log("Previously Saved Remaining Health: " + data.remainingHealth);
             if(data == null) {
                 gameObject.GetComponent<LevelManager>().SaveLevelData();
             } else if(data.remainingHealth < currentRemainingHealth) {

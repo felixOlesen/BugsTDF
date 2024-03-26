@@ -513,6 +513,11 @@ MonoBehaviour:
   currentFiringObjectSpare: {fileID: 0}
   firingBarrel: 0
   towerPlacement: {fileID: 7565169788521162152}
+  tierCompletionCrit:
+  - 0.05
+  - 0.05
+  - 0.07
+  critChance: 0
 --- !u!82 &-5494627682429029163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1301,6 +1306,7 @@ MonoBehaviour:
   aoeDamage: 0
   aoeParticles: {fileID: 0}
   system: {fileID: 0}
+  aoeSfx: {fileID: 0}
 --- !u!1 &7565169788521162152
 GameObject:
   m_ObjectHideFlags: 0

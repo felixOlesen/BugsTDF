@@ -82,10 +82,16 @@ public class TowerController : MonoBehaviour
     public int firingBarrel;
 
     public GameObject towerPlacement;
+    public List<float> tierCompletionCrit;
+    public float critChance;
+    public bool crit1Complete;
+    public bool crit2Complete;
+    public bool crit3Complete;
 
 
 
     private void Start() {
+        critChance = 0f;
         towerRange = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
         towerRange.isTrigger = true;
         placed = false;
@@ -107,6 +113,10 @@ public class TowerController : MonoBehaviour
         firingPoints.Add(currentFiringPoint);
         firingPoints.Add(currentFiringPointSpare);
         firingBarrel = 0;
+        crit1Complete = false;
+        crit2Complete = false;
+        crit3Complete = false;
+        
     }
 
     private void Update() {
@@ -240,9 +250,17 @@ public class TowerController : MonoBehaviour
                 firingBarrel = 0;
             }
             //GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            float randomValue = Random.Range(0f, 1f);
+            bool crit = false;
+            int previousAttack = attackPower;
+            if(randomValue < critChance) {
+                attackPower = Mathf.RoundToInt(attackPower * 1.75f);
+                crit = true;
+            }
             tempProjectile.GetComponent<BulletController>().attackPower = attackPower;
             Destroy(tempProjectile, 3f);
-            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, gameObject);
+            tempProjectile.GetComponent<BulletController>().shot(shootDir, armourPierce, armourDestroying, gameObject, crit);
+            attackPower = previousAttack;
         }
         yield return new WaitForSeconds(attackSpeed);
         currentCoroutine = null;

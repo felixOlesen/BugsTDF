@@ -44,6 +44,15 @@ public GameObject upgradeIcon1;
 public GameObject upgradeIcon2;
 public GameObject upgradeIcon3;
 
+public GameObject critOne;
+public GameObject critTwo;
+public GameObject critThree;
+public int tierCompleteIndex;
+
+private void Start() {
+    tierCompleteIndex = 0;
+}
+
 
 private void Update() {
     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -152,10 +161,9 @@ public void DisplayOptions(GameObject tower) {
         priceThree.text = "";
         upgradeIcon3.SetActive(false);
         buttonThree.SetActive(false);
-        // goldThree.SetActive(false);
-        // silverThree.SetActive(false);
-        // bronzeThree.SetActive(false);
     }
+    SetCritCompleteIndex(tower);
+    UpdateCritDesc(tower, lvlTree);
     UpdateTierImages();
     UpdateTierSkin(tower, lvlTree);
 
@@ -173,6 +181,34 @@ public void UpdateTierSkin(GameObject tower, List<Queue<TowerData>> tree) {
     }
 }
 
+public void UpdateTowerCrit(GameObject tower, List<Queue<TowerData>> tree) {
+    if(!tower.GetComponent<TowerController>().crit1Complete && tree[0].Count <= 2 && tree[1].Count <= 2 && tree[2].Count <= 2) {
+        tower.GetComponent<TowerController>().crit1Complete = true;
+        ImproveStats("critChance", tower.GetComponent<TowerController>().tierCompletionCrit[0]);
+    } 
+    if(!tower.GetComponent<TowerController>().crit2Complete && tree[0].Count <= 1 && tree[1].Count <= 1 && tree[2].Count <= 1) {
+        tower.GetComponent<TowerController>().crit2Complete = true;
+        ImproveStats("critChance", tower.GetComponent<TowerController>().tierCompletionCrit[1]);
+    } 
+    if(!tower.GetComponent<TowerController>().crit3Complete && tree[0].Count <= 0 && tree[1].Count <= 0 && tree[2].Count <= 0) {
+        tower.GetComponent<TowerController>().crit3Complete = true;
+        ImproveStats("critChance", tower.GetComponent<TowerController>().tierCompletionCrit[2]);
+    }
+}
+
+public void SetCritCompleteIndex(GameObject tower) {
+    bool c1 = tower.GetComponent<TowerController>().crit1Complete;
+    bool c2 = tower.GetComponent<TowerController>().crit2Complete;
+    bool c3 = tower.GetComponent<TowerController>().crit3Complete;
+    if(!c1 && !c2 && !c3) {
+        tierCompleteIndex = 0;
+    } else if(c1 && !c2 && !c3) {
+        tierCompleteIndex = 1;
+    } else if(c1 && c2 && !c3) {
+        tierCompleteIndex = 2;
+    }
+}
+
 public void SellTower() {
     /*
     1. Get sellprice
@@ -184,6 +220,35 @@ public void SellTower() {
     Destroy(currentTower);
     lvlUpMenu.SetActive(false);
     levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(money);
+}
+
+public void UpdateCritDesc(GameObject tower, List<Queue<TowerData>> tree) {
+    if(tree[0].Count > tree[1].Count && tree[0].Count > tree[2].Count) {
+        critOne.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critTwo.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critThree.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critOne.SetActive(true);
+        critTwo.SetActive(false);
+        critThree.SetActive(false);
+    } else if(tree[1].Count > tree[0].Count && tree[1].Count > tree[2].Count) {
+        critOne.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critTwo.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critThree.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critOne.SetActive(false);
+        critTwo.SetActive(true);
+        critThree.SetActive(false);
+    } else if(tree[2].Count > tree[1].Count && tree[2].Count > tree[0].Count) {
+        critOne.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critTwo.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critThree.GetComponent<TMP_Text>().text = "Crit Chance: +" + (tower.GetComponent<TowerController>().tierCompletionCrit[tierCompleteIndex]*100).ToString() + "%";
+        critOne.SetActive(false);
+        critTwo.SetActive(false);
+        critThree.SetActive(true);
+    } else {
+        critOne.SetActive(false);
+        critTwo.SetActive(false);
+        critThree.SetActive(false);
+    }
 }
 
 private void UpdateTierImages() {
@@ -235,17 +300,16 @@ public void LevelUp(int branch) {
         6. Refreshes the Displayed options
     */
     branch -= 1;
-    if(!PauseMenuController.isPaused) {
-        if(lvlTree[branch].Count != 0) {
-            int cost = lvlTree[branch].Peek().upgradeCost;
-            if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
-                string index = lvlTree[branch].Peek().buffIdx;
-                float magnitude = lvlTree[branch].Peek().magnitude;
-                ImproveStats(index, magnitude);
-                levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
-                currentTower.GetComponent<TowerController>().UpdateSellPrice(Mathf.Abs(cost));
-                lvlTree[branch].Dequeue();
-            }
+    if(!PauseMenuController.isPaused && lvlTree[branch].Count != 0) {
+        int cost = lvlTree[branch].Peek().upgradeCost;
+        if(levelManager.GetComponent<LevelManager>().CheckMoneyTotal(cost)) {
+            string index = lvlTree[branch].Peek().buffIdx;
+            float magnitude = lvlTree[branch].Peek().magnitude;
+            ImproveStats(index, magnitude);
+            levelManager.GetComponent<LevelManager>().ChangeMoneyTotal(cost);
+            currentTower.GetComponent<TowerController>().UpdateSellPrice(Mathf.Abs(cost));
+            lvlTree[branch].Dequeue();
+            UpdateTowerCrit(currentTower, lvlTree);
         }
     }
     DisplayOptions(currentTower);
@@ -289,6 +353,9 @@ public void ImproveStats(string idx, float mag) {
     }
     if(idx == "stunDuration") {
         currentTower.GetComponent<TowerController>().stunDuration *= mag;
+    }
+    if(idx == "critChance") {
+        currentTower.GetComponent<TowerController>().critChance += mag;
     }
 
 }

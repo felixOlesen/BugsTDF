@@ -71,11 +71,23 @@ public class LevelManager : MonoBehaviour
     public GameObject star3;
     public AudioSource starSound;
 
+    public GameObject tutorialMenu;
+    public List<GameObject> tutorialWindows;
+    private int tutorialWindowIndex;
+    public GameObject previousButton;
+    public GameObject nextButton;
+    public GameObject closeButton;
+    public bool tutorialNeeded;
+    public bool gameOverFlag;
+    public GameObject WaveIndicator;
 
     private void Start() {
+        tutorialNeeded = GetComponent<GameDataController>().tutorialNeeded;
         gameOverMenu.SetActive(false);
         lvlUpMenu.SetActive(false);
         lvlCompleteMenu.SetActive(false);
+        WaveIndicator.SetActive(true);
+        gameOverFlag = false;
         midWave = false;
         waveUI.text = "Wave 0";
         waveNumber = 0;
@@ -102,12 +114,22 @@ public class LevelManager : MonoBehaviour
         star1.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         star2.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         star3.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+        tutorialWindowIndex = 0;
+
+        
+        if(tutorialNeeded) {
+            Debug.Log("Tutorial Do not show: " + tutorialNeeded);
+            DisplayTutorial();
+        }
+        previousButton.SetActive(false);
+        closeButton.SetActive(false);
+        initializedWaveText.gameObject.SetActive(false);
     }
     
     private void Update() {
         if(currentEnemies.TrueForAll(EnemyCheck) && waveTimeUp) {
             currentEnemies.Clear();
-            
+            WaveIndicator.SetActive(true);
             midWave = false;
             startWaveButton.gameObject.SetActive(true);
             speedUpButton.gameObject.SetActive(false);
@@ -126,7 +148,17 @@ public class LevelManager : MonoBehaviour
             }
             
         }
-        if(!midWave && waveNumber >= levelStructure.GetTotalWaves() && !levelComplete) {
+        if(int.Parse(healthUI.text) <= 0 && !gameOverFlag) {
+            Debug.Log("Game over Trigger");
+            gameOverFlag = true;
+            gameOverSound1.Play();
+            gameOverMenu.SetActive(true);
+            gameObject.GetComponent<PauseMenuController>().SetGameOverFlag(true);
+            Time.timeScale = 0f;
+            PauseMenuController.isPaused = true;
+        }
+
+        if(!midWave && (waveNumber >= levelStructure.GetTotalWaves()) && !levelComplete) {
             Debug.Log("Level Complete!");
             remainingHealth = int.Parse(healthUI.text);
             if(remainingHealth >= 180) {
@@ -142,6 +174,57 @@ public class LevelManager : MonoBehaviour
             gameOverMenu.SetActive(false);
             lvlUpMenu.SetActive(false);
         }
+    }
+
+    public void DisplayTutorial() {
+        tutorialMenu.SetActive(true);
+    }
+
+    public void NextTutorialWindow() {
+        if(tutorialWindowIndex < tutorialWindows.Count-1){
+            tutorialWindows[tutorialWindowIndex].SetActive(false);
+            tutorialWindowIndex++;
+        }
+        Debug.Log("Index " + tutorialWindowIndex);
+        if(tutorialWindowIndex < tutorialWindows.Count){
+            tutorialWindows[tutorialWindowIndex].SetActive(true);
+        }
+        if(tutorialWindowIndex > 0) {
+            previousButton.SetActive(true);
+        }
+        if(tutorialWindowIndex == tutorialWindows.Count-1) {
+            nextButton.SetActive(false);
+            closeButton.SetActive(true);
+        }
+    }
+
+    public void PreviousTutorialWindow() {
+        if(tutorialWindowIndex >= 1){
+            tutorialWindows[tutorialWindowIndex].SetActive(false);
+            tutorialWindowIndex--;
+        }
+        Debug.Log("Index " + tutorialWindowIndex);
+        if(tutorialWindowIndex >= 0){
+            tutorialWindows[tutorialWindowIndex].SetActive(true);
+        }
+        if(tutorialWindowIndex == 0) {
+            previousButton.SetActive(false);
+        }
+        if(tutorialWindowIndex < tutorialWindows.Count-1) {
+            nextButton.SetActive(true);
+            closeButton.SetActive(false);
+        }
+
+    }
+
+    public void ToggleTutorial(bool tutorial) {
+        tutorialNeeded = tutorial;
+        gameObject.GetComponent<GameDataController>().SetTutorialNeeded(tutorialNeeded);
+        Debug.Log("Tutorial Toggle: " + tutorialNeeded);
+    }
+
+    public void CloseWindow(GameObject window) {
+        window.SetActive(false);
     }
 
     private bool EnemyCheck(GameObject item) {
@@ -172,6 +255,7 @@ public class LevelManager : MonoBehaviour
             startWaveButton.gameObject.SetActive(false);
             speedUpButton.gameObject.SetActive(true);
             StartCoroutine(FadeDayNight("night"));
+            WaveIndicator.SetActive(false);
             int waveSoundIndex = UnityEngine.Random.Range(0,2);
             if(waveSoundIndex == 1){
                 waveStartSound2.Play();
@@ -386,14 +470,6 @@ public class LevelManager : MonoBehaviour
     public void LevelDamage(int dmg) {
         int currentHealth = Int32.Parse(healthUI.text);
         currentHealth -= dmg;
-        if(currentHealth <= 0) {
-            Debug.Log("Game over Trigger");
-            gameOverSound1.Play();
-            gameOverMenu.SetActive(true);
-            gameObject.GetComponent<PauseMenuController>().SetGameOverFlag(true);
-            Time.timeScale = 0f;
-            PauseMenuController.isPaused = true;
-        }
         healthUI.SetText(currentHealth.ToString());
 
     }

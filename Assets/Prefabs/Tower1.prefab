@@ -653,6 +653,11 @@ MonoBehaviour:
   currentFiringObjectSpare: {fileID: 0}
   firingBarrel: 0
   towerPlacement: {fileID: 5818883325573133265}
+  tierCompletionCrit:
+  - 0.01
+  - 0.03
+  - 0.05
+  critChance: 0
 --- !u!82 &-2501845062167964822
 AudioSource:
   m_ObjectHideFlags: 0

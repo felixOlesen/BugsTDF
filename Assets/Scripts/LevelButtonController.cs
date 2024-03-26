@@ -20,17 +20,17 @@ public class LevelButtonController : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(0, 1, 0, 1);
             Debug.Log(data.remainingHealth);
             if(data.remainingHealth >= 180) {
-                star1.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
-                star2.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
-                star3.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
+                star1.GetComponent<Image>().color = new Color(255,255,255,255);
+                star2.GetComponent<Image>().color = new Color(255,255,255,255);
+                star3.GetComponent<Image>().color = new Color(255,255,255,255);
             } else if(data.remainingHealth < 180 && data.remainingHealth >= 100) {
-                star1.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
-                star2.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
-                star3.GetComponent<SpriteRenderer>().color = new Color(0,0,0,255);
+                star1.GetComponent<Image>().color = new Color(255,255,255,255);
+                star2.GetComponent<Image>().color = new Color(255,255,255,255);
+                star3.GetComponent<Image>().color = new Color(0,0,0,255);
             } else if(data.remainingHealth < 100 && data.remainingHealth > 0) {
-                star1.GetComponent<SpriteRenderer>().color = new Color(255,255,255,255);
-                star2.GetComponent<SpriteRenderer>().color = new Color(0,0,0,255);
-                star3.GetComponent<SpriteRenderer>().color = new Color(0,0,0,255);
+                star1.GetComponent<Image>().color = new Color(255,255,255,255);
+                star2.GetComponent<Image>().color = new Color(0,0,0,255);
+                star3.GetComponent<Image>().color = new Color(0,0,0,255);
             }
         } else {
             star1.SetActive(false);
