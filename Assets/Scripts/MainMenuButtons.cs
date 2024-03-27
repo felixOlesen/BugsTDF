@@ -16,9 +16,6 @@ public class MainMenuButtons : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
-    public GameObject backgroundImage;
-    public float degreesPerSecond = 0.0001f;
-    public float timer;
     public AudioSource buttonClickSound;
 
     private void Start() {
@@ -45,13 +42,6 @@ public class MainMenuButtons : MonoBehaviour
         Time.timeScale = 0.2f;
         
 
-    }
-
-    private void Update() {
-        timer += Time.deltaTime * degreesPerSecond;
-        if(backgroundImage.transform.position.x < 3.0f && backgroundImage.transform.position.y < 2.6f) {
-            backgroundImage.transform.position = new Vector3 (timer - 3.0f, timer - 2.6f, 0);
-        }
     }
 
     public void StartGame() {
