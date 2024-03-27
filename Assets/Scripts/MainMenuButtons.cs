@@ -18,6 +18,8 @@ public class MainMenuButtons : MonoBehaviour
 
     public AudioSource buttonClickSound;
 
+    public GameObject levelLoader;
+
     private void Start() {
         mainCanvas.SetActive(true);
         levelCanvas.SetActive(false);
@@ -54,7 +56,7 @@ public class MainMenuButtons : MonoBehaviour
     public void EnterLevel(string lvlNum) {
         Debug.Log(lvlNum);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level"+lvlNum);
+        levelLoader.GetComponent<SceneTransitionManager>().EnterLevel(lvlNum); 
     }
 
     public void Back() {

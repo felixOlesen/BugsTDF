@@ -177,10 +177,12 @@ public class LevelManager : MonoBehaviour
     }
 
     public void DisplayTurretInfo() {
+        bugInfoMenu.SetActive(false);
         turretInfoMenu.SetActive(true);
     }
 
     public void DisplayBugInfo() {
+        turretInfoMenu.SetActive(false);
         bugInfoMenu.SetActive(true);
     }
 
@@ -369,7 +371,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         if(dayOrNight == "night") {
-            for (float i = 0.5f; i >= 0.1f; i -= Time.deltaTime/2) {
+            for (float i = 0.5f; i >= 0.2f; i -= Time.deltaTime/2) {
             globalLight.intensity = i;
             yield return null;
         }
