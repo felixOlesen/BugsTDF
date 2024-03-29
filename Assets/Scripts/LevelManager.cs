@@ -78,6 +78,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject turretInfoMenu;
     public GameObject bugInfoMenu;
+    public int swarmCounter;
 
     private void Start() {
         tutorialNeeded = GetComponent<GameDataController>().tutorialNeeded;
@@ -447,8 +448,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void SwarmSpawning(int numEn, GameObject enPrefab, int checkPointInd, Vector3 checkPointPos, Vector3 pos) {
-        int buffer = 13;
-        StartCoroutine(WaveTimer(numEn + buffer));
+        StartCoroutine(SwarmWaveTimer(numEn+1));
         StartCoroutine(SwarmCoroutine(numEn, enPrefab, checkPointInd, checkPointPos, pos));
     }
 
@@ -465,15 +465,24 @@ public class LevelManager : MonoBehaviour
     IEnumerator EnemyCoroutine(int numEn, GameObject enPrefab) {
         for(int i = 1; i <= numEn; i++) {
             GameObject prefab = Instantiate(enPrefab);
-            // if(waveNumber >= 10) {
-            //     prefab.GetComponent<EnemyController>().speed *= (waveNumber * 0.08f);
-            //     prefab.GetComponent<EnemyController>().maxHealth = Mathf.RoundToInt(prefab.GetComponent<EnemyController>().maxHealth * (waveNumber * 0.08f));
-            //     prefab.GetComponent<EnemyController>().armour /= (waveNumber * 0.08f);
-            // }
-
             currentEnemies.Add(prefab);
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    IEnumerator SwarmWaveTimer(int numEn) {
+        waveTimeUp = false;
+        float totalWaveTime = spawnDelay * numEn;
+        swarmCounter++;
+        // Debug.Log("Timer Started: " + totalWaveTime );
+        yield return new WaitForSeconds(totalWaveTime);
+        // Debug.Log("Wave Finished");
+        swarmCounter--;
+        Debug.Log("Swarm Count:" + swarmCounter.ToString());
+        if(swarmCounter <= 0) {
+            waveTimeUp = true; 
+        }
+        
     }
 
 
