@@ -150,7 +150,7 @@ public class LevelManager : MonoBehaviour
             
         }
         if(int.Parse(healthUI.text) <= 0 && !gameOverFlag) {
-            Debug.Log("Game over Trigger");
+            Debug.Log("Game over Trigger Occurring");
             gameOverFlag = true;
             gameOverSound1.Play();
             gameOverMenu.SetActive(true);

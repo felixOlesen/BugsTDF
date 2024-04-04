@@ -54,11 +54,16 @@ public class PauseMenuController : MonoBehaviour
     }
 
     public void PauseGame() {
-        gameObject.GetComponent<LevelManager>().turretInfoMenu.SetActive(false);
-        gameObject.GetComponent<LevelManager>().bugInfoMenu.SetActive(false);
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        levelComplete = gameObject.GetComponent<LevelManager>().levelComplete;
+        gameOver = gameObject.GetComponent<LevelManager>().gameOverFlag;
+        if(!levelComplete && !gameOver) {
+            gameObject.GetComponent<LevelManager>().turretInfoMenu.SetActive(false);
+            gameObject.GetComponent<LevelManager>().bugInfoMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
+        
     }
 
     public void ResumeGame() {
