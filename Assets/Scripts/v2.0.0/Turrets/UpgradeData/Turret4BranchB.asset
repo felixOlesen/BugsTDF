@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1820cbd6140b4e1cabc00fdb034b1c6, type: 3}
+  m_Name: Turret4BranchB
+  m_EditorClassIdentifier: 
+  branchName: AttackBranch
+  upgradeNames:
+  - Improved Balistics
+  - Plasma Munitions
+  - Piercing Shells
+  upgradeDescriptions:
+  - 'Attack: +10'
+  - 'Attack: +25'
+  - 'Armour Piercing: Active'
+  upgradeIndexes:
+  - attackPower
+  - attackPower
+  - addArmourPierce
+  upgradeMagnitude:
+  - 10
+  - 25
+  - 0
+  upgradeCosts: bbfeffff50fbffff3cf6ffff
+  upgradeIcons:
+  - {fileID: 21300000, guid: cdd94e98ae59c491b9d979418b88ee37, type: 3}
+  - {fileID: 21300000, guid: c8672655e05cb462f839a50eda99ee23, type: 3}
+  - {fileID: 21300000, guid: d626d5c8691924e6a85d877e3ba04d52, type: 3}

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1820cbd6140b4e1cabc00fdb034b1c6, type: 3}
+  m_Name: Turret4BranchC
+  m_EditorClassIdentifier: 
+  branchName: AttackSpeedBranch
+  upgradeNames:
+  - Faster Firing
+  - Barrel Cooling
+  - Efficiency Overload
+  upgradeDescriptions:
+  - 'Fire Rate: +12%'
+  - 'Fire Rate: +15%'
+  - 'Fire Rate: +20%'
+  upgradeIndexes:
+  - attackSpeed
+  - attackSpeed
+  - attackSpeed
+  upgradeMagnitude:
+  - 0.15
+  - 0.15
+  - 0.2
+  upgradeCosts: 3efeffff1efbffff30f8ffff
+  upgradeIcons:
+  - {fileID: 21300000, guid: eb51d828509a346c68e243a53ec4338c, type: 3}
+  - {fileID: 21300000, guid: 309e45f5f0f3e4d0aae9d0ac41e5168d, type: 3}
+  - {fileID: 21300000, guid: 6a32c3dc23491479f9c5094f186268d2, type: 3}
